@@ -18,6 +18,7 @@
 		2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F622A26189B2100284F8F /* Tutorial.storyboard */; };
 		2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F622D26189BC200284F8F /* TutorialViewController.swift */; };
 		2F6F623226189F5300284F8F /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F623126189F4400284F8F /* LuckiestGuy-Regular.ttf */; };
+		4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E3663302618BC85001F8428 /* s1c1.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2F6F622A26189B2100284F8F /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		2F6F622D26189BC200284F8F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		2F6F623126189F4400284F8F /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LuckiestGuy-Regular.ttf"; path = "../../../../../../Downloads/Luckiest_Guy/LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		4E3663302618BC85001F8428 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		2F6F61FE2617DC1800284F8F /* EcoRanger */ = {
 			isa = PBXGroup;
 			children = (
+				4E36632F2618BC4B001F8428 /* Videos */,
 				2F6F623026189F3200284F8F /* fonts */,
 				2F6F621C2618096B00284F8F /* Controller */,
 				2F6F621B2618096600284F8F /* View */,
@@ -112,6 +115,14 @@
 				2F6F623126189F4400284F8F /* LuckiestGuy-Regular.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		4E36632F2618BC4B001F8428 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				4E3663302618BC85001F8428 /* s1c1.mp4 */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */,
+				4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */,
 				2F6F620C2617DC1B00284F8F /* LaunchScreen.storyboard in Resources */,
 				2F6F62092617DC1B00284F8F /* Assets.xcassets in Resources */,
 				2F6F62072617DC1800284F8F /* Main.storyboard in Resources */,
