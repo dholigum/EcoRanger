@@ -13,6 +13,8 @@
 		2F6F62072617DC1800284F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F62052617DC1800284F8F /* Main.storyboard */; };
 		2F6F62092617DC1B00284F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F62082617DC1B00284F8F /* Assets.xcassets */; };
 		2F6F620C2617DC1B00284F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F620A2617DC1B00284F8F /* LaunchScreen.storyboard */; };
+		2F6F62232618841800284F8F /* Prolog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F62222618841800284F8F /* Prolog.storyboard */; };
+		2F6F62262618895900284F8F /* PrologViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F62252618895900284F8F /* PrologViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2F6F62082617DC1B00284F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F6F620B2617DC1B00284F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F6F620D2617DC1B00284F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F6F62222618841800284F8F /* Prolog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Prolog.storyboard; sourceTree = "<group>"; };
+		2F6F62252618895900284F8F /* PrologViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrologViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				2F6F62052617DC1800284F8F /* Main.storyboard */,
+				2F6F62222618841800284F8F /* Prolog.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2F6F62032617DC1800284F8F /* MainViewController.swift */,
+				2F6F62252618895900284F8F /* PrologViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,6 +157,7 @@
 				2F6F620C2617DC1B00284F8F /* LaunchScreen.storyboard in Resources */,
 				2F6F62092617DC1B00284F8F /* Assets.xcassets in Resources */,
 				2F6F62072617DC1800284F8F /* Main.storyboard in Resources */,
+				2F6F62232618841800284F8F /* Prolog.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +171,7 @@
 				2F6F62042617DC1800284F8F /* MainViewController.swift in Sources */,
 				2F6F62002617DC1800284F8F /* AppDelegate.swift in Sources */,
 				2F6F62022617DC1800284F8F /* SceneDelegate.swift in Sources */,
+				2F6F62262618895900284F8F /* PrologViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
