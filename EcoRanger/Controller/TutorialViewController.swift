@@ -1,5 +1,5 @@
 //
-//  PrologViewController.swift
+//  TutorialViewController.swift
 //  EcoRanger
 //
 //  Created by Syahrul Apple Developer BINUS on 03/04/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PrologViewController: UIViewController {
+class TutorialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,10 +16,10 @@ class PrologViewController: UIViewController {
     }
     
     @IBAction func prevButtonPressed(_ sender: UIButton) {
-        print("Prolog Prev Button Pressed!")
+        print("Tutorial Button Pressed")
     }
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        print("Prolog Next Button Pressed!")
+        print("Tutorial Button Pressed")
     }
     
 }
