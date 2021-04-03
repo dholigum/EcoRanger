@@ -11,7 +11,7 @@
         <!--Prolog View Controller-->
         <scene sceneID="unA-op-4PS">
             <objects>
-                <viewController id="Qaa-uB-y6t" customClass="PrologViewController" customModule="EcoRanger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="prologView" id="Qaa-uB-y6t" customClass="PrologViewController" customModule="EcoRanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xvE-N3-GD2">
                         <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
