@@ -16,10 +16,10 @@ class TutorialViewController: UIViewController {
     }
     
     @IBAction func prevButtonPressed(_ sender: UIButton) {
-        print("Prev Button Pressed")
+        print("Tutorial Button Pressed")
     }
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        print("Next Button Pressed")
+        print("Tutorial Button Pressed")
     }
     
 }

@@ -16,10 +16,10 @@ class PrologViewController: UIViewController {
     }
     
     @IBAction func prevButtonPressed(_ sender: UIButton) {
-        print("Prev Button Pressed!")
+        print("Prolog Prev Button Pressed!")
     }
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        print("Next Button Pressed!")
+        print("Prolog Next Button Pressed!")
     }
     
 }
