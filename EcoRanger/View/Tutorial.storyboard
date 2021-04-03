@@ -11,7 +11,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="ctx-ku-jzY">
             <objects>
-                <viewController id="LvG-dB-oE9" customClass="TutorialViewController" customModule="EcoRanger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorialView" id="LvG-dB-oE9" customClass="TutorialViewController" customModule="EcoRanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c4t-La-aFA">
                         <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

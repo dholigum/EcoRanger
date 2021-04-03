@@ -16,6 +16,14 @@
             </objects>
             <point key="canvasLocation" x="-160" y="651"/>
         </scene>
+        <!--tutorialView-->
+        <scene sceneID="8Au-5q-xNB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tutorial" referencedIdentifier="tutorialView" id="1LB-lv-0jb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJn-gH-UR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121" y="651"/>
+        </scene>
         <!--Prolog View Controller-->
         <scene sceneID="unA-op-4PS">
             <objects>
@@ -89,6 +97,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="Qaa-uB-y6t" eventType="touchUpInside" id="Cu6-WS-dlU"/>
+                                            <segue destination="1LB-lv-0jb" kind="presentation" modalPresentationStyle="fullScreen" id="EYX-LT-srG"/>
                                         </connections>
                                     </button>
                                 </subviews>
