@@ -15,6 +15,8 @@
 		2F6F620C2617DC1B00284F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F620A2617DC1B00284F8F /* LaunchScreen.storyboard */; };
 		2F6F62232618841800284F8F /* Prolog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F62222618841800284F8F /* Prolog.storyboard */; };
 		2F6F62262618895900284F8F /* PrologViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F62252618895900284F8F /* PrologViewController.swift */; };
+		2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F622A26189B2100284F8F /* Tutorial.storyboard */; };
+		2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F622D26189BC200284F8F /* TutorialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2F6F620D2617DC1B00284F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F6F62222618841800284F8F /* Prolog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Prolog.storyboard; sourceTree = "<group>"; };
 		2F6F62252618895900284F8F /* PrologViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrologViewController.swift; sourceTree = "<group>"; };
+		2F6F622A26189B2100284F8F /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		2F6F622D26189BC200284F8F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			children = (
 				2F6F62052617DC1800284F8F /* Main.storyboard */,
 				2F6F62222618841800284F8F /* Prolog.storyboard */,
+				2F6F622A26189B2100284F8F /* Tutorial.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			children = (
 				2F6F62032617DC1800284F8F /* MainViewController.swift */,
 				2F6F62252618895900284F8F /* PrologViewController.swift */,
+				2F6F622D26189BC200284F8F /* TutorialViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */,
 				2F6F620C2617DC1B00284F8F /* LaunchScreen.storyboard in Resources */,
 				2F6F62092617DC1B00284F8F /* Assets.xcassets in Resources */,
 				2F6F62072617DC1800284F8F /* Main.storyboard in Resources */,
@@ -170,6 +177,7 @@
 			files = (
 				2F6F62042617DC1800284F8F /* MainViewController.swift in Sources */,
 				2F6F62002617DC1800284F8F /* AppDelegate.swift in Sources */,
+				2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */,
 				2F6F62022617DC1800284F8F /* SceneDelegate.swift in Sources */,
 				2F6F62262618895900284F8F /* PrologViewController.swift in Sources */,
 			);
