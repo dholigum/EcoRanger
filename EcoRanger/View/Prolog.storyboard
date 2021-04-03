@@ -8,6 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--mainView-->
+        <scene sceneID="II2-dh-X1I">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="mainView" id="n0F-Ea-Tet" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Koh-qG-EyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-160" y="651"/>
+        </scene>
         <!--Prolog View Controller-->
         <scene sceneID="unA-op-4PS">
             <objects>
@@ -47,6 +55,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="prevButtonPressed:" destination="Qaa-uB-y6t" eventType="touchUpInside" id="VRf-eh-U22"/>
+                                            <segue destination="n0F-Ea-Tet" kind="presentation" modalPresentationStyle="fullScreen" id="VVr-lb-BZ7"/>
                                         </connections>
                                     </button>
                                 </subviews>
