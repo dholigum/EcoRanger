@@ -5,6 +5,7 @@
 Educational game application on environmental waste for primary schoolers
 
 <hr />
+
 ## About EcoRanger
 ### _Refined Challenge:_
 Educate children to raise awareness towards environmental issues.
