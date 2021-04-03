@@ -45,6 +45,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfI-px-YXi">
                                         <rect key="frame" x="15" y="14" width="48" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="prevButtonPressed:" destination="Qaa-uB-y6t" eventType="touchUpInside" id="VRf-eh-U22"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,6 +78,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-mC-D3r">
                                         <rect key="frame" x="15" y="14" width="48" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="nextButtonPressed:" destination="Qaa-uB-y6t" eventType="touchUpInside" id="Cu6-WS-dlU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,7 +99,7 @@
         <image name="homescreenbg" width="270.66665649414062" height="125"/>
         <image name="nextbutton" width="25.333333969116211" height="25.333333969116211"/>
         <image name="prevbutton" width="25.333333969116211" height="25.333333969116211"/>
-        <image name="thumbnailvideo" width="198" height="82"/>
+        <image name="thumbnailvideo" width="198.66667175292969" height="82"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
