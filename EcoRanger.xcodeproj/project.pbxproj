@@ -17,6 +17,7 @@
 		2F6F62262618895900284F8F /* PrologViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F62252618895900284F8F /* PrologViewController.swift */; };
 		2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F622A26189B2100284F8F /* Tutorial.storyboard */; };
 		2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F622D26189BC200284F8F /* TutorialViewController.swift */; };
+		2F6F623226189F5300284F8F /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F623126189F4400284F8F /* LuckiestGuy-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2F6F62252618895900284F8F /* PrologViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrologViewController.swift; sourceTree = "<group>"; };
 		2F6F622A26189B2100284F8F /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		2F6F622D26189BC200284F8F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		2F6F623126189F4400284F8F /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LuckiestGuy-Regular.ttf"; path = "../../../../../../Downloads/Luckiest_Guy/LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		2F6F61FE2617DC1800284F8F /* EcoRanger */ = {
 			isa = PBXGroup;
 			children = (
+				2F6F623026189F3200284F8F /* fonts */,
 				2F6F621C2618096B00284F8F /* Controller */,
 				2F6F621B2618096600284F8F /* View */,
 				2F6F621A2618095C00284F8F /* Model */,
@@ -101,6 +104,14 @@
 				2F6F622D26189BC200284F8F /* TutorialViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F6F623026189F3200284F8F /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2F6F623126189F4400284F8F /* LuckiestGuy-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				2F6F62092617DC1B00284F8F /* Assets.xcassets in Resources */,
 				2F6F62072617DC1800284F8F /* Main.storyboard in Resources */,
 				2F6F62232618841800284F8F /* Prolog.storyboard in Resources */,
+				2F6F623226189F5300284F8F /* LuckiestGuy-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
