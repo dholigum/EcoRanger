@@ -56,15 +56,39 @@
 		2F6F61FE2617DC1800284F8F /* EcoRanger */ = {
 			isa = PBXGroup;
 			children = (
+				2F6F621C2618096B00284F8F /* Controller */,
+				2F6F621B2618096600284F8F /* View */,
+				2F6F621A2618095C00284F8F /* Model */,
 				2F6F61FF2617DC1800284F8F /* AppDelegate.swift */,
 				2F6F62012617DC1800284F8F /* SceneDelegate.swift */,
-				2F6F62032617DC1800284F8F /* ViewController.swift */,
-				2F6F62052617DC1800284F8F /* Main.storyboard */,
 				2F6F62082617DC1B00284F8F /* Assets.xcassets */,
 				2F6F620A2617DC1B00284F8F /* LaunchScreen.storyboard */,
 				2F6F620D2617DC1B00284F8F /* Info.plist */,
 			);
 			path = EcoRanger;
+			sourceTree = "<group>";
+		};
+		2F6F621A2618095C00284F8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F6F621B2618096600284F8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F6F62052617DC1800284F8F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F6F621C2618096B00284F8F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F6F62032617DC1800284F8F /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
