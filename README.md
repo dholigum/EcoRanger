@@ -1,6 +1,6 @@
 # EcoRanger
 
-![alt text](https://www.dropbox.com/s/xdv8hrgoiexr9ym/EcoRangerLogo.png)
+![alt text](https://github.com/dholigum/EcoRanger/blob/main/EcoRangerLogo.png?raw=true)
 Educational game application on environmental waste for primary schoolers
 
 ## About EcoRanger
