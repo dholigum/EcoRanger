@@ -7,8 +7,9 @@
 
 import Foundation
 struct Thumbnail {
-    var id: String?
-    var chapter: String?
-    var story: String?
-    var imgthumbnail: String?
+    var id = ""
+    var chapter = ""
+    var story = ""
+    var imgthumbnail = ""
+    var videoPath = ""
 }

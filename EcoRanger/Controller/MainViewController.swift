@@ -11,6 +11,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var collectionView: UICollectionView!
     var dataThumbail = [Thumbnail]()
+    private var indexSelected = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,13 +39,23 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellThumbnail", for: indexPath ) as! ThumbnailCollectionViewCell
                 // set nilai ke view dalam cell
         let Thumbnail = dataThumbail[indexPath.row]
-                cell.labelThumbnail.text = Thumbnail.chapter!
-                cell.imgThumbnail.image = UIImage(named: Thumbnail.imgthumbnail!)
+                cell.labelThumbnail.text = Thumbnail.chapter
+                cell.imgThumbnail.image = UIImage(named: Thumbnail.imgthumbnail)
         cell.imgThumbnail.layer.cornerRadius = 20.0
         collectionView.backgroundColor = UIColor.clear
                 return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        indexSelected = indexPath.row
+        self.performSegue(withIdentifier: "prologIdentifier", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? PrologViewController {
+            destination.chapterModel = dataThumbail[indexSelected]
+        }
+    }
     
     @IBAction func settingButtonPressed(_ sender: UIButton) {
         print("Setting Button Pressed")

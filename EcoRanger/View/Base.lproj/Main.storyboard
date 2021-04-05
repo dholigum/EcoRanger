@@ -115,7 +115,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Dummy to next screen"/>
                                 <connections>
-                                    <segue destination="BcY-oE-1XL" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="ama-2Y-75L"/>
+                                    <segue destination="BcY-oE-1XL" kind="presentation" identifier="prologIdentifier" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="ama-2Y-75L"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bd2-W7-fKY" userLabel="settingButton">
@@ -137,7 +137,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JCx-Th-Vw6">
-                                <rect key="frame" x="60" y="106" width="751" height="225"/>
+                                <rect key="frame" x="0.0" y="106" width="844" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yyB-Lw-nTc">
@@ -196,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19.194312796208528" y="86.153846153846146"/>
+            <point key="canvasLocation" x="59" y="86"/>
         </scene>
         <!--prologView-->
         <scene sceneID="6xK-NE-prY">
