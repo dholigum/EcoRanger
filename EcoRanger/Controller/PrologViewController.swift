@@ -8,11 +8,19 @@
 import UIKit
 import AVKit
 class PrologViewController: UIViewController {
+    
+    var chapterModel: Thumbnail?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    private func setupView() {
+        guard let dataModel = chapterModel else { return }
+        
+        print(dataModel.chapter)
     }
     
     @IBAction func prevButtonPressed(_ sender: UIButton) {

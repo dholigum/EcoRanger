@@ -19,6 +19,8 @@
 		2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F622A26189B2100284F8F /* Tutorial.storyboard */; };
 		2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F622D26189BC200284F8F /* TutorialViewController.swift */; };
 		4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E3663302618BC85001F8428 /* s1c1.mp4 */; };
+		4ED2CA26261A283800AC5985 /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2CA25261A283800AC5985 /* ThumbnailCollectionViewCell.swift */; };
+		4ED2CA29261A29F800AC5985 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2CA28261A29F800AC5985 /* Thumbnail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		2F6F622A26189B2100284F8F /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		2F6F622D26189BC200284F8F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		4E3663302618BC85001F8428 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
+		4ED2CA25261A283800AC5985 /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThumbnailCollectionViewCell.swift; path = EcoRanger/View/ThumbnailCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		4ED2CA28261A29F800AC5985 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Thumbnail.swift; path = EcoRanger/View/Thumbnail.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		2F6F621A2618095C00284F8F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4ED2CA28261A29F800AC5985 /* Thumbnail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 		2F6F621C2618096B00284F8F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4ED2CA25261A283800AC5985 /* ThumbnailCollectionViewCell.swift */,
 				2F6F62032617DC1800284F8F /* MainViewController.swift */,
 				2F6F62252618895900284F8F /* PrologViewController.swift */,
 				2F6F622D26189BC200284F8F /* TutorialViewController.swift */,
@@ -204,6 +210,8 @@
 				2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */,
 				2F6F62022617DC1800284F8F /* SceneDelegate.swift in Sources */,
 				2F6F62262618895900284F8F /* PrologViewController.swift in Sources */,
+				4ED2CA26261A283800AC5985 /* ThumbnailCollectionViewCell.swift in Sources */,
+				4ED2CA29261A29F800AC5985 /* Thumbnail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
