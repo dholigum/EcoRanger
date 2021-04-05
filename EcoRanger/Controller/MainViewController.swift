@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
     @IBAction func bgmSwitch(_ sender: Any) {
         print("ini switch BMG")
     }
-    
+    //
     
 
     override func viewDidLoad() {
@@ -35,7 +35,8 @@ class MainViewController: UIViewController {
         settingView.layer.cornerRadius = 10
         
     }
-
+    
+    //settingButtonPressed
     @IBAction func settingButtonPressed(_ sender: UIButton) {
         //print("Setting Button Pressed")
         //action
@@ -44,9 +45,13 @@ class MainViewController: UIViewController {
         
         
     }
+    
+    //badges
     @IBAction func badgesButtonPressed(_ sender: UIButton) {
         print("Badges Button Pressed")
     }
+    
+    //avatar
     @IBAction func avatarButtonPressed(_ sender: UIButton) {
         print("Avatar Button Pressed")
     }
