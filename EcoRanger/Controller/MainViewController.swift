@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
     @IBOutlet var settingView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
     @IBAction func backButton(_ sender: UIButton) {
-            popUpTransitionOut(desiredView: settingView)
+        popUpTransitionOut(desiredView: settingView)
+        popUpTransitionOut(desiredView: blurView)
             
         }
     @IBAction func sfxButton(_ sender: Any) {
@@ -38,7 +39,7 @@ class MainViewController: UIViewController {
     @IBAction func settingButtonPressed(_ sender: UIButton) {
         //print("Setting Button Pressed")
         //action
-        //popUpTransition(desiredView: blurView)
+        popUpTransitionIn(desiredView: blurView)
         popUpTransitionIn(desiredView: settingView)
         
         
