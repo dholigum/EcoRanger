@@ -18,6 +18,8 @@
 		2F6F62262618895900284F8F /* PrologViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F62252618895900284F8F /* PrologViewController.swift */; };
 		2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F622A26189B2100284F8F /* Tutorial.storyboard */; };
 		2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F622D26189BC200284F8F /* TutorialViewController.swift */; };
+		4E336DBB261AF2C2001A6916 /* s1c3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E336DB9261AF2C2001A6916 /* s1c3.mp4 */; };
+		4E336DBC261AF2C2001A6916 /* s1c2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E336DBA261AF2C2001A6916 /* s1c2.mp4 */; };
 		4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E3663302618BC85001F8428 /* s1c1.mp4 */; };
 		4ED2CA26261A283800AC5985 /* ThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2CA25261A283800AC5985 /* ThumbnailCollectionViewCell.swift */; };
 		4ED2CA29261A29F800AC5985 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2CA28261A29F800AC5985 /* Thumbnail.swift */; };
@@ -37,6 +39,8 @@
 		2F6F62252618895900284F8F /* PrologViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrologViewController.swift; sourceTree = "<group>"; };
 		2F6F622A26189B2100284F8F /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		2F6F622D26189BC200284F8F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		4E336DB9261AF2C2001A6916 /* s1c3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c3.mp4; sourceTree = "<group>"; };
+		4E336DBA261AF2C2001A6916 /* s1c2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c2.mp4; sourceTree = "<group>"; };
 		4E3663302618BC85001F8428 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
 		4ED2CA25261A283800AC5985 /* ThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThumbnailCollectionViewCell.swift; path = EcoRanger/View/ThumbnailCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		4ED2CA28261A29F800AC5985 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Thumbnail.swift; path = EcoRanger/View/Thumbnail.swift; sourceTree = SOURCE_ROOT; };
@@ -126,6 +130,8 @@
 		4E36632F2618BC4B001F8428 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				4E336DBA261AF2C2001A6916 /* s1c2.mp4 */,
+				4E336DB9261AF2C2001A6916 /* s1c3.mp4 */,
 				4E3663302618BC85001F8428 /* s1c1.mp4 */,
 			);
 			path = Videos;
@@ -189,11 +195,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5D2531261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf in Resources */,
+				4E336DBB261AF2C2001A6916 /* s1c3.mp4 in Resources */,
 				2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */,
 				4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */,
 				2F6F620C2617DC1B00284F8F /* LaunchScreen.storyboard in Resources */,
 				2F6F62092617DC1B00284F8F /* Assets.xcassets in Resources */,
 				2F6F62072617DC1800284F8F /* Main.storyboard in Resources */,
+				4E336DBC261AF2C2001A6916 /* s1c2.mp4 in Resources */,
 				2F6F62232618841800284F8F /* Prolog.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
