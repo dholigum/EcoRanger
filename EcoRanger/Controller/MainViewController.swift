@@ -21,7 +21,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         popUpTransitionOut(desiredView: blurView)
             
         }
-    @IBAction func sfxButton(_ sender: Any) {
+    @IBAction func sfxBgutton(_ sender: Any) {
         print("ini switch sfx")
         
     }

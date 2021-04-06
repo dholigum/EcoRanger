@@ -17,8 +17,6 @@ class PrologViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-    
     @IBOutlet weak var labelChapter: UILabel!
     @IBAction func didUnwind(_ sender: UIStoryboardSegue){
         guard let tutorVC = sender.source as? TutorialViewController else { return }

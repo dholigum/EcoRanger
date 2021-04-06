@@ -90,11 +90,24 @@
                         <viewLayoutGuide key="safeArea" id="ECg-0S-0B9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <segue destination="xEm-AN-1ge" kind="show" identifier="segueToGame" id="Qv0-go-soE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CcT-sD-w6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="J13-kL-l3Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-23.459715639810426" y="69.230769230769226"/>
+        </scene>
+        <!--gameView-->
+        <scene sceneID="FEa-IN-sg6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Game" referencedIdentifier="gameView" id="xEm-AN-1ge" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ufV-FI-blS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ETX-OR-tCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="626"/>
         </scene>
         <!--prologView-->
         <scene sceneID="UgQ-Kv-syA">
@@ -102,7 +115,7 @@
                 <viewControllerPlaceholder storyboardName="Prolog" referencedIdentifier="prologView" id="Snt-lU-cSJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-ht-GPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="665"/>
+            <point key="canvasLocation" x="-182" y="582"/>
         </scene>
     </scenes>
     <resources>
