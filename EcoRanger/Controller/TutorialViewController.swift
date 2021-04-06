@@ -32,9 +32,19 @@ class TutorialViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    @IBAction func backTutor(_ sender: UIStoryboardSegue){
+        guard let gameVC = sender.source as? GameActivityViewController else { return }
+        tutorModel = gameVC.gameModel
+    }
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "gameIdentifier", sender: self)
         print("Tutorial Button Pressed")
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "gameIdentifier"){
+            let gameVC = segue.destination as! GameActivityViewController
+            gameVC.gameModel = tutorModel
+        }
     }
     override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
         if (unwindSegue.identifier == "backToProlog"){

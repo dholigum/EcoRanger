@@ -74,7 +74,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="LvG-dB-oE9" eventType="touchUpInside" id="Ppk-tH-cjM"/>
-                                            <segue destination="bxE-g0-dM2" kind="presentation" modalPresentationStyle="fullScreen" id="mm2-oF-D5E"/>
+                                            <segue destination="bxE-g0-dM2" kind="presentation" identifier="gameIdentifier" modalPresentationStyle="fullScreen" id="mm2-oF-D5E"/>
                                         </connections>
                                     </button>
                                 </subviews>

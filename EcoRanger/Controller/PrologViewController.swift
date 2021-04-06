@@ -8,7 +8,7 @@
 import UIKit
 import AVKit
 class PrologViewController: UIViewController {
-    var dataThumbail = [Thumbnail]()
+//    var dataThumbail = [Thumbnail]()
     var chapterModel: Thumbnail?
     
     override func viewDidLoad() {

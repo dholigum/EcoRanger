@@ -24,6 +24,9 @@
                                         <rect key="frame" x="52" y="25" width="112" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="BACK TO HOME"/>
+                                        <connections>
+                                            <segue destination="T3H-Bu-BsU" kind="unwind" unwindAction="backTutor:" id="pgc-IW-TUo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -37,6 +40,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ur7-Ft-G5G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="T3H-Bu-BsU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-443.60189573459712" y="24.615384615384613"/>
         </scene>
