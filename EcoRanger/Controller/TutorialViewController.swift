@@ -9,9 +9,11 @@ import UIKit
 import AVKit
 
 class TutorialViewController: UIViewController {
-
+    var tutorModel: Thumbnail?
+    
     @IBAction func PlayButton(_ sender: Any) {
-        if let Path = Bundle.main.path(forResource: "s1c1", ofType: "mp4")
+        guard let dataModel = tutorModel else { return }
+        if let Path = Bundle.main.path(forResource: "\(dataModel.videoPath)", ofType: "mp4")
         {
             let Video = AVPlayer(url: URL(fileURLWithPath: Path))
             let VideoPlayer = AVPlayerViewController()

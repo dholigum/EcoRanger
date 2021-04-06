@@ -91,7 +91,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="Qaa-uB-y6t" eventType="touchUpInside" id="Cu6-WS-dlU"/>
-                                            <segue destination="1LB-lv-0jb" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="EYX-LT-srG"/>
+                                            <segue destination="1LB-lv-0jb" kind="presentation" identifier="tutorialIdentiier" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="EYX-LT-srG"/>
                                         </connections>
                                     </button>
                                 </subviews>

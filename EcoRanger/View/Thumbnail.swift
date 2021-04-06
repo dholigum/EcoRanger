@@ -11,4 +11,5 @@ struct Thumbnail {
     var story = ""
     var imgthumbnail = ""
     var videoPath = ""
+    var tutorPath = ""
 }
