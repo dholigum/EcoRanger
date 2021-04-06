@@ -35,12 +35,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         //popUp setting button
+        setUpPopUpSettingView()
+        initDataThumbnail()
+    }
+    
+    func setUpPopUpSettingView(){
         blurView.bounds = self.view.bounds
         settingView.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
-        initDataThumbnail()
     }
     
     func initDataThumbnail() {
