@@ -6,9 +6,24 @@
 //
 
 import UIKit
+import AVKit
 
 class TutorialViewController: UIViewController {
 
+    @IBAction func PlayButton(_ sender: Any) {
+        if let Path = Bundle.main.path(forResource: "s1c1", ofType: "mp4")
+        {
+            let Video = AVPlayer(url: URL(fileURLWithPath: Path))
+            let VideoPlayer = AVPlayerViewController()
+            VideoPlayer.player = Video
+            
+            present(VideoPlayer, animated: true, completion:
+            {
+                Video.play()
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
