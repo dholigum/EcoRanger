@@ -11,11 +11,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var collectionView: UICollectionView!
     var dataThumbail = [Thumbnail]()
+    var dataThumbailFiltered = [Thumbnail]()
     private var indexSelected = 0
+    var StorySelected = "Story 1"
     
     //popUp var space
     @IBOutlet var settingView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
+    @IBOutlet weak var SegmentControl: UISegmentedControl!
     @IBAction func backButton(_ sender: UIButton) {
         popUpTransitionOut(desiredView: settingView)
         popUpTransitionOut(desiredView: blurView)
@@ -29,7 +32,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         print("ini switch BMG")
     }
     //
-    
         
 
     override func viewDidLoad() {
@@ -38,6 +40,38 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setUpPopUpSettingView()
         initDataThumbnail()
     }
+    
+    
+    //Story Segmented Control
+    @IBAction func DidChangeSegment(_ sender: UISegmentedControl)
+    {
+        if sender.selectedSegmentIndex == 0
+        {
+            StorySelected = "Story 1"
+            print(StorySelected)
+            collectionView.reloadData()
+        }
+        else if sender.selectedSegmentIndex == 1
+        {
+            StorySelected = "Story 2"
+            print(StorySelected)
+            collectionView.reloadData()
+        }
+        else if sender.selectedSegmentIndex == 2
+        {
+            StorySelected = "Story 3"
+            print(StorySelected)
+            collectionView.reloadData()
+        }
+        
+        dataThumbailFiltered = dataThumbail.filter
+        {   (thumbnail) in
+            return thumbnail.story == StorySelected
+        }
+        collectionView.reloadData()
+        collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
+    }
+    
     
     func setUpPopUpSettingView(){
         blurView.bounds = self.view.bounds
@@ -48,29 +82,54 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func initDataThumbnail() {
-        let s1c1 = Thumbnail(chapter: "Chapter 1",story: "Story 1", imgthumbnail: "tb1", videoPath:"s1c1")
-        let s1c2 = Thumbnail(chapter: "Chapter 2",story: "Story 1", imgthumbnail: "tb2", videoPath:"s1c2")
-        let s1c3 = Thumbnail(chapter: "Chapter 3",story: "Story 1", imgthumbnail: "tb3", videoPath:"s1c3")
-        dataThumbail.append(s1c1)
+        let s1c1 = Thumbnail(chapter: "S1Chapter 1",story: "Story 1", imgthumbnail: "tb1", videoPath:"s1c1") //Input data ke Struct
+        let s1c2 = Thumbnail(chapter: "S1Chapter 2",story: "Story 1", imgthumbnail: "tb2", videoPath:"s1c2")
+        let s1c3 = Thumbnail(chapter: "S1Chapter 3",story: "Story 1", imgthumbnail: "tb3", videoPath:"s1c3")
+        
+        let s2c1 = Thumbnail(chapter: "S2Chapter 1",story: "Story 2", imgthumbnail: "tb1", videoPath:"s2c1")
+        let s2c2 = Thumbnail(chapter: "S2Chapter 2",story: "Story 2", imgthumbnail: "tb2", videoPath:"s2c2")
+        let s2c3 = Thumbnail(chapter: "S2Chapter 3",story: "Story 2", imgthumbnail: "tb3", videoPath:"s2c3")
+        
+        let s3c1 = Thumbnail(chapter: "S3Chapter 1",story: "Story 3", imgthumbnail: "tb1", videoPath:"s3c1")
+        let s3c2 = Thumbnail(chapter: "S3Chapter 2",story: "Story 3", imgthumbnail: "tb2", videoPath:"s3c2")
+        let s3c3 = Thumbnail(chapter: "S3Chapter 3",story: "Story 3", imgthumbnail: "tb3", videoPath:"s3c3")
+        
+        dataThumbail.append(s1c1) //Append untuk ngesave data yang diinput ke array. (Masuk ke akhir queue array)
         dataThumbail.append(s1c2)
         dataThumbail.append(s1c3)
-        collectionView.reloadData()
+        dataThumbail.append(s2c1)
+        dataThumbail.append(s2c2)
+        dataThumbail.append(s2c3)
+        dataThumbail.append(s3c1)
+        dataThumbail.append(s3c2)
+        dataThumbail.append(s3c3)
+        
+        
+        dataThumbailFiltered = dataThumbail.filter
+        {   (thumbnail) in
+            return thumbnail.story == StorySelected
         }
+        
+        collectionView.reloadData()
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataThumbail.count
-    }
+            return dataThumbailFiltered.count
+        }
     
+    //Buat display data thumbnail
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellThumbnail", for: indexPath ) as! ThumbnailCollectionViewCell
-                // set nilai ke view dalam cell
-        let Thumbnail = dataThumbail[indexPath.row]
-                cell.labelThumbnail.text = Thumbnail.chapter
-                cell.imgThumbnail.image = UIImage(named: Thumbnail.imgthumbnail)
-        cell.imgThumbnail.layer.cornerRadius = 20.0
-        collectionView.backgroundColor = UIColor.clear
-                return cell
-    }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellThumbnail", for: indexPath ) as! ThumbnailCollectionViewCell
+            let Thumbnail = dataThumbailFiltered[indexPath.row]
+            
+            cell.labelThumbnail.text = Thumbnail.chapter
+            cell.imgThumbnail.image = UIImage(named: Thumbnail.imgthumbnail)
+            cell.imgThumbnail.layer.cornerRadius = 20.0
+            collectionView.backgroundColor = UIColor.clear
+            
+            return cell
+        }
+     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         indexSelected = indexPath.row

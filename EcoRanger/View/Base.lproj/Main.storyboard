@@ -30,47 +30,19 @@
                                 <rect key="frame" x="232" y="38" width="380" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OMy-jl-lcD">
-                                        <rect key="frame" x="0.0" y="0.0" width="380" height="45"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Yw-4r-SIU">
+                                        <rect key="frame" x="8" y="7" width="364" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.2627450980392157" green="0.74901960784313726" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fsk-zi-Q5C">
-                                            <size key="itemSize" width="75" height="45"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4cJ-HK-MlM">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="45"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RNl-AE-zBt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67N-BV-Cye">
-                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="45"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MXD-tF-Bw6">
-                                                                    <rect key="frame" x="-153" y="0.0" width="380" height="45"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="17"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD6-6g-rZj">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="45"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                </button>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="1" green="0.75686274509803919" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </view>
-                                                    </subviews>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
+                                        <segments>
+                                            <segment title="Story 1"/>
+                                            <segment title="Story 2"/>
+                                            <segment title="Story 3"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" red="0.95037025210000003" green="0.67113327980000004" blue="0.27831178899999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="DidChangeSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="sTV-lG-GtC"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.74901960784313726" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -183,6 +155,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="SegmentControl" destination="2Yw-4r-SIU" id="0KH-xN-sWY"/>
                         <outlet property="blurView" destination="ct7-XC-qow" id="Z9O-9x-Nhw"/>
                         <outlet property="collectionView" destination="JCx-Th-Vw6" id="5YA-fi-Ktg"/>
                         <outlet property="settingView" destination="E7l-ag-CcF" id="w1r-Eb-xvB"/>
@@ -263,15 +236,15 @@
                     <blurEffect style="regular"/>
                 </visualEffectView>
             </objects>
-            <point key="canvasLocation" x="59" y="86"/>
+            <point key="canvasLocation" x="58.293838862559241" y="84.615384615384613"/>
         </scene>
         <!--prologView-->
         <scene sceneID="6xK-NE-prY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ax-qA-vGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Prolog" referencedIdentifier="prologView" id="BcY-oE-1XL" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xXs-O9-5c8"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ax-qA-vGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="449" y="85"/>
         </scene>
