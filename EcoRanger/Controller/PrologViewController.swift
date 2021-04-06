@@ -8,26 +8,39 @@
 import UIKit
 import AVKit
 class PrologViewController: UIViewController {
-    
+//    var dataThumbail = [Thumbnail]()
     var chapterModel: Thumbnail?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelChapter.text = chapterModel!.chapter
+        labelChapter.text = chapterModel?.chapter
         // Do any additional setup after loading the view.
     }
     
     
     
     @IBOutlet weak var labelChapter: UILabel!
-    
+    @IBAction func didUnwind(_ sender: UIStoryboardSegue){
+        guard let tutorVC = sender.source as? TutorialViewController else { return }
+        chapterModel = tutorVC.tutorModel
+    }
     
     @IBAction func prevButtonPressed(_ sender: UIButton) {
         print("Prolog Prev Button Pressed!")
     }
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "tutorialIdentiier", sender: self)
         print("Prolog Next Button Pressed!")
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "tutorialIdentiier"){
+            let tutorVC = segue.destination as! TutorialViewController
+            tutorVC.tutorModel = chapterModel
+        }
+    }
+    
+    
     
     @IBAction func btnPlay(_ sender: UIButton) {
         guard let dataModel = chapterModel else { return }
@@ -41,11 +54,12 @@ class PrologViewController: UIViewController {
             })
         }
     }
+//    
+//    private func setupView() {
+//        guard let dataModel = chapterModel else { return }
+//        print(dataModel.chapter)
+//    }
     
-    private func setupView() {
-        guard let dataModel = chapterModel else { return }
-        print(dataModel.chapter)
-    }
     
     
 }
