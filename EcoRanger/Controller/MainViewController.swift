@@ -48,9 +48,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func initDataThumbnail() {
-        let s1c1 = Thumbnail(chapter: "Chapter 1",story: "Story 1", imgthumbnail: "tb1", videoPath:"s1c1", tutorPath: "s1c1")
-        let s1c2 = Thumbnail(chapter: "Chapter 2",story: "Story 1", imgthumbnail: "tb2", videoPath:"s1c2", tutorPath: "s1c2")
-        let s1c3 = Thumbnail(chapter: "Chapter 3",story: "Story 1", imgthumbnail: "tb3", videoPath:"s1c3", tutorPath: "s1c3")
+        let s1c1 = Thumbnail(chapter: "Chapter 1",story: "Story 1", imgthumbnail: "tb1", videoPath:"s1c1", tutorPath: "s1c1", gameActivity: CarGameScene())
+        let s1c2 = Thumbnail(chapter: "Chapter 2",story: "Story 1", imgthumbnail: "tb2", videoPath:"s1c2", tutorPath: "s1c2", gameActivity: TruckGameScene())
+        let s1c3 = Thumbnail(chapter: "Chapter 3",story: "Story 1", imgthumbnail: "tb3", videoPath:"s1c3", tutorPath: "s1c3", gameActivity: CarGameScene())
         dataThumbail.append(s1c1)
         dataThumbail.append(s1c2)
         dataThumbail.append(s1c3)
