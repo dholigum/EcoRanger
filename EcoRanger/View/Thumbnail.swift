@@ -13,3 +13,4 @@ struct Thumbnail {
     var videoPath = ""
     var tutorPath = ""
 }
+

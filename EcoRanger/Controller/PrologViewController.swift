@@ -54,11 +54,11 @@ class PrologViewController: UIViewController {
             })
         }
     }
-    
-    private func setupView() {
-        guard let dataModel = chapterModel else { return }
-        print(dataModel.chapter)
-    }
+//    
+//    private func setupView() {
+//        guard let dataModel = chapterModel else { return }
+//        print(dataModel.chapter)
+//    }
     
     
     
