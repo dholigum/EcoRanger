@@ -20,7 +20,10 @@ class PrologViewController: UIViewController {
     
     
     @IBOutlet weak var labelChapter: UILabel!
-    
+    @IBAction func didUnwind(_ sender: UIStoryboardSegue){
+        guard let tutorVC = sender.source as? TutorialViewController else { return }
+        chapterModel = tutorVC.tutorModel
+    }
     
     @IBAction func prevButtonPressed(_ sender: UIButton) {
         print("Prolog Prev Button Pressed!")
@@ -36,6 +39,7 @@ class PrologViewController: UIViewController {
             tutorVC.tutorModel = chapterModel
         }
     }
+    
     
     
     @IBAction func btnPlay(_ sender: UIButton) {

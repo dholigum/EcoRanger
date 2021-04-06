@@ -32,11 +32,14 @@ class TutorialViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func prevButtonPressed(_ sender: UIButton) {
-        print("Tutorial Button Pressed")
-    }
+    
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         print("Tutorial Button Pressed")
     }
-    
+    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        if (unwindSegue.identifier == "backToProlog"){
+            let prologVC = unwindSegue.destination as! PrologViewController
+            prologVC.chapterModel = tutorModel
+        }
+    }
 }
