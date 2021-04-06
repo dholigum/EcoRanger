@@ -7,7 +7,6 @@
 
 import Foundation
 struct Thumbnail {
-    var id = ""
     var chapter = ""
     var story = ""
     var imgthumbnail = ""

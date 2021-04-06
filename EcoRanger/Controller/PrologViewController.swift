@@ -13,15 +13,14 @@ class PrologViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        labelChapter.text = chapterModel!.chapter
         // Do any additional setup after loading the view.
     }
     
-    private func setupView() {
-        guard let dataModel = chapterModel else { return }
-        
-        print(dataModel.chapter)
-    }
+    
+    
+    @IBOutlet weak var labelChapter: UILabel!
+    
     
     @IBAction func prevButtonPressed(_ sender: UIButton) {
         print("Prolog Prev Button Pressed!")
@@ -31,7 +30,8 @@ class PrologViewController: UIViewController {
     }
     
     @IBAction func btnPlay(_ sender: UIButton) {
-        if let path =  Bundle.main.path(forResource: "s1c1", ofType: "mp4"){
+        guard let dataModel = chapterModel else { return }
+        if let path =  Bundle.main.path(forResource: "\(dataModel.videoPath)", ofType: "mp4"){
             let video =  AVPlayer(url: URL(fileURLWithPath: path))
             let videoPlayer = AVPlayerViewController()
             videoPlayer.player = video
@@ -40,6 +40,11 @@ class PrologViewController: UIViewController {
                 video.play()
             })
         }
+    }
+    
+    private func setupView() {
+        guard let dataModel = chapterModel else { return }
+        print(dataModel.chapter)
     }
     
     
