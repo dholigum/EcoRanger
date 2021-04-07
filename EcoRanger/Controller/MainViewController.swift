@@ -98,17 +98,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func initDataThumbnail() {
-        let s1c1 = Thumbnail(chapter: "S1Chapter 1",story: "Story 1", imgthumbnail: "tb1", videoPath:"s1c1", gameActivity: CarGameScene()) //Input data ke Struct
-        let s1c2 = Thumbnail(chapter: "S1Chapter 2",story: "Story 1", imgthumbnail: "tb2", videoPath:"s1c2", gameActivity: TruckGameScene())
-        let s1c3 = Thumbnail(chapter: "S1Chapter 3",story: "Story 1", imgthumbnail: "tb3", videoPath:"s1c3", gameActivity: CarGameScene())
+        let s1c1 = Thumbnail(chapter: "S1Chapter 1",story: "Story 1", imgthumbnail: "tb1", videoPath:"s1c1", gameActivity: CarGameScene(), isActive: true) //Input data ke Struct
+        let s1c2 = Thumbnail(chapter: "S1Chapter 2",story: "Story 1", imgthumbnail: "tb2", videoPath:"s1c2", gameActivity: TruckGameScene(), isActive: true)
+        let s1c3 = Thumbnail(chapter: "S1Chapter 3",story: "Story 1", imgthumbnail: "tb3", videoPath:"s1c3", gameActivity: CarGameScene(), isActive: false)
         
-        let s2c1 = Thumbnail(chapter: "S2Chapter 1",story: "Story 2", imgthumbnail: "tb1", videoPath:"s2c1", gameActivity: CarGameScene())
-        let s2c2 = Thumbnail(chapter: "S2Chapter 2",story: "Story 2", imgthumbnail: "tb2", videoPath:"s2c2", gameActivity: CarGameScene())
-        let s2c3 = Thumbnail(chapter: "S2Chapter 3",story: "Story 2", imgthumbnail: "tb3", videoPath:"s2c3", gameActivity: CarGameScene())
+        let s2c1 = Thumbnail(chapter: "S2Chapter 1",story: "Story 2", imgthumbnail: "tb1", videoPath:"s2c1", gameActivity: CarGameScene(), isActive: true)
+        let s2c2 = Thumbnail(chapter: "S2Chapter 2",story: "Story 2", imgthumbnail: "tb2", videoPath:"s2c2", gameActivity: CarGameScene(), isActive: false)
+        let s2c3 = Thumbnail(chapter: "S2Chapter 3",story: "Story 2", imgthumbnail: "tb3", videoPath:"s2c3", gameActivity: CarGameScene(), isActive: false)
         
-        let s3c1 = Thumbnail(chapter: "S3Chapter 1",story: "Story 3", imgthumbnail: "tb1", videoPath:"s3c1", gameActivity: CarGameScene())
-        let s3c2 = Thumbnail(chapter: "S3Chapter 2",story: "Story 3", imgthumbnail: "tb2", videoPath:"s3c2", gameActivity: CarGameScene())
-        let s3c3 = Thumbnail(chapter: "S3Chapter 3",story: "Story 3", imgthumbnail: "tb3", videoPath:"s3c3", gameActivity: CarGameScene())
+        let s3c1 = Thumbnail(chapter: "S3Chapter 1",story: "Story 3", imgthumbnail: "tb1", videoPath:"s3c1", gameActivity: CarGameScene(), isActive: true)
+        let s3c2 = Thumbnail(chapter: "S3Chapter 2",story: "Story 3", imgthumbnail: "tb2", videoPath:"s3c2", gameActivity: CarGameScene(), isActive: false)
+        let s3c3 = Thumbnail(chapter: "S3Chapter 3",story: "Story 3", imgthumbnail: "tb3", videoPath:"s3c3", gameActivity: CarGameScene(), isActive: false)
         
         dataThumbail.append(s1c1) //Append untuk ngesave data yang diinput ke array. (Masuk ke akhir queue array)
         dataThumbail.append(s1c2)
@@ -137,14 +137,24 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellThumbnail", for: indexPath ) as! ThumbnailCollectionViewCell
             let Thumbnail = dataThumbailFiltered[indexPath.row]
-            
-            
+        
+        if  Thumbnail.isActive == true {
             cell.imgThumbnail.layer.borderWidth = 8
             cell.imgThumbnail.layer.borderColor = UIColor.white.cgColor
             cell.labelThumbnail.text = Thumbnail.chapter
             cell.imgThumbnail.image = UIImage(named: Thumbnail.imgthumbnail)
             cell.imgThumbnail.layer.cornerRadius = 20.0
             collectionView.backgroundColor = UIColor.clear
+        } else {
+            cell.imgThumbnail.layer.borderWidth = 8
+            cell.imgThumbnail.layer.borderColor = UIColor.black.cgColor
+            cell.labelThumbnail.text = Thumbnail.chapter
+            cell.imgThumbnail.image = UIImage(named: Thumbnail.imgthumbnail)
+            cell.imgThumbnail.layer.cornerRadius = 20.0
+            collectionView.backgroundColor = UIColor.clear
+        }
+            
+           
             
             return cell
         }
@@ -152,7 +162,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         indexSelected = indexPath.row
-        self.performSegue(withIdentifier: "prologIdentifier", sender: self)
+        
+        if ( dataThumbailFiltered[indexSelected].isActive == true) {
+            self.performSegue(withIdentifier: "prologIdentifier", sender: self)
+        } else {
+            print("Belom kelar oy")
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
