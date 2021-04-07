@@ -9,6 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var segmentedViewController: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     var dataThumbail = [Thumbnail]()
     var dataThumbailFiltered = [Thumbnail]()
@@ -39,6 +40,21 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //popUp setting button
         setUpPopUpSettingView()
         initDataThumbnail()
+        
+        setUpUISegmented()
+    }
+    
+    func setUpUISegmented() {
+        segmentedViewController.layer.cornerRadius = 15
+        
+        let font = UIFont(name: "Luckiest Guy Regular", size: 15)
+        
+        
+        SegmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white,
+                                               NSAttributedString.Key.font : font], for: .normal)
+        
+        
+        
     }
     
     
@@ -141,6 +157,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             destination.chapterModel = dataThumbail[indexSelected]
         }
     }
+    
+    
+    
+    
     
     //settingButtonPressed
     @IBAction func settingButtonPressed(_ sender: UIButton) {

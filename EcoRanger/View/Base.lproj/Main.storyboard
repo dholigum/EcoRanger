@@ -104,7 +104,7 @@
                                 <rect key="frame" x="0.0" y="106" width="844" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yyB-Lw-nTc">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="50" id="yyB-Lw-nTc">
                                     <size key="itemSize" width="327" height="226"/>
                                     <size key="estimatedItemSize" width="327" height="226"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -129,7 +129,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Label">
                                                             <attributes>
-                                                                <font key="NSFont" size="36" name="LuckiestGuy-Regular"/>
+                                                                <font key="NSFont" size="35" name="LuckiestGuy-Regular"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -158,6 +158,7 @@
                         <outlet property="SegmentControl" destination="2Yw-4r-SIU" id="0KH-xN-sWY"/>
                         <outlet property="blurView" destination="ct7-XC-qow" id="Z9O-9x-Nhw"/>
                         <outlet property="collectionView" destination="JCx-Th-Vw6" id="5YA-fi-Ktg"/>
+                        <outlet property="segmentedViewController" destination="ogo-5J-fwz" id="tqm-J3-iaL"/>
                         <outlet property="settingView" destination="E7l-ag-CcF" id="w1r-Eb-xvB"/>
                         <segue destination="BcY-oE-1XL" kind="show" identifier="prologIdentifier" id="40P-8V-CVc"/>
                     </connections>
