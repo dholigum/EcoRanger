@@ -138,6 +138,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellThumbnail", for: indexPath ) as! ThumbnailCollectionViewCell
             let Thumbnail = dataThumbailFiltered[indexPath.row]
             
+            
+            cell.imgThumbnail.layer.borderWidth = 8
+            cell.imgThumbnail.layer.borderColor = UIColor.white.cgColor
             cell.labelThumbnail.text = Thumbnail.chapter
             cell.imgThumbnail.image = UIImage(named: Thumbnail.imgthumbnail)
             cell.imgThumbnail.layer.cornerRadius = 20.0
