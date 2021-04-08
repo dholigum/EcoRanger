@@ -11,10 +11,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var segmentedViewController: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var storyBgImage: UIImageView!
+    
     var dataThumbail = [Thumbnail]()
     var dataThumbailFiltered = [Thumbnail]()
     private var indexSelected = 0
-    var StorySelected = "Story 1"
+    var StorySelected = "Cerita 1"
     
     //popUp var space
     @IBOutlet var settingView: UIView!
@@ -23,8 +25,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func backButton(_ sender: UIButton) {
         popUpTransitionOut(desiredView: settingView)
         popUpTransitionOut(desiredView: blurView)
-            
-        }
+        
+    }
     @IBAction func sfxButton(_ sender: Any) {
         print("ini switch sfx")
         
@@ -33,8 +35,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         print("ini switch BMG")
     }
     //
-        
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //popUp setting button
@@ -60,20 +62,20 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     {
         if sender.selectedSegmentIndex == 0
         {
-            StorySelected = "Story 1"
-            print(StorySelected)
+            StorySelected = "Cerita 1"
+            storyBgImage.image = #imageLiteral(resourceName: "homescreenbg")
             collectionView.reloadData()
         }
         else if sender.selectedSegmentIndex == 1
         {
-            StorySelected = "Story 2"
-            print(StorySelected)
+            StorySelected = "Cerita 2"
+            storyBgImage.image = #imageLiteral(resourceName: "parkbg")
             collectionView.reloadData()
         }
         else if sender.selectedSegmentIndex == 2
         {
-            StorySelected = "Story 3"
-            print(StorySelected)
+            StorySelected = "Cerita 3"
+            storyBgImage.image = #imageLiteral(resourceName: "beachbg")
             collectionView.reloadData()
         }
         
@@ -95,17 +97,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func initDataThumbnail() {
-        let s1c1 = Thumbnail(chapter: "S1Chapter 1",story: "Story 1", imgthumbnail: "tb1", videoPath:"s1c1", gameActivity: CarGameScene(), isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame") //Input data ke Struct
-        let s1c2 = Thumbnail(chapter: "S1Chapter 2",story: "Story 1", imgthumbnail: "tb2", videoPath:"s1c2", gameActivity: TruckGameScene(), isActive: true, gameStoryboard: "TruckGame", gameIdentifier: "truckGame")
-        let s1c3 = Thumbnail(chapter: "S1Chapter 3",story: "Story 1", imgthumbnail: "tb3", videoPath:"s1c3", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s1c1 = Thumbnail(chapter: "Bagian 1",story: "Cerita 1", imgthumbnail: "tb1", videoPath:"s1c1", gameActivity: CarGameScene(), isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame") //Input data ke Struct
+        let s1c2 = Thumbnail(chapter: "Bagian 2",story: "Cerita 1", imgthumbnail: "tb2", videoPath:"s1c2", gameActivity: TruckGameScene(), isActive: true, gameStoryboard: "TruckGame", gameIdentifier: "truckGame")
+        let s1c3 = Thumbnail(chapter: "Bagian 3",story: "Cerita 1", imgthumbnail: "tb3", videoPath:"s1c3", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
-        let s2c1 = Thumbnail(chapter: "S2Chapter 1",story: "Story 2", imgthumbnail: "tb1", videoPath:"s2c1", gameActivity: CarGameScene(), isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame")
-        let s2c2 = Thumbnail(chapter: "S2Chapter 2",story: "Story 2", imgthumbnail: "tb2", videoPath:"s2c2", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
-        let s2c3 = Thumbnail(chapter: "S2Chapter 3",story: "Story 2", imgthumbnail: "tb3", videoPath:"s2c3", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s2c1 = Thumbnail(chapter: "Bagian 1",story: "Cerita 2", imgthumbnail: "tb1", videoPath:"s2c1", gameActivity: CarGameScene(), isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s2c2 = Thumbnail(chapter: "Bagian 2",story: "Cerita 2", imgthumbnail: "tb2", videoPath:"s2c2", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s2c3 = Thumbnail(chapter: "Bagian 3",story: "Cerita 2", imgthumbnail: "tb3", videoPath:"s2c3", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
-        let s3c1 = Thumbnail(chapter: "S3Chapter 1",story: "Story 3", imgthumbnail: "tb1", videoPath:"s3c1", gameActivity: CarGameScene(), isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame")
-        let s3c2 = Thumbnail(chapter: "S3Chapter 2",story: "Story 3", imgthumbnail: "tb2", videoPath:"s3c2", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
-        let s3c3 = Thumbnail(chapter: "S3Chapter 3",story: "Story 3", imgthumbnail: "tb3", videoPath:"s3c3", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s3c1 = Thumbnail(chapter: "Bagian 1",story: "Cerita 3", imgthumbnail: "tb1", videoPath:"s3c1", gameActivity: CarGameScene(), isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s3c2 = Thumbnail(chapter: "Bagian 2",story: "Cerita 3", imgthumbnail: "tb2", videoPath:"s3c2", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s3c3 = Thumbnail(chapter: "Bagian 3",story: "Cerita 3", imgthumbnail: "tb3", videoPath:"s3c3", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
         dataThumbail.append(s1c1) //Append untuk ngesave data yang diinput ke array. (Masuk ke akhir queue array)
         dataThumbail.append(s1c2)
@@ -125,15 +127,15 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         collectionView.reloadData()
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return dataThumbailFiltered.count
-        }
+        return dataThumbailFiltered.count
+    }
     
     //Buat display data thumbnail
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellThumbnail", for: indexPath ) as! ThumbnailCollectionViewCell
-            let Thumbnail = dataThumbailFiltered[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellThumbnail", for: indexPath ) as! ThumbnailCollectionViewCell
+        let Thumbnail = dataThumbailFiltered[indexPath.row]
         
         if  Thumbnail.isActive == true {
             cell.imgThumbnail.layer.borderWidth = 8
@@ -154,10 +156,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.imgThumbnail.layer.cornerRadius = 20.0
             collectionView.backgroundColor = UIColor.clear
         }
-            
-            return cell
-        }
-     
+        
+        return cell
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         indexSelected = indexPath.row

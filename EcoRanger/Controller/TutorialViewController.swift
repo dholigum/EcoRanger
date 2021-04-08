@@ -20,15 +20,15 @@ class TutorialViewController: UIViewController {
             VideoPlayer.player = Video
             // VideoPlayer.showsPlaybackControls = false
             present(VideoPlayer, animated: true, completion:
-            {
-                Video.play()
-            })
+                        {
+                            Video.play()
+                        })
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -46,13 +46,6 @@ class TutorialViewController: UIViewController {
         self.present(navigation, animated: true, completion: nil)
         
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if(segue.identifier == tutorModel?.gameIdentifier ?? ""){
-//            let gameVC = segue.destination as! CarGameViewController
-//            gameVC.gameModel = tutorModel
-//        }
-//    }
     
     override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
         if (unwindSegue.identifier == "backToProlog"){

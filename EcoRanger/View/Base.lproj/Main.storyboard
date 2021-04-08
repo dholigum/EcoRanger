@@ -34,9 +34,9 @@
                                         <rect key="frame" x="8" y="7" width="364" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
-                                            <segment title="Story 1"/>
-                                            <segment title="Story 2"/>
-                                            <segment title="Story 3"/>
+                                            <segment title="Cerita 1"/>
+                                            <segment title="Cerita 2"/>
+                                            <segment title="Cerita 3"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.95037025210000003" green="0.67113327980000004" blue="0.27831178899999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -165,6 +165,7 @@
                         <outlet property="collectionView" destination="JCx-Th-Vw6" id="5YA-fi-Ktg"/>
                         <outlet property="segmentedViewController" destination="ogo-5J-fwz" id="tqm-J3-iaL"/>
                         <outlet property="settingView" destination="E7l-ag-CcF" id="w1r-Eb-xvB"/>
+                        <outlet property="storyBgImage" destination="y8o-Q0-JwV" id="wXp-1Q-tHL"/>
                         <segue destination="BcY-oE-1XL" kind="show" identifier="prologIdentifier" id="40P-8V-CVc"/>
                     </connections>
                 </viewController>
