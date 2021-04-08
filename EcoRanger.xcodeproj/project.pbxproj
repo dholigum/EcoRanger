@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078A5FC1261F572A003F10A6 /* MainMenuBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 078A5FC0261F572A003F10A6 /* MainMenuBGM.mp3 */; };
+		078A5FC5261F7A2B003F10A6 /* ButtonPress.wav in Resources */ = {isa = PBXBuildFile; fileRef = 078A5FC4261F7A2B003F10A6 /* ButtonPress.wav */; };
 		2F5D2531261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5D2530261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf */; };
 		2F5D2B0D261CAD4D009173FA /* CarGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5D2B0C261CAD4D009173FA /* CarGame.storyboard */; };
 		2F5D2B10261CAE14009173FA /* CarGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D2B0F261CAE14009173FA /* CarGameViewController.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		078A5FC0261F572A003F10A6 /* MainMenuBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MainMenuBGM.mp3; sourceTree = "<group>"; };
+		078A5FC4261F7A2B003F10A6 /* ButtonPress.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ButtonPress.wav; sourceTree = "<group>"; };
 		2F5D2530261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
 		2F5D2B0C261CAD4D009173FA /* CarGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CarGame.storyboard; sourceTree = "<group>"; };
 		2F5D2B0F261CAE14009173FA /* CarGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGameViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		078A5FBD261F4C43003F10A6 /* BGM */ = {
+			isa = PBXGroup;
+			children = (
+				078A5FC0261F572A003F10A6 /* MainMenuBGM.mp3 */,
+			);
+			path = BGM;
+			sourceTree = "<group>";
+		};
+		078A5FBE261F4C49003F10A6 /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				078A5FC4261F7A2B003F10A6 /* ButtonPress.wav */,
+			);
+			path = SFX;
+			sourceTree = "<group>";
+		};
 		2F6F61F32617DC1800284F8F = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +108,8 @@
 		2F6F61FE2617DC1800284F8F /* EcoRanger */ = {
 			isa = PBXGroup;
 			children = (
+				078A5FBE261F4C49003F10A6 /* SFX */,
+				078A5FBD261F4C43003F10A6 /* BGM */,
 				4E36632F2618BC4B001F8428 /* Videos */,
 				2F6F623026189F3200284F8F /* fonts */,
 				2F6F621C2618096B00284F8F /* Controller */,
@@ -214,6 +236,7 @@
 			files = (
 				2F5D2531261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf in Resources */,
 				4E336DBB261AF2C2001A6916 /* s1c3.mp4 in Resources */,
+				078A5FC1261F572A003F10A6 /* MainMenuBGM.mp3 in Resources */,
 				2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */,
 				2F5D2B0D261CAD4D009173FA /* CarGame.storyboard in Resources */,
 				4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */,
@@ -223,6 +246,7 @@
 				4E336DBC261AF2C2001A6916 /* s1c2.mp4 in Resources */,
 				2FC29A08261EBC3200B1B284 /* TruckGame.storyboard in Resources */,
 				2F6F62232618841800284F8F /* Prolog.storyboard in Resources */,
+				078A5FC5261F7A2B003F10A6 /* ButtonPress.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

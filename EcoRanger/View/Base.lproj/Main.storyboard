@@ -160,6 +160,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="BGMSwitch" destination="O3Q-PS-jof" id="pc6-CD-Q3v"/>
+                        <outlet property="SFXSwitch" destination="fSg-uv-KyN" id="cWm-1A-Cpc"/>
                         <outlet property="SegmentControl" destination="2Yw-4r-SIU" id="0KH-xN-sWY"/>
                         <outlet property="blurView" destination="ct7-XC-qow" id="Z9O-9x-Nhw"/>
                         <outlet property="collectionView" destination="JCx-Th-Vw6" id="5YA-fi-Ktg"/>
