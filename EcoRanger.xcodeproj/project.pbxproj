@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F5D2531261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5D2530261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf */; };
-		2F5D2B0D261CAD4D009173FA /* GameActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5D2B0C261CAD4D009173FA /* GameActivity.storyboard */; };
-		2F5D2B10261CAE14009173FA /* GameActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D2B0F261CAE14009173FA /* GameActivityViewController.swift */; };
+		2F5D2B0D261CAD4D009173FA /* CarGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5D2B0C261CAD4D009173FA /* CarGame.storyboard */; };
+		2F5D2B10261CAE14009173FA /* CarGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D2B0F261CAE14009173FA /* CarGameViewController.swift */; };
 		2F5D2B13261CAF4A009173FA /* CarGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D2B12261CAF4A009173FA /* CarGameScene.swift */; };
 		2F5D2B16261CB1A2009173FA /* TruckGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D2B15261CB1A2009173FA /* TruckGameScene.swift */; };
 		2F6F62002617DC1800284F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F61FF2617DC1800284F8F /* AppDelegate.swift */; };
@@ -22,6 +22,8 @@
 		2F6F62262618895900284F8F /* PrologViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F62252618895900284F8F /* PrologViewController.swift */; };
 		2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F622A26189B2100284F8F /* Tutorial.storyboard */; };
 		2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F622D26189BC200284F8F /* TutorialViewController.swift */; };
+		2FC29A08261EBC3200B1B284 /* TruckGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC29A07261EBC3200B1B284 /* TruckGame.storyboard */; };
+		2FC29A0B261EBEA200B1B284 /* TruckGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC29A0A261EBEA200B1B284 /* TruckGameViewController.swift */; };
 		4E336DBB261AF2C2001A6916 /* s1c3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E336DB9261AF2C2001A6916 /* s1c3.mp4 */; };
 		4E336DBC261AF2C2001A6916 /* s1c2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E336DBA261AF2C2001A6916 /* s1c2.mp4 */; };
 		4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E3663302618BC85001F8428 /* s1c1.mp4 */; };
@@ -31,8 +33,8 @@
 
 /* Begin PBXFileReference section */
 		2F5D2530261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
-		2F5D2B0C261CAD4D009173FA /* GameActivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameActivity.storyboard; sourceTree = "<group>"; };
-		2F5D2B0F261CAE14009173FA /* GameActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameActivityViewController.swift; sourceTree = "<group>"; };
+		2F5D2B0C261CAD4D009173FA /* CarGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CarGame.storyboard; sourceTree = "<group>"; };
+		2F5D2B0F261CAE14009173FA /* CarGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGameViewController.swift; sourceTree = "<group>"; };
 		2F5D2B12261CAF4A009173FA /* CarGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGameScene.swift; sourceTree = "<group>"; };
 		2F5D2B15261CB1A2009173FA /* TruckGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckGameScene.swift; sourceTree = "<group>"; };
 		2F6F61FC2617DC1800284F8F /* EcoRanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoRanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +49,8 @@
 		2F6F62252618895900284F8F /* PrologViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrologViewController.swift; sourceTree = "<group>"; };
 		2F6F622A26189B2100284F8F /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		2F6F622D26189BC200284F8F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		2FC29A07261EBC3200B1B284 /* TruckGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TruckGame.storyboard; sourceTree = "<group>"; };
+		2FC29A0A261EBEA200B1B284 /* TruckGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckGameViewController.swift; sourceTree = "<group>"; };
 		4E336DB9261AF2C2001A6916 /* s1c3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c3.mp4; sourceTree = "<group>"; };
 		4E336DBA261AF2C2001A6916 /* s1c2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c2.mp4; sourceTree = "<group>"; };
 		4E3663302618BC85001F8428 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
@@ -112,7 +116,8 @@
 				2F6F62052617DC1800284F8F /* Main.storyboard */,
 				2F6F62222618841800284F8F /* Prolog.storyboard */,
 				2F6F622A26189B2100284F8F /* Tutorial.storyboard */,
-				2F5D2B0C261CAD4D009173FA /* GameActivity.storyboard */,
+				2F5D2B0C261CAD4D009173FA /* CarGame.storyboard */,
+				2FC29A07261EBC3200B1B284 /* TruckGame.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,7 +129,8 @@
 				2F6F62032617DC1800284F8F /* MainViewController.swift */,
 				2F6F62252618895900284F8F /* PrologViewController.swift */,
 				2F6F622D26189BC200284F8F /* TutorialViewController.swift */,
-				2F5D2B0F261CAE14009173FA /* GameActivityViewController.swift */,
+				2FC29A0A261EBEA200B1B284 /* TruckGameViewController.swift */,
+				2F5D2B0F261CAE14009173FA /* CarGameViewController.swift */,
 				2F5D2B12261CAF4A009173FA /* CarGameScene.swift */,
 				2F5D2B15261CB1A2009173FA /* TruckGameScene.swift */,
 			);
@@ -209,12 +215,13 @@
 				2F5D2531261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf in Resources */,
 				4E336DBB261AF2C2001A6916 /* s1c3.mp4 in Resources */,
 				2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */,
-				2F5D2B0D261CAD4D009173FA /* GameActivity.storyboard in Resources */,
+				2F5D2B0D261CAD4D009173FA /* CarGame.storyboard in Resources */,
 				4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */,
 				2F6F620C2617DC1B00284F8F /* LaunchScreen.storyboard in Resources */,
 				2F6F62092617DC1B00284F8F /* Assets.xcassets in Resources */,
 				2F6F62072617DC1800284F8F /* Main.storyboard in Resources */,
 				4E336DBC261AF2C2001A6916 /* s1c2.mp4 in Resources */,
+				2FC29A08261EBC3200B1B284 /* TruckGame.storyboard in Resources */,
 				2F6F62232618841800284F8F /* Prolog.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,7 +236,8 @@
 				2F6F62042617DC1800284F8F /* MainViewController.swift in Sources */,
 				2F6F62002617DC1800284F8F /* AppDelegate.swift in Sources */,
 				2F5D2B16261CB1A2009173FA /* TruckGameScene.swift in Sources */,
-				2F5D2B10261CAE14009173FA /* GameActivityViewController.swift in Sources */,
+				2F5D2B10261CAE14009173FA /* CarGameViewController.swift in Sources */,
+				2FC29A0B261EBEA200B1B284 /* TruckGameViewController.swift in Sources */,
 				2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */,
 				2F6F62022617DC1800284F8F /* SceneDelegate.swift in Sources */,
 				2F6F62262618895900284F8F /* PrologViewController.swift in Sources */,

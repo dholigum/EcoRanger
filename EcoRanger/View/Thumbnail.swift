@@ -15,6 +15,7 @@ struct Thumbnail {
     var videoPath = ""
     var tutorPath = ""
     var gameActivity: SKScene
-    var isActive: Bool 
+    var isActive: Bool
+    var gameStoryboard: String
+    var gameIdentifier: String
 }
-

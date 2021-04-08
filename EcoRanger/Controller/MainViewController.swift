@@ -49,11 +49,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let font = UIFont(name: "Luckiest Guy Regular", size: 15)
         
-        
         SegmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white,
                                                NSAttributedString.Key.font : font], for: .normal)
-        
-        
         
     }
     
@@ -98,17 +95,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func initDataThumbnail() {
-        let s1c1 = Thumbnail(chapter: "S1Chapter 1",story: "Story 1", imgthumbnail: "tb1", videoPath:"s1c1", gameActivity: CarGameScene(), isActive: true) //Input data ke Struct
-        let s1c2 = Thumbnail(chapter: "S1Chapter 2",story: "Story 1", imgthumbnail: "tb2", videoPath:"s1c2", gameActivity: TruckGameScene(), isActive: true)
-        let s1c3 = Thumbnail(chapter: "S1Chapter 3",story: "Story 1", imgthumbnail: "tb3", videoPath:"s1c3", gameActivity: CarGameScene(), isActive: false)
+        let s1c1 = Thumbnail(chapter: "S1Chapter 1",story: "Story 1", imgthumbnail: "tb1", videoPath:"s1c1", gameActivity: CarGameScene(), isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame") //Input data ke Struct
+        let s1c2 = Thumbnail(chapter: "S1Chapter 2",story: "Story 1", imgthumbnail: "tb2", videoPath:"s1c2", gameActivity: TruckGameScene(), isActive: true, gameStoryboard: "TruckGame", gameIdentifier: "truckGame")
+        let s1c3 = Thumbnail(chapter: "S1Chapter 3",story: "Story 1", imgthumbnail: "tb3", videoPath:"s1c3", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
-        let s2c1 = Thumbnail(chapter: "S2Chapter 1",story: "Story 2", imgthumbnail: "tb1", videoPath:"s2c1", gameActivity: CarGameScene(), isActive: true)
-        let s2c2 = Thumbnail(chapter: "S2Chapter 2",story: "Story 2", imgthumbnail: "tb2", videoPath:"s2c2", gameActivity: CarGameScene(), isActive: false)
-        let s2c3 = Thumbnail(chapter: "S2Chapter 3",story: "Story 2", imgthumbnail: "tb3", videoPath:"s2c3", gameActivity: CarGameScene(), isActive: false)
+        let s2c1 = Thumbnail(chapter: "S2Chapter 1",story: "Story 2", imgthumbnail: "tb1", videoPath:"s2c1", gameActivity: CarGameScene(), isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s2c2 = Thumbnail(chapter: "S2Chapter 2",story: "Story 2", imgthumbnail: "tb2", videoPath:"s2c2", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s2c3 = Thumbnail(chapter: "S2Chapter 3",story: "Story 2", imgthumbnail: "tb3", videoPath:"s2c3", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
-        let s3c1 = Thumbnail(chapter: "S3Chapter 1",story: "Story 3", imgthumbnail: "tb1", videoPath:"s3c1", gameActivity: CarGameScene(), isActive: true)
-        let s3c2 = Thumbnail(chapter: "S3Chapter 2",story: "Story 3", imgthumbnail: "tb2", videoPath:"s3c2", gameActivity: CarGameScene(), isActive: false)
-        let s3c3 = Thumbnail(chapter: "S3Chapter 3",story: "Story 3", imgthumbnail: "tb3", videoPath:"s3c3", gameActivity: CarGameScene(), isActive: false)
+        let s3c1 = Thumbnail(chapter: "S3Chapter 1",story: "Story 3", imgthumbnail: "tb1", videoPath:"s3c1", gameActivity: CarGameScene(), isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s3c2 = Thumbnail(chapter: "S3Chapter 2",story: "Story 3", imgthumbnail: "tb2", videoPath:"s3c2", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s3c3 = Thumbnail(chapter: "S3Chapter 3",story: "Story 3", imgthumbnail: "tb3", videoPath:"s3c3", gameActivity: CarGameScene(), isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
         dataThumbail.append(s1c1) //Append untuk ngesave data yang diinput ke array. (Masuk ke akhir queue array)
         dataThumbail.append(s1c2)

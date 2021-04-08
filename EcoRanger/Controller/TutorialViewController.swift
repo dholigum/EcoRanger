@@ -33,19 +33,27 @@ class TutorialViewController: UIViewController {
     }
     
     @IBAction func backTutor(_ sender: UIStoryboardSegue){
-        guard let gameVC = sender.source as? GameActivityViewController else { return }
+        guard let gameVC = sender.source as? CarGameViewController else { return }
         tutorModel = gameVC.gameModel
     }
+    
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "gameIdentifier", sender: self)
-        print("Tutorial Button Pressed")
+        print("to \(tutorModel?.gameStoryboard ?? "nil") Activity")
+        print("to \(tutorModel?.gameIdentifier ?? "nil") Identifier")
+        
+        let storyboard = UIStoryboard(name: tutorModel?.gameStoryboard ?? "nil", bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: tutorModel?.gameIdentifier ?? "nil")
+        self.present(navigation, animated: true, completion: nil)
+        
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "gameIdentifier"){
-            let gameVC = segue.destination as! GameActivityViewController
-            gameVC.gameModel = tutorModel
-        }
-    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(segue.identifier == tutorModel?.gameIdentifier ?? ""){
+//            let gameVC = segue.destination as! CarGameViewController
+//            gameVC.gameModel = tutorModel
+//        }
+//    }
+    
     override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
         if (unwindSegue.identifier == "backToProlog"){
             let prologVC = unwindSegue.destination as! PrologViewController

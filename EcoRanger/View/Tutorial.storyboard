@@ -38,7 +38,6 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="LvG-dB-oE9" eventType="touchUpInside" id="Ppk-tH-cjM"/>
-                                            <segue destination="bxE-g0-dM2" kind="presentation" identifier="gameIdentifier" modalPresentationStyle="fullScreen" id="mm2-oF-D5E"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -94,27 +93,12 @@
                             <constraint firstItem="6x5-xC-jM1" firstAttribute="top" secondItem="ECg-0S-0B9" secondAttribute="top" constant="24" id="wRA-vB-1qV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ggA-AT-jTe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CcT-sD-w6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="J13-kL-l3Z" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-23.459715639810426" y="69.230769230769226"/>
-        </scene>
-        <!--prologView-->
-        <scene sceneID="UgQ-Kv-syA">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Prolog" referencedIdentifier="prologView" id="Snt-lU-cSJ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9hd-ht-GPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-180" y="665"/>
-        </scene>
-        <!--gameActivityView-->
-        <scene sceneID="uTu-vK-hmN">
-            <objects>
-                <viewControllerPlaceholder storyboardName="GameActivity" referencedIdentifier="gameActivityView" id="bxE-g0-dM2" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GW7-gt-Wsj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="20" y="652"/>
+            <point key="canvasLocation" x="728.67298578199052" y="69.230769230769226"/>
         </scene>
     </scenes>
     <resources>
