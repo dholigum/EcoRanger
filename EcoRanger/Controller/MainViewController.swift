@@ -141,20 +141,22 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if  Thumbnail.isActive == true {
             cell.imgThumbnail.layer.borderWidth = 8
             cell.imgThumbnail.layer.borderColor = UIColor.white.cgColor
+            cell.imgThumbnail.alpha = 1.0
+            cell.lockIcon.isHidden = true
             cell.labelThumbnail.text = Thumbnail.chapter
             cell.imgThumbnail.image = UIImage(named: Thumbnail.imgthumbnail)
             cell.imgThumbnail.layer.cornerRadius = 20.0
             collectionView.backgroundColor = UIColor.clear
         } else {
             cell.imgThumbnail.layer.borderWidth = 8
-            cell.imgThumbnail.layer.borderColor = UIColor.black.cgColor
+            cell.imgThumbnail.layer.borderColor = UIColor.white.cgColor
+            cell.imgThumbnail.alpha = 0.7
+            cell.lockIcon.isHidden = false
             cell.labelThumbnail.text = Thumbnail.chapter
             cell.imgThumbnail.image = UIImage(named: Thumbnail.imgthumbnail)
             cell.imgThumbnail.layer.cornerRadius = 20.0
             collectionView.backgroundColor = UIColor.clear
         }
-            
-           
             
             return cell
         }
@@ -178,16 +180,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
-    
-    
-    
     //settingButtonPressed
     @IBAction func settingButtonPressed(_ sender: UIButton) {
         //print("Setting Button Pressed")
         //action
         popUpTransitionIn(desiredView: blurView)
         popUpTransitionIn(desiredView: settingView)
-        
         
     }
     
@@ -230,5 +228,15 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         })
     }
     
+}
+
+extension UIImageView {
+    func applyBlurEffect() {
+        let blurEffect = UIBlurEffect(style: .regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(blurEffectView)
+    }
 }
 

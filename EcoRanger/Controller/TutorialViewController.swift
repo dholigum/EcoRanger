@@ -18,7 +18,7 @@ class TutorialViewController: UIViewController {
             let Video = AVPlayer(url: URL(fileURLWithPath: Path))
             let VideoPlayer = AVPlayerViewController()
             VideoPlayer.player = Video
-           // VideoPlayer.showsPlaybackControls = false
+            // VideoPlayer.showsPlaybackControls = false
             present(VideoPlayer, animated: true, completion:
             {
                 Video.play()

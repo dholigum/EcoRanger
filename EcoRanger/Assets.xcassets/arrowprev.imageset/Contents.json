@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "prevbutton.png",
+      "filename" : "arrowprev.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "prevbutton@2x.png",
+      "filename" : "arrowprev@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "prevbutton@3x.png",
+      "filename" : "arrowprev@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

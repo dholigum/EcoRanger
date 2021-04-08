@@ -25,28 +25,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7O-5e-tyo" userLabel="previousButton">
-                                <rect key="frame" x="31" y="6" width="78" height="78"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="prevbutton" translatesAutoresizingMaskIntoConstraints="NO" id="QDI-Ym-7L6">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrZ-Rg-w8F">
-                                        <rect key="frame" x="14" y="13" width="48" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <segue destination="J13-kL-l3Z" kind="unwind" unwindAction="didUnwind:" id="Brk-Zr-4fP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8n-zH-TPa" userLabel="nextButton">
                                 <rect key="frame" x="726" y="20" width="78" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nextbutton" translatesAutoresizingMaskIntoConstraints="NO" id="FYb-1n-g47">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrownext" translatesAutoresizingMaskIntoConstraints="NO" id="FYb-1n-g47">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -85,13 +68,29 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7O-5e-tyo" userLabel="previousButton">
+                                <rect key="frame" x="37" y="20" width="78" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowprev" translatesAutoresizingMaskIntoConstraints="NO" id="QDI-Ym-7L6">
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrZ-Rg-w8F">
+                                        <rect key="frame" x="14" y="13" width="48" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <segue destination="J13-kL-l3Z" kind="unwind" unwindAction="didUnwind:" id="Brk-Zr-4fP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ECg-0S-0B9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6x5-xC-jM1" firstAttribute="centerX" secondItem="c4t-La-aFA" secondAttribute="centerX" id="aCU-Rj-gHI"/>
-                            <constraint firstItem="U7O-5e-tyo" firstAttribute="leading" secondItem="c4t-La-aFA" secondAttribute="leading" constant="24" id="eNd-8E-gcb"/>
-                            <constraint firstItem="U7O-5e-tyo" firstAttribute="top" secondItem="ECg-0S-0B9" secondAttribute="top" constant="24" id="k7C-34-d7r"/>
                             <constraint firstItem="6x5-xC-jM1" firstAttribute="top" secondItem="ECg-0S-0B9" secondAttribute="top" constant="24" id="wRA-vB-1qV"/>
                         </constraints>
                     </view>
@@ -119,9 +118,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrownext" width="417.33334350585938" height="213"/>
+        <image name="arrowprev" width="417.33334350585938" height="213"/>
         <image name="homescreenbg" width="270.66665649414062" height="125"/>
-        <image name="nextbutton" width="25.333333969116211" height="25.333333969116211"/>
-        <image name="prevbutton" width="25.333333969116211" height="25.333333969116211"/>
         <image name="thumbnailvideo" width="198.66667175292969" height="82"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

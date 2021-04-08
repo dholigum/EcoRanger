@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "nextbutton.png",
+      "filename" : "arrownext.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "nextbutton@2x.png",
+      "filename" : "arrownext@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "nextbutton@3x.png",
+      "filename" : "arrownext@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

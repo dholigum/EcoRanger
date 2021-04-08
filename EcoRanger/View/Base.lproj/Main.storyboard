@@ -136,12 +136,17 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lockicon" translatesAutoresizingMaskIntoConstraints="NO" id="pcf-zI-Bbt">
+                                                    <rect key="frame" x="139" y="60" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="327" height="226"/>
                                         <connections>
                                             <outlet property="imgThumbnail" destination="ngt-UP-Gav" id="bWc-83-0Vx"/>
                                             <outlet property="labelThumbnail" destination="bcq-H1-evV" id="BtF-QK-tuu"/>
+                                            <outlet property="lockIcon" destination="pcf-zI-Bbt" id="4cK-DW-o5l"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -254,6 +259,7 @@
         <image name="avataricon" width="18.666666030883789" height="18.666666030883789"/>
         <image name="badgesicon" width="26" height="26"/>
         <image name="homescreenbg" width="270.66665649414062" height="125"/>
+        <image name="lockicon" width="58.666667938232422" height="58.666667938232422"/>
         <image name="settingicon" width="25" height="25"/>
         <image name="tb1" width="846" height="360"/>
         <systemColor name="systemBackgroundColor">

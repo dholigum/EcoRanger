@@ -10,5 +10,6 @@ import UIKit
 class ThumbnailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgThumbnail: UIImageView!
     @IBOutlet weak var labelThumbnail: UILabel!
+    @IBOutlet weak var lockIcon: UIImageView!
     
 }
