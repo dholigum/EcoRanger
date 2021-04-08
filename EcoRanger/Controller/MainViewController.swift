@@ -183,9 +183,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func settingButtonPressed(_ sender: UIButton) {
         //print("Setting Button Pressed")
         //action
-        popUpTransitionIn(desiredView: blurView)
-        popUpTransitionIn(desiredView: settingView)
-        
+        //popUpTransitionIn(desiredView: blurView)
+        //popUpTransitionIn(desiredView: settingView)
+        //menggunakan view xib
+        SettingPopUpController.instance.showAlert(center: self.view)
     }
     
     //badges
