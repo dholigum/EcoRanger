@@ -8,10 +8,10 @@
 import SpriteKit
 import GameplayKit
 
-class TruckGameScene: SKScene {
+class SlapMosquitoGameScene: SKScene {
     
     override func didMove(to view: SKView) {
-        let backgroundSprite: SKSpriteNode = SKSpriteNode(imageNamed: "roadbackground")
+        let backgroundSprite: SKSpriteNode = SKSpriteNode(imageNamed: "roombg")
         backgroundSprite.position = CGPoint(x: size.width/2, y: size.height/2)
         backgroundSprite.size = CGSize(width: frame.maxX, height: frame.maxY)
         self.addChild(backgroundSprite)

@@ -8,14 +8,14 @@
 import UIKit
 import SpriteKit
 
-class TruckGameViewController: UIViewController {
+class SlapMosquitoGameViewController: UIViewController {
     var gameModel: Thumbnail?
     @IBOutlet weak var skview: SKView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let scene: TruckGameScene = TruckGameScene(size: skview.frame.size)
+        let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
         skview.presentScene(scene)
     }
 
