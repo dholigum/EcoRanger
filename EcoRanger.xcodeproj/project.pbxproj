@@ -31,6 +31,8 @@
 		4ED2CA29261A29F800AC5985 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2CA28261A29F800AC5985 /* Thumbnail.swift */; };
 		EA3CDD76261F557B00C167EF /* SettingPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3CDD75261F557B00C167EF /* SettingPopUp.xib */; };
 		EA3CDD79261F579800C167EF /* SettingPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CDD78261F579800C167EF /* SettingPopUpController.swift */; };
+		EA3CDD7C261F6E9200C167EF /* PausePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3CDD7B261F6E9200C167EF /* PausePopUp.xib */; };
+		EA3CDD7F261F6F7300C167EF /* PausePopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CDD7E261F6F7300C167EF /* PausePopUpController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		4ED2CA28261A29F800AC5985 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Thumbnail.swift; path = EcoRanger/View/Thumbnail.swift; sourceTree = SOURCE_ROOT; };
 		EA3CDD75261F557B00C167EF /* SettingPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPopUp.xib; sourceTree = "<group>"; };
 		EA3CDD78261F579800C167EF /* SettingPopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopUpController.swift; sourceTree = "<group>"; };
+		EA3CDD7B261F6E9200C167EF /* PausePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PausePopUp.xib; sourceTree = "<group>"; };
+		EA3CDD7E261F6F7300C167EF /* PausePopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePopUpController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 				2F5D2B0C261CAD4D009173FA /* CarGame.storyboard */,
 				2FC29A07261EBC3200B1B284 /* TruckGame.storyboard */,
 				EA3CDD75261F557B00C167EF /* SettingPopUp.xib */,
+				EA3CDD7B261F6E9200C167EF /* PausePopUp.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 				2F5D2B12261CAF4A009173FA /* CarGameScene.swift */,
 				2F5D2B15261CB1A2009173FA /* TruckGameScene.swift */,
 				EA3CDD78261F579800C167EF /* SettingPopUpController.swift */,
+				EA3CDD7E261F6F7300C167EF /* PausePopUpController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 				4E336DBC261AF2C2001A6916 /* s1c2.mp4 in Resources */,
 				2FC29A08261EBC3200B1B284 /* TruckGame.storyboard in Resources */,
 				2F6F62232618841800284F8F /* Prolog.storyboard in Resources */,
+				EA3CDD7C261F6E9200C167EF /* PausePopUp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +256,7 @@
 				2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */,
 				2F6F62022617DC1800284F8F /* SceneDelegate.swift in Sources */,
 				2F6F62262618895900284F8F /* PrologViewController.swift in Sources */,
+				EA3CDD7F261F6F7300C167EF /* PausePopUpController.swift in Sources */,
 				2F5D2B13261CAF4A009173FA /* CarGameScene.swift in Sources */,
 				4ED2CA26261A283800AC5985 /* ThumbnailCollectionViewCell.swift in Sources */,
 				4ED2CA29261A29F800AC5985 /* Thumbnail.swift in Sources */,

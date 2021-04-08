@@ -186,12 +186,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //popUpTransitionIn(desiredView: blurView)
         //popUpTransitionIn(desiredView: settingView)
         //menggunakan view xib
-        SettingPopUpController.instance.showAlert(center: self.view)
+        SettingPopUpController.instance.showAlert()
     }
     
     //badges
     @IBAction func badgesButtonPressed(_ sender: UIButton) {
         print("Badges Button Pressed")
+        //testing pause pop up
+        PausePopUpController.instance.showPausePopUp()
     }
     
     //avatar

@@ -43,11 +43,11 @@ class SettingPopUpController: UIView {
         parentViewContoller.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
     
-    func showAlert(center : UIView){
+    func showAlert(){
         print("halaman alert")
         alertView.layer.cornerRadius = 10
         backBtn.layer.cornerRadius = 10
-        parentViewContoller.center = center.center
+        //parentViewContoller.center = center.center
         UIApplication.shared.keyWindow?.addSubview(parentViewContoller)
     }
     
