@@ -51,6 +51,7 @@
 		2F6F622D26189BC200284F8F /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		2FC29A07261EBC3200B1B284 /* SlapMosquitoGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlapMosquitoGame.storyboard; sourceTree = "<group>"; };
 		2FC29A0A261EBEA200B1B284 /* SlapMosquitoGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlapMosquitoGameViewController.swift; sourceTree = "<group>"; };
+		2FC29A1C261F775600B1B284 /* button-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "button-3.wav"; sourceTree = "<group>"; };
 		4E336DB9261AF2C2001A6916 /* s1c3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c3.mp4; sourceTree = "<group>"; };
 		4E336DBA261AF2C2001A6916 /* s1c2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c2.mp4; sourceTree = "<group>"; };
 		4E3663302618BC85001F8428 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 				2F6F62082617DC1B00284F8F /* Assets.xcassets */,
 				2F6F620A2617DC1B00284F8F /* LaunchScreen.storyboard */,
 				2F6F620D2617DC1B00284F8F /* Info.plist */,
+				2FC29A1C261F775600B1B284 /* button-3.wav */,
 			);
 			path = EcoRanger;
 			sourceTree = "<group>";
