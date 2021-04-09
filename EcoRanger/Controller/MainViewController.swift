@@ -195,7 +195,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //testing pause pop up
         //PausePopUpController.instance.showPausePopUp()
         //testing game success popup
-        GameResultPopUpController.instance.showResultView(alertType: .success)
+        PausePopUpController.instance.showPausePopUp()
+        //GameResultPopUpController.instance.showResultView(alertType: .success)
     }
     
     //avatar

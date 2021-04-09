@@ -20,12 +20,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="844" height="412"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbd-Uw-kQ2">
-                                        <rect key="frame" x="52" y="30" width="112" height="30"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingicon" translatesAutoresizingMaskIntoConstraints="NO" id="Kuo-E6-e02">
+                                        <rect key="frame" x="44" y="23" width="64" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="PAUSE BUTTON"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saR-Wa-hce">
+                                        <rect key="frame" x="59" y="37" width="34" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="yQh-2L-NAw" kind="presentation" id="XKS-qi-Qeq"/>
+                                            <action selector="pauseButton:" destination="J93-Wh-7Ub" eventType="touchUpInside" id="SOw-f1-ImI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -53,6 +56,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="settingicon" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

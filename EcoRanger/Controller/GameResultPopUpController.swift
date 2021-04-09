@@ -19,9 +19,8 @@ class GameResultPopUpController: UIView {
     @IBOutlet var succesLbl:UILabel!
     @IBOutlet var failureLbl:UILabel!
     
-    @IBAction func trueButton(_ sender: Any) {
+    @IBAction func trueButton(_ sender: Any){
         print("resume button")
-        
     }
     @IBAction func falseButton(_ sender: Any) {
         print("home button")
@@ -87,5 +86,8 @@ class GameResultPopUpController: UIView {
         }
         UIApplication.shared.keyWindow?.addSubview(parentView)
     }
+//    func returnToHome{
+//        //direct ke home
+//    }
 
 }

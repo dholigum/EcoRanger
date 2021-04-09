@@ -12,6 +12,12 @@ class SlapMosquitoGameViewController: UIViewController {
     var gameModel: Thumbnail?
 //    var time = 20
     @IBOutlet weak var skview: SKView!
+    @IBAction func pauseButton(_ sender: UIButton) {
+        let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
+        PausePopUpController.instance.showPausePopUp()
+        scene.view?.isPaused = true
+        
+    }
     
 //    @IBOutlet weak var timeLabel: UILabel!
     

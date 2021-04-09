@@ -90,6 +90,7 @@ class SlapMosquitoGameScene: SKScene, SKPhysicsContactDelegate {
                             print("Kamu kalah")
                             //self.iswin = true
                             self.view?.isPaused = true
+                            GameResultPopUpController.instance.showResultView(alertType: .failure)
                         }
                     }
                     
@@ -164,6 +165,7 @@ class SlapMosquitoGameScene: SKScene, SKPhysicsContactDelegate {
         //SKSpriteNode(imageNamed: "avataricon")
         if mosquitoleft==0 {
             print("Yay MENANG!!!!!")
+            GameResultPopUpController.instance.showResultView(alertType: .success)
         }
     }
     
