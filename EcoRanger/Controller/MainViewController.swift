@@ -78,14 +78,15 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setUpUISegmented()
         
         //Play BGM on Menu Load
-        do{
-            MenuBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "MainMenuBGM", ofType: ".mp3")!))
-            MenuBGM.prepareToPlay()
-            MenuBGM.play()
-        }
-        catch{
-            print(error)
-        }
+        MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
+//        do{
+//            MenuBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "MainMenuBGM", ofType: ".mp3")!))
+//            MenuBGM.prepareToPlay()
+//            MenuBGM.play()
+//        }
+//        catch{
+//            print(error)
+//        }
         
         //Prepare SFX on Button Press
         do{
@@ -172,7 +173,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func initDataThumbnail() {
-        let s1c1 = Thumbnail(chapter: "Bagian 1", story: "Cerita 1", imgthumbnail: "tb1", videoPath:"s1c1", tutorPath:"s1c1", isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s1c1 = Thumbnail(chapter: "Bagian 1", story: "Cerita 1", imgthumbnail: "tb1", videoPath:"s1c1", tutorPath:"s1c1", isActive: true, gameStoryboard: "YesOrNoStoryboard", gameIdentifier: "YesOrNo")
         let s1c2 = Thumbnail(chapter: "Bagian 2", story: "Cerita 1", imgthumbnail: "tb2", videoPath:"s1c2", tutorPath:"s1c2", isActive: true, gameStoryboard: "SlapMosquitoGame", gameIdentifier: "slapMosquitoGame")
         let s1c3 = Thumbnail(chapter: "Bagian 3", story: "Cerita 1", imgthumbnail: "tb3", videoPath:"s1c3", tutorPath:"s1c3", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         

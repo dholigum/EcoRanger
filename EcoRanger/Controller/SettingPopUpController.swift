@@ -14,6 +14,7 @@ class SettingPopUpController: UIView {
     @IBOutlet var backBtn: UIButton!
     @IBOutlet var parentViewContoller : UIView!
     @IBOutlet var alertView : UIView!
+    @IBOutlet var switcher: UISwitch!
     @IBAction func backButton(_ sender: UIButton) {
         print("tombol kembali")
         parentViewContoller.removeFromSuperview()
@@ -23,6 +24,11 @@ class SettingPopUpController: UIView {
     }
     @IBAction func bgmSwitch(_ sender: Any) {
         print("ini switch BMG")
+        if switcher.isOn{
+                    MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
+                }else{
+                    MusicPlayer.shared.stopBackgroundMusic()
+                }
     }
     
     

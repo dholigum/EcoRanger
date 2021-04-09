@@ -17,6 +17,7 @@
                 <outlet property="alertView" destination="yaT-aI-T6r" id="ORZ-Mn-2YA"/>
                 <outlet property="backBtn" destination="h5O-t9-URu" id="zK3-e3-zkl"/>
                 <outlet property="parentViewContoller" destination="iN0-l3-epB" id="mlo-GK-DLR"/>
+                <outlet property="switcher" destination="Lss-99-hzI" id="EdF-9F-hRX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
