@@ -33,6 +33,8 @@
 		EA3CDD79261F579800C167EF /* SettingPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CDD78261F579800C167EF /* SettingPopUpController.swift */; };
 		EA3CDD7C261F6E9200C167EF /* PausePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3CDD7B261F6E9200C167EF /* PausePopUp.xib */; };
 		EA3CDD7F261F6F7300C167EF /* PausePopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CDD7E261F6F7300C167EF /* PausePopUpController.swift */; };
+		EA3CDD822620045400C167EF /* GameResultPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3CDD812620045400C167EF /* GameResultPopUp.xib */; };
+		EA3CDD852620047E00C167EF /* GameResultPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CDD842620047E00C167EF /* GameResultPopUpController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		EA3CDD78261F579800C167EF /* SettingPopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopUpController.swift; sourceTree = "<group>"; };
 		EA3CDD7B261F6E9200C167EF /* PausePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PausePopUp.xib; sourceTree = "<group>"; };
 		EA3CDD7E261F6F7300C167EF /* PausePopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePopUpController.swift; sourceTree = "<group>"; };
+		EA3CDD812620045400C167EF /* GameResultPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameResultPopUp.xib; sourceTree = "<group>"; };
+		EA3CDD842620047E00C167EF /* GameResultPopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultPopUpController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 				2FC29A07261EBC3200B1B284 /* TruckGame.storyboard */,
 				EA3CDD75261F557B00C167EF /* SettingPopUp.xib */,
 				EA3CDD7B261F6E9200C167EF /* PausePopUp.xib */,
+				EA3CDD812620045400C167EF /* GameResultPopUp.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 				2F5D2B15261CB1A2009173FA /* TruckGameScene.swift */,
 				EA3CDD78261F579800C167EF /* SettingPopUpController.swift */,
 				EA3CDD7E261F6F7300C167EF /* PausePopUpController.swift */,
+				EA3CDD842620047E00C167EF /* GameResultPopUpController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5D2531261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf in Resources */,
+				EA3CDD822620045400C167EF /* GameResultPopUp.xib in Resources */,
 				4E336DBB261AF2C2001A6916 /* s1c3.mp4 in Resources */,
 				2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */,
 				EA3CDD76261F557B00C167EF /* SettingPopUp.xib in Resources */,
@@ -248,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6F62042617DC1800284F8F /* MainViewController.swift in Sources */,
+				EA3CDD852620047E00C167EF /* GameResultPopUpController.swift in Sources */,
 				2F6F62002617DC1800284F8F /* AppDelegate.swift in Sources */,
 				2F5D2B16261CB1A2009173FA /* TruckGameScene.swift in Sources */,
 				2F5D2B10261CAE14009173FA /* CarGameViewController.swift in Sources */,
