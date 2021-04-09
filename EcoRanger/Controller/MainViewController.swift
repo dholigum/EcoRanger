@@ -193,12 +193,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func badgesButtonPressed(_ sender: UIButton) {
         print("Badges Button Pressed")
         //testing pause pop up
-        PausePopUpController.instance.showPausePopUp()
+        //PausePopUpController.instance.showPausePopUp()
+        //testing game success popup
+        GameResultPopUpController.instance.showResultView(alertType: .success)
     }
     
     //avatar
     @IBAction func avatarButtonPressed(_ sender: UIButton) {
         print("Avatar Button Pressed")
+        //testing game failure popup
+        GameResultPopUpController.instance.showResultView(alertType: .failure)
+        //testing
     }
     
     //popUp transition

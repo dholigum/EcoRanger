@@ -26,6 +26,7 @@ class GameResultPopUpController: UIView {
     @IBAction func falseButton(_ sender: Any) {
         print("home button")
         parentView.removeFromSuperview()
+        //tempat kosong
         
     }
     @IBAction func nextButton(_ sender: Any) {
