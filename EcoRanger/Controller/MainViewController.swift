@@ -183,19 +183,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func settingButtonPressed(_ sender: UIButton) {
         //print("Setting Button Pressed")
         //action
-        popUpTransitionIn(desiredView: blurView)
-        popUpTransitionIn(desiredView: settingView)
-        
+        //popUpTransitionIn(desiredView: blurView)
+        //popUpTransitionIn(desiredView: settingView)
+        //menggunakan view xib
+        SettingPopUpController.instance.showAlert()
     }
     
     //badges
     @IBAction func badgesButtonPressed(_ sender: UIButton) {
         print("Badges Button Pressed")
+        //testing pause pop up
+        //PausePopUpController.instance.showPausePopUp()
+        //testing game success popup
+        GameResultPopUpController.instance.showResultView(alertType: .success)
     }
     
     //avatar
     @IBAction func avatarButtonPressed(_ sender: UIButton) {
         print("Avatar Button Pressed")
+        //testing game failure popup
+        GameResultPopUpController.instance.showResultView(alertType: .failure)
+        //testing
     }
     
     //popUp transition
