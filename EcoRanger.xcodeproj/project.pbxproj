@@ -24,6 +24,7 @@
 		2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6F622D26189BC200284F8F /* TutorialViewController.swift */; };
 		2FC29A08261EBC3200B1B284 /* SlapMosquitoGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC29A07261EBC3200B1B284 /* SlapMosquitoGame.storyboard */; };
 		2FC29A0B261EBEA200B1B284 /* SlapMosquitoGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC29A0A261EBEA200B1B284 /* SlapMosquitoGameViewController.swift */; };
+		4E32DD08262004150040C5A4 /* button-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2FC29A1C261F775600B1B284 /* button-3.wav */; };
 		4E336DBB261AF2C2001A6916 /* s1c3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E336DB9261AF2C2001A6916 /* s1c3.mp4 */; };
 		4E336DBC261AF2C2001A6916 /* s1c2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E336DBA261AF2C2001A6916 /* s1c2.mp4 */; };
 		4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4E3663302618BC85001F8428 /* s1c1.mp4 */; };
@@ -218,6 +219,7 @@
 				4E336DBB261AF2C2001A6916 /* s1c3.mp4 in Resources */,
 				2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */,
 				2F5D2B0D261CAD4D009173FA /* CarGame.storyboard in Resources */,
+				4E32DD08262004150040C5A4 /* button-3.wav in Resources */,
 				4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */,
 				2F6F620C2617DC1B00284F8F /* LaunchScreen.storyboard in Resources */,
 				2F6F62092617DC1B00284F8F /* Assets.xcassets in Resources */,
