@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
@@ -17,6 +18,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var dataThumbailFiltered = [Thumbnail]()
     private var indexSelected = 0
     var StorySelected = "Cerita 1"
+    var MenuBGM = AVAudioPlayer()
+    var ButtonPressSFX = AVAudioPlayer()
+    var SFXAllowStatus = true
     
     //popUp var space
     @IBOutlet var settingView: UIView!
@@ -25,14 +29,42 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func backButton(_ sender: UIButton) {
         popUpTransitionOut(desiredView: settingView)
         popUpTransitionOut(desiredView: blurView)
-        
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
     }
+    @IBOutlet weak var SFXSwitch: UISwitch!
+    @IBOutlet weak var BGMSwitch: UISwitch!
     @IBAction func sfxButton(_ sender: Any) {
         print("ini switch sfx")
-        
+        if SFXSwitch.isOn
+        {
+            print("On")
+            SFXAllowStatus = true
+        }
+        else
+        {
+            print("Off")
+            SFXAllowStatus = false
+        }
     }
     @IBAction func bgmSwitch(_ sender: Any) {
         print("ini switch BMG")
+        if BGMSwitch.isOn
+        {
+            print("On")
+            MenuBGM.play()
+        }
+        else
+        {
+            print("Off")
+            MenuBGM.stop()
+        }
     }
     //
     
@@ -44,6 +76,25 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         initDataThumbnail()
         
         setUpUISegmented()
+        
+        //Play BGM on Menu Load
+        do{
+            MenuBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "MainMenuBGM", ofType: ".mp3")!))
+            MenuBGM.prepareToPlay()
+            MenuBGM.play()
+        }
+        catch{
+            print(error)
+        }
+        
+        //Prepare SFX on Button Press
+        do{
+            ButtonPressSFX = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "ButtonPress", ofType: ".wav")!))
+            ButtonPressSFX.prepareToPlay()
+        }
+        catch{
+            print(error)
+        }
     }
     
     func setUpUISegmented() {
@@ -65,18 +116,42 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             StorySelected = "Cerita 1"
             storyBgImage.image = #imageLiteral(resourceName: "homescreenbg")
             collectionView.reloadData()
+            if SFXAllowStatus
+            {
+                if ButtonPressSFX.isPlaying
+                {
+                    ButtonPressSFX.stop()
+                }
+                ButtonPressSFX.play()
+            }
         }
         else if sender.selectedSegmentIndex == 1
         {
             StorySelected = "Cerita 2"
             storyBgImage.image = #imageLiteral(resourceName: "parkbg")
             collectionView.reloadData()
+            if SFXAllowStatus
+            {
+                if ButtonPressSFX.isPlaying
+                {
+                    ButtonPressSFX.stop()
+                }
+                ButtonPressSFX.play()
+            }
         }
         else if sender.selectedSegmentIndex == 2
         {
             StorySelected = "Cerita 3"
             storyBgImage.image = #imageLiteral(resourceName: "beachbg")
             collectionView.reloadData()
+            if SFXAllowStatus
+            {
+                if ButtonPressSFX.isPlaying
+                {
+                    ButtonPressSFX.stop()
+                }
+                ButtonPressSFX.play()
+            }
         }
         
         dataThumbailFiltered = dataThumbail.filter
@@ -175,6 +250,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? PrologViewController {
             destination.chapterModel = dataThumbail[indexSelected]
+            MenuBGM.stop()
         }
     }
     
@@ -187,6 +263,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //popUpTransitionIn(desiredView: settingView)
         //menggunakan view xib
         SettingPopUpController.instance.showAlert()
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
     }
     
     //badges
@@ -194,11 +278,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         print("Badges Button Pressed")
         //testing pause pop up
         PausePopUpController.instance.showPausePopUp()
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
     }
     
     //avatar
     @IBAction func avatarButtonPressed(_ sender: UIButton) {
         print("Avatar Button Pressed")
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
     }
     
     //popUp transition

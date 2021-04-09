@@ -10,11 +10,22 @@ import AVKit
 class PrologViewController: UIViewController {
 //    var dataThumbail = [Thumbnail]()
     var chapterModel: Thumbnail?
+    var ButtonPressSFX = AVAudioPlayer()
+    var SFXAllowStatus = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         labelChapter.text = chapterModel?.chapter
         // Do any additional setup after loading the view.
+        
+        //Prepare SFX on Button Press
+        do{
+            ButtonPressSFX = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "ButtonPress", ofType: ".wav")!))
+            ButtonPressSFX.prepareToPlay()
+        }
+        catch{
+            print(error)
+        }
     }
     
     
@@ -27,10 +38,26 @@ class PrologViewController: UIViewController {
     
     @IBAction func prevButtonPressed(_ sender: UIButton) {
         print("Prolog Prev Button Pressed!")
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
     }
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "tutorialIdentiier", sender: self)
         print("Prolog Next Button Pressed!")
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
