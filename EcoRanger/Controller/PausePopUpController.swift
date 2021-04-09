@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SpriteKit
 class PausePopUpController: UIView {
 
     static let instance = PausePopUpController()
@@ -52,7 +52,6 @@ class PausePopUpController: UIView {
     }
     func showPausePopUp() {
         print("pause pop up")
-        
         UIApplication.shared.keyWindow?.addSubview(parentView)
     }
     

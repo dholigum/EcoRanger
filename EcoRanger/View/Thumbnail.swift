@@ -10,11 +10,10 @@ import SpriteKit
 
 struct Thumbnail {
     var chapter: String
-    var story = ""
-    var imgthumbnail = ""
-    var videoPath = ""
-    var tutorPath = ""
-    var gameActivity: SKScene
+    var story: String
+    var imgthumbnail: String
+    var videoPath: String
+    var tutorPath: String
     var isActive: Bool
     var gameStoryboard: String
     var gameIdentifier: String

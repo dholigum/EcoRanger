@@ -29,6 +29,7 @@ class TutorialViewController: UIViewController {
             let VideoPlayer = AVPlayerViewController()
             VideoPlayer.player = Video
             // VideoPlayer.showsPlaybackControls = false
+            MusicPlayer.shared.stopBackgroundMusic()
             present(VideoPlayer, animated: true, completion:
                         {
                             Video.play()
@@ -51,10 +52,10 @@ class TutorialViewController: UIViewController {
         }
     }
     
-    @IBAction func backTutor(_ sender: UIStoryboardSegue){
-        guard let gameVC = sender.source as? CarGameViewController else { return }
-        tutorModel = gameVC.gameModel
-    }
+//    @IBAction func backTutor(_ sender: UIStoryboardSegue){
+//        guard let gameVC = sender.source as? CarGameViewController else { return }
+//        tutorModel = gameVC.gameModel
+//    }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         if SFXAllowStatus
