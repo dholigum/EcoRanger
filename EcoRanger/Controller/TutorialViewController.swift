@@ -10,8 +10,18 @@ import AVKit
 
 class TutorialViewController: UIViewController {
     var tutorModel: Thumbnail?
+    var ButtonPressSFX = AVAudioPlayer()
+    var SFXAllowStatus = true
     
     @IBAction func PlayButton(_ sender: Any) {
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
         guard let dataModel = tutorModel else { return }
         if let Path = Bundle.main.path(forResource: "\(dataModel.videoPath)", ofType: "mp4")
         {
@@ -30,6 +40,15 @@ class TutorialViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        //Prepare SFX on Button Press
+        do{
+            ButtonPressSFX = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "ButtonPress", ofType: ".wav")!))
+            ButtonPressSFX.prepareToPlay()
+        }
+        catch{
+            print(error)
+        }
     }
     
     @IBAction func backTutor(_ sender: UIStoryboardSegue){
@@ -38,6 +57,15 @@ class TutorialViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
+        
         print("to \(tutorModel?.gameStoryboard ?? "nil") Activity")
         print("to \(tutorModel?.gameIdentifier ?? "nil") Identifier")
         
