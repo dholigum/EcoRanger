@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070512D526204DD5009A6A98 /* MainMenuBGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 070512D426204DD5009A6A98 /* MainMenuBGM.mp3 */; };
+		070512D926204DDD009A6A98 /* ButtonPress.wav in Resources */ = {isa = PBXBuildFile; fileRef = 070512D726204DDD009A6A98 /* ButtonPress.wav */; };
+		070512DA26204DDD009A6A98 /* MosquitoSquash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 070512D826204DDD009A6A98 /* MosquitoSquash.wav */; };
 		2F5D2531261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5D2530261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf */; };
 		2F5D2B0D261CAD4D009173FA /* CarGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5D2B0C261CAD4D009173FA /* CarGame.storyboard */; };
 		2F5D2B10261CAE14009173FA /* CarGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5D2B0F261CAE14009173FA /* CarGameViewController.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070512D426204DD5009A6A98 /* MainMenuBGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MainMenuBGM.mp3; sourceTree = "<group>"; };
+		070512D726204DDD009A6A98 /* ButtonPress.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ButtonPress.wav; sourceTree = "<group>"; };
+		070512D826204DDD009A6A98 /* MosquitoSquash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MosquitoSquash.wav; sourceTree = "<group>"; };
 		2F5D2530261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
 		2F5D2B0C261CAD4D009173FA /* CarGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CarGame.storyboard; sourceTree = "<group>"; };
 		2F5D2B0F261CAE14009173FA /* CarGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGameViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070512D126204C6E009A6A98 /* BGM */ = {
+			isa = PBXGroup;
+			children = (
+				070512D426204DD5009A6A98 /* MainMenuBGM.mp3 */,
+			);
+			path = BGM;
+			sourceTree = "<group>";
+		};
+		070512D326204DC0009A6A98 /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				070512D826204DDD009A6A98 /* MosquitoSquash.wav */,
+				070512D726204DDD009A6A98 /* ButtonPress.wav */,
+			);
+			path = SFX;
+			sourceTree = "<group>";
+		};
 		2F6F61F32617DC1800284F8F = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +123,8 @@
 		2F6F61FE2617DC1800284F8F /* EcoRanger */ = {
 			isa = PBXGroup;
 			children = (
+				070512D326204DC0009A6A98 /* SFX */,
+				070512D126204C6E009A6A98 /* BGM */,
 				4E36632F2618BC4B001F8428 /* Videos */,
 				2F6F623026189F3200284F8F /* fonts */,
 				2F6F621C2618096B00284F8F /* Controller */,
@@ -230,10 +255,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070512D526204DD5009A6A98 /* MainMenuBGM.mp3 in Resources */,
+				070512DA26204DDD009A6A98 /* MosquitoSquash.wav in Resources */,
 				2F5D2531261AD6BC009E1FC9 /* LuckiestGuy-Regular.ttf in Resources */,
 				EA3CDD822620045400C167EF /* GameResultPopUp.xib in Resources */,
 				4E336DBB261AF2C2001A6916 /* s1c3.mp4 in Resources */,
 				2F6F622B26189B2100284F8F /* Tutorial.storyboard in Resources */,
+				070512D926204DDD009A6A98 /* ButtonPress.wav in Resources */,
 				EA3CDD76261F557B00C167EF /* SettingPopUp.xib in Resources */,
 				2F5D2B0D261CAD4D009173FA /* CarGame.storyboard in Resources */,
 				4E3663312618BC85001F8428 /* s1c1.mp4 in Resources */,
