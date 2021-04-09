@@ -277,6 +277,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func badgesButtonPressed(_ sender: UIButton) {
         print("Badges Button Pressed")
         //testing pause pop up
+        //testing pause pop up
+        //PausePopUpController.instance.showPausePopUp()
+        //testing game success popup
+        GameResultPopUpController.instance.showResultView(alertType: .success)
+        
         PausePopUpController.instance.showPausePopUp()
         if SFXAllowStatus
         {
@@ -291,6 +296,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //avatar
     @IBAction func avatarButtonPressed(_ sender: UIButton) {
         print("Avatar Button Pressed")
+        //testing game failure popup
+        GameResultPopUpController.instance.showResultView(alertType: .failure)
+        //testing
         if SFXAllowStatus
         {
             if ButtonPressSFX.isPlaying

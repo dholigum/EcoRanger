@@ -20,7 +20,6 @@ class SettingPopUpController: UIView {
     }
     @IBAction func sfxButton(_ sender: Any) {
         print("ini switch sfx")
-        
     }
     @IBAction func bgmSwitch(_ sender: Any) {
         print("ini switch BMG")
