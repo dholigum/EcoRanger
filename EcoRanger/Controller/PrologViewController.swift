@@ -83,7 +83,7 @@ class PrologViewController: UIViewController {
             let video =  AVPlayer(url: URL(fileURLWithPath: path))
             let videoPlayer = AVPlayerViewController()
             videoPlayer.player = video
-            
+            MusicPlayer.shared.stopBackgroundMusic()
             present(videoPlayer, animated: true, completion: {
                 video.play()
             })

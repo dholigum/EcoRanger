@@ -29,6 +29,7 @@ class TutorialViewController: UIViewController {
             let VideoPlayer = AVPlayerViewController()
             VideoPlayer.player = Video
             // VideoPlayer.showsPlaybackControls = false
+            MusicPlayer.shared.stopBackgroundMusic()
             present(VideoPlayer, animated: true, completion:
                         {
                             Video.play()
