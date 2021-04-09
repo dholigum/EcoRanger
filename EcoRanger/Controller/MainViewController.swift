@@ -239,8 +239,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         indexSelected = indexPath.row
         
-        if ( dataThumbailFiltered[indexSelected].isActive == true) {
+        if (dataThumbailFiltered[indexSelected].isActive == true) {
             self.performSegue(withIdentifier: "prologIdentifier", sender: self)
+            if SFXAllowStatus
+            {
+                if ButtonPressSFX.isPlaying
+                {
+                    ButtonPressSFX.stop()
+                }
+                ButtonPressSFX.play()
+            }
         } else {
             print("Belom kelar oy")
         }

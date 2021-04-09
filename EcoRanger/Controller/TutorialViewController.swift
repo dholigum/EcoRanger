@@ -14,6 +14,14 @@ class TutorialViewController: UIViewController {
     var SFXAllowStatus = true
     
     @IBAction func PlayButton(_ sender: Any) {
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
         guard let dataModel = tutorModel else { return }
         if let Path = Bundle.main.path(forResource: "\(dataModel.videoPath)", ofType: "mp4")
         {

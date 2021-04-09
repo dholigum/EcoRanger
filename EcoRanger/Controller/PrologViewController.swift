@@ -70,6 +70,14 @@ class PrologViewController: UIViewController {
     
     
     @IBAction func btnPlay(_ sender: UIButton) {
+        if SFXAllowStatus
+        {
+            if ButtonPressSFX.isPlaying
+            {
+                ButtonPressSFX.stop()
+            }
+            ButtonPressSFX.play()
+        }
         guard let dataModel = chapterModel else { return }
         if let path =  Bundle.main.path(forResource: "\(dataModel.videoPath)", ofType: "mp4"){
             let video =  AVPlayer(url: URL(fileURLWithPath: path))
