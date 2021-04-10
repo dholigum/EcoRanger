@@ -9,6 +9,9 @@ import Foundation
 import SpriteKit
 
 struct Thumbnail {
+    
+    //Id for the DB
+    var id: Int
     var chapter: String
     var story: String
     var imgthumbnail: String

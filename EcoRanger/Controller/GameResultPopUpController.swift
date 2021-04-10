@@ -71,6 +71,7 @@ class GameResultPopUpController: UIView {
             succesLbl.isHidden = false
             nextBtn.isHidden = false
             starView.isHidden = false
+            
         }else if alertType == .failure{
             print("failure")
             //failure asset

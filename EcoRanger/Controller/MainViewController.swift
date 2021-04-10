@@ -22,6 +22,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var ButtonPressSFX = AVAudioPlayer()
     var SFXAllowStatus = true
     
+    var dataThumbnailCoreData = [Thumbnail]()
+    
     //popUp var space
     @IBOutlet var settingView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
@@ -71,14 +73,35 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Init Core Data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        CoreDataHandle.initCoreData(appDelegate)
+        
+        //Get All Data from core data
+        dataThumbnailCoreData = CoreDataHandle.getAllThumbailData()
+        print("Size nya berapa -> \(dataThumbnailCoreData.count)")
+        
+        //Prevent Duplicate Data
+        if ( dataThumbnailCoreData.count == 0) {
+            initDataThumbnail()
+        } else {
+            dataThumbailFiltered = dataThumbnailCoreData
+            dataThumbail = dataThumbnailCoreData
+        }
+        
         //popUp setting button
         setUpPopUpSettingView()
-        initDataThumbnail()
+       
         
         setUpUISegmented()
         
+      
+        
         //Play BGM on Menu Load
-        MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
+   //     MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
+        
+        
 //        do{
 //            MenuBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "MainMenuBGM", ofType: ".mp3")!))
 //            MenuBGM.prepareToPlay()
@@ -155,6 +178,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         
+        //Change to dataThumbnailCoreData
         dataThumbailFiltered = dataThumbail.filter
         {   (thumbnail) in
             return thumbnail.story == StorySelected
@@ -173,17 +197,35 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func initDataThumbnail() {
-        let s1c1 = Thumbnail(chapter: "Bagian 1", story: "Cerita 1", imgthumbnail: "tb1", videoPath:"s1c1", tutorPath:"s1c1", isActive: true, gameStoryboard: "YesOrNoStoryboard", gameIdentifier: "YesOrNo")
-        let s1c2 = Thumbnail(chapter: "Bagian 2", story: "Cerita 1", imgthumbnail: "tb2", videoPath:"s1c2", tutorPath:"s1c2", isActive: true, gameStoryboard: "SlapMosquitoGame", gameIdentifier: "slapMosquitoGame")
-        let s1c3 = Thumbnail(chapter: "Bagian 3", story: "Cerita 1", imgthumbnail: "tb3", videoPath:"s1c3", tutorPath:"s1c3", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
-        let s2c1 = Thumbnail(chapter: "Bagian 1", story: "Cerita 2", imgthumbnail: "tb1", videoPath:"s2c1", tutorPath:"s1c1", isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame")
-        let s2c2 = Thumbnail(chapter: "Bagian 2", story: "Cerita 2", imgthumbnail: "tb2", videoPath:"s2c2", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
-        let s2c3 = Thumbnail(chapter: "Bagian 3", story: "Cerita 2", imgthumbnail: "tb3", videoPath:"s2c3", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        //Add Id and Change isActive true only in S1C1
         
-        let s3c1 = Thumbnail(chapter: "Bagian 1", story: "Cerita 3", imgthumbnail: "tb1", videoPath:"s3c1", tutorPath:"s1c1", isActive: true, gameStoryboard: "CarGame", gameIdentifier: "carGame")
-        let s3c2 = Thumbnail(chapter: "Bagian 2", story: "Cerita 3", imgthumbnail: "tb2", videoPath:"s3c2", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
-        let s3c3 = Thumbnail(chapter: "Bagian 3", story: "Cerita 3", imgthumbnail: "tb3", videoPath:"s3c3", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s1c1 = Thumbnail(id: 1,chapter: "Bagian 1", story: "Cerita 1", imgthumbnail: "tb1", videoPath:"s1c1", tutorPath:"s1c1", isActive: true, gameStoryboard: "YesOrNoStoryboard", gameIdentifier: "YesOrNo")
+        let s1c2 = Thumbnail(id: 2, chapter: "Bagian 2", story: "Cerita 1", imgthumbnail: "tb2", videoPath:"s1c2", tutorPath:"s1c2", isActive: false, gameStoryboard: "SlapMosquitoGame", gameIdentifier: "slapMosquitoGame")
+        let s1c3 = Thumbnail(id: 3,chapter: "Bagian 3", story: "Cerita 1", imgthumbnail: "tb3", videoPath:"s1c3", tutorPath:"s1c3", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        
+        let s2c1 = Thumbnail(id: 4,chapter: "Bagian 1", story: "Cerita 2", imgthumbnail: "tb1", videoPath:"s2c1", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s2c2 = Thumbnail(id: 5,chapter: "Bagian 2", story: "Cerita 2", imgthumbnail: "tb2", videoPath:"s2c2", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s2c3 = Thumbnail(id: 6, chapter: "Bagian 3", story: "Cerita 2", imgthumbnail: "tb3", videoPath:"s2c3", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        
+        let s3c1 = Thumbnail(id: 7, chapter: "Bagian 1", story: "Cerita 3", imgthumbnail: "tb1", videoPath:"s3c1", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s3c2 = Thumbnail(id: 8,chapter: "Bagian 2", story: "Cerita 3", imgthumbnail: "tb2", videoPath:"s3c2", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        let s3c3 = Thumbnail(id: 9,chapter: "Bagian 3", story: "Cerita 3", imgthumbnail: "tb3", videoPath:"s3c3", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
+        
+        
+        //Save to CoreData
+        CoreDataHandle.addDataThumbnail(s1c1)
+        CoreDataHandle.addDataThumbnail(s1c2)
+        CoreDataHandle.addDataThumbnail(s1c3)
+        CoreDataHandle.addDataThumbnail(s2c1)
+        CoreDataHandle.addDataThumbnail(s2c1)
+        CoreDataHandle.addDataThumbnail(s2c3)
+        CoreDataHandle.addDataThumbnail(s3c1)
+        CoreDataHandle.addDataThumbnail(s3c2)
+        CoreDataHandle.addDataThumbnail(s3c3)
+        
+        
+        
         
         dataThumbail.append(s1c1) //Append untuk ngesave data yang diinput ke array. (Masuk ke akhir queue array)
         dataThumbail.append(s1c2)
@@ -203,6 +245,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         collectionView.reloadData()
     }
+    
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataThumbailFiltered.count

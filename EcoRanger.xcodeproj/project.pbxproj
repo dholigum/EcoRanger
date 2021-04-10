@@ -36,6 +36,7 @@
 		4EF3878A2620BBA900EE04D6 /* YesorNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF387892620BBA900EE04D6 /* YesorNoViewController.swift */; };
 		4EF3878D2620BC2C00EE04D6 /* ImageGameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3878C2620BC2C00EE04D6 /* ImageGameData.swift */; };
 		4EF387902620BCC600EE04D6 /* YesOrNoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF3878F2620BCC600EE04D6 /* YesOrNoStoryboard.storyboard */; };
+		52270EE926216CDA002DECD1 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52270EE826216CDA002DECD1 /* CoreDataHandler.swift */; };
 		EA3CDD76261F557B00C167EF /* SettingPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3CDD75261F557B00C167EF /* SettingPopUp.xib */; };
 		EA3CDD79261F579800C167EF /* SettingPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CDD78261F579800C167EF /* SettingPopUpController.swift */; };
 		EA3CDD7C261F6E9200C167EF /* PausePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3CDD7B261F6E9200C167EF /* PausePopUp.xib */; };
@@ -76,6 +77,7 @@
 		4EF387892620BBA900EE04D6 /* YesorNoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesorNoViewController.swift; sourceTree = "<group>"; };
 		4EF3878C2620BC2C00EE04D6 /* ImageGameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageGameData.swift; path = EcoRanger/Controller/ImageGameData.swift; sourceTree = SOURCE_ROOT; };
 		4EF3878F2620BCC600EE04D6 /* YesOrNoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YesOrNoStoryboard.storyboard; sourceTree = "<group>"; };
+		52270EE826216CDA002DECD1 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		EA3CDD75261F557B00C167EF /* SettingPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingPopUp.xib; sourceTree = "<group>"; };
 		EA3CDD78261F579800C167EF /* SettingPopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopUpController.swift; sourceTree = "<group>"; };
 		EA3CDD7B261F6E9200C167EF /* PausePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PausePopUp.xib; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		2F6F61FE2617DC1800284F8F /* EcoRanger */ = {
 			isa = PBXGroup;
 			children = (
+				52270EE726216C7F002DECD1 /* Database */,
 				070512D326204DC0009A6A98 /* SFX */,
 				070512D126204C6E009A6A98 /* BGM */,
 				4E36632F2618BC4B001F8428 /* Videos */,
@@ -208,6 +211,14 @@
 				4E3663302618BC85001F8428 /* s1c1.mp4 */,
 			);
 			path = Videos;
+			sourceTree = "<group>";
+		};
+		52270EE726216C7F002DECD1 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				52270EE826216CDA002DECD1 /* CoreDataHandler.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +316,7 @@
 				2FC29A0B261EBEA200B1B284 /* SlapMosquitoGameViewController.swift in Sources */,
 				EA3CDD79261F579800C167EF /* SettingPopUpController.swift in Sources */,
 				4EF387872620BB3900EE04D6 /* BGMPlayer.swift in Sources */,
+				52270EE926216CDA002DECD1 /* CoreDataHandler.swift in Sources */,
 				4EF3878D2620BC2C00EE04D6 /* ImageGameData.swift in Sources */,
 				2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */,
 				2F6F62022617DC1800284F8F /* SceneDelegate.swift in Sources */,
