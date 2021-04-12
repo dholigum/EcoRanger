@@ -21,6 +21,8 @@ class YesorNoViewController: UIViewController {
     @IBOutlet weak var bgGame: UIImageView!
     @IBOutlet weak var yesButtonContainer: UIView!
     @IBOutlet weak var yesImgView: UIImageView!
+    @IBOutlet weak var noButtonContainer: UIView!
+    @IBOutlet weak var noImgView: UIImageView!
     
     
     @IBAction func btnPause(_ sender: UIButton) {
@@ -76,6 +78,7 @@ class YesorNoViewController: UIViewController {
         MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
         objectView.applyshadowWithCorner(containerView: containerView, cornerRadious: 10.0, shadowOpacity: 0.8)
         yesImgView.applyshadowWithCorner(containerView: yesButtonContainer, cornerRadious: 10.0, shadowOpacity: 0.4)
+        noImgView.applyshadowWithCorner(containerView: noButtonContainer, cornerRadious: 10.0, shadowOpacity: 0.4)
         
         if objFlags==10{
             GameResultPopUpController.instance.showResultView(alertType: .success)

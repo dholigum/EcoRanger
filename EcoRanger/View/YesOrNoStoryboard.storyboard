@@ -85,7 +85,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLR-qT-8oy" userLabel="noButton">
-                                <rect key="frame" x="615" y="188" width="180" height="96"/>
+                                <rect key="frame" x="602" y="188" width="180" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noButtonImg" translatesAutoresizingMaskIntoConstraints="NO" id="ZQh-Kr-i7A">
@@ -111,6 +111,8 @@
                     <connections>
                         <outlet property="bgGame" destination="v71-a7-4HT" id="40J-3I-BEf"/>
                         <outlet property="containerView" destination="iQG-6L-UEA" id="pbA-OW-ZMG"/>
+                        <outlet property="noButtonContainer" destination="QLR-qT-8oy" id="3z2-v1-oga"/>
+                        <outlet property="noImgView" destination="ZQh-Kr-i7A" id="tzt-dy-elB"/>
                         <outlet property="objectView" destination="wuN-G5-VAA" id="QSI-7y-uaA"/>
                         <outlet property="yesButtonContainer" destination="pw5-zR-2hd" id="knK-o9-ASL"/>
                         <outlet property="yesImgView" destination="eYW-Ma-soC" id="B8Q-0j-VO8"/>
