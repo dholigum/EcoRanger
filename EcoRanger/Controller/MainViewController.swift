@@ -80,7 +80,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         //Get All Data from core data
         dataThumbnailCoreData = CoreDataHandle.getAllThumbailData()
-        print("Size nya berapa -> \(dataThumbnailCoreData.count)")
+        print("Size nya berapa onViewDidLoad -> \(dataThumbnailCoreData.count)")
         
         //Prevent Duplicate Data
         if ( dataThumbnailCoreData.count == 0) {
@@ -88,6 +88,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } else {
             dataThumbailFiltered = dataThumbnailCoreData
             dataThumbail = dataThumbnailCoreData
+            dataThumbailFiltered = dataThumbail.filter({ (Thumbnail) -> Bool in
+                return Thumbnail.story == "Cerita 1"
+            })
+            dataThumbailFiltered = dataThumbail
         }
         
         //popUp setting button
@@ -178,11 +182,18 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         
-        //Change to dataThumbnailCoreData
-        dataThumbailFiltered = dataThumbail.filter
+        //Get all Data Core Data
+        dataThumbnailCoreData = CoreDataHandle.getAllThumbailData()
+        dataThumbailFiltered = dataThumbnailCoreData.filter
         {   (thumbnail) in
             return thumbnail.story == StorySelected
         }
+        
+        //Change to dataThumbnailCoreData
+//        dataThumbailFiltered = dataThumbail.filter
+//        {   (thumbnail) in
+//            return thumbnail.story == StorySelected
+//        }
         collectionView.reloadData()
         collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
     }
@@ -218,24 +229,25 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         CoreDataHandle.addDataThumbnail(s1c2)
         CoreDataHandle.addDataThumbnail(s1c3)
         CoreDataHandle.addDataThumbnail(s2c1)
-        CoreDataHandle.addDataThumbnail(s2c1)
+        CoreDataHandle.addDataThumbnail(s2c2)
         CoreDataHandle.addDataThumbnail(s2c3)
         CoreDataHandle.addDataThumbnail(s3c1)
         CoreDataHandle.addDataThumbnail(s3c2)
         CoreDataHandle.addDataThumbnail(s3c3)
         
+        dataThumbnailCoreData = CoreDataHandle.getAllThumbailData()
+        dataThumbail = dataThumbnailCoreData
+        print("Size nya berapa dataThumbnail di init data -> \(dataThumbail.count)")
         
-        
-        
-        dataThumbail.append(s1c1) //Append untuk ngesave data yang diinput ke array. (Masuk ke akhir queue array)
-        dataThumbail.append(s1c2)
-        dataThumbail.append(s1c3)
-        dataThumbail.append(s2c1)
-        dataThumbail.append(s2c2)
-        dataThumbail.append(s2c3)
-        dataThumbail.append(s3c1)
-        dataThumbail.append(s3c2)
-        dataThumbail.append(s3c3)
+//        dataThumbail.append(s1c1) //Append untuk ngesave data yang diinput ke array. (Masuk ke akhir queue array)
+//        dataThumbail.append(s1c2)
+//        dataThumbail.append(s1c3)
+//        dataThumbail.append(s2c1)
+//        dataThumbail.append(s2c2)
+//        dataThumbail.append(s2c3)
+//        dataThumbail.append(s3c1)
+//        dataThumbail.append(s3c2)
+//        dataThumbail.append(s3c3)
         
         
         dataThumbailFiltered = dataThumbail.filter

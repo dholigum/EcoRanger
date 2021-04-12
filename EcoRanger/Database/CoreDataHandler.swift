@@ -25,13 +25,14 @@ class CoreDataHandle {
         
         //Set Data
         newThumbnailData.setValue(dataThumbnail.id, forKey: ThumbnailFieldKey.ID)
-        newThumbnailData.setValue(dataThumbnail.chapter, forKey: "chapter")
-        newThumbnailData.setValue(dataThumbnail.gameIdentifier, forKey: "gameIdentifier")
-        newThumbnailData.setValue(dataThumbnail.gameStoryboard, forKey: "gameStoryboard")
-        newThumbnailData.setValue(dataThumbnail.isActive, forKey: "isActive")
-        newThumbnailData.setValue(dataThumbnail.story, forKey: "story")
-        newThumbnailData.setValue(dataThumbnail.tutorPath, forKey: "tutorPath")
-        newThumbnailData.setValue(dataThumbnail.videoPath, forKey: "videoPath")
+        newThumbnailData.setValue(dataThumbnail.chapter, forKey: ThumbnailFieldKey.CHAPTER)
+        newThumbnailData.setValue(dataThumbnail.gameIdentifier, forKey: ThumbnailFieldKey.GAMEIDENTIFIER)
+        newThumbnailData.setValue(dataThumbnail.gameStoryboard, forKey: ThumbnailFieldKey.GAMESTORYBOARD)
+        newThumbnailData.setValue(dataThumbnail.imgthumbnail, forKey: ThumbnailFieldKey.IMGTHUMBNAIL)
+        newThumbnailData.setValue(dataThumbnail.isActive, forKey: ThumbnailFieldKey.ISACTIVE)
+        newThumbnailData.setValue(dataThumbnail.story, forKey: ThumbnailFieldKey.STORY)
+        newThumbnailData.setValue(dataThumbnail.tutorPath, forKey: ThumbnailFieldKey.TUTORPATH)
+        newThumbnailData.setValue(dataThumbnail.videoPath, forKey: ThumbnailFieldKey.VIDEOPATH)
         
         do {
             try context.save()
@@ -47,7 +48,7 @@ class CoreDataHandle {
         var listThumbnail:[Thumbnail] = []
         
         //Open Request to Core Data
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ThumbnailTable")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: ThumbnailFieldKey.THUMBNAILTABLE)
         
         //Prevent Double data
         listThumbnail.removeAll()
@@ -60,14 +61,14 @@ class CoreDataHandle {
                 let chapter = i.value(forKey: ThumbnailFieldKey.CHAPTER) as! String
                 let gameIdentifier = i.value(forKey: ThumbnailFieldKey.GAMEIDENTIFIER) as! String
                 let gameStoryboard = i.value(forKey: ThumbnailFieldKey.GAMESTORYBOARD) as! String
-                let imgThumbnail = i.value(forKey: ThumbnailFieldKey.IMGTHUMBNAIL) as? String
+                let imgThumbnail = i.value(forKey: ThumbnailFieldKey.IMGTHUMBNAIL) as! String
                 let isActive = i.value(forKey: ThumbnailFieldKey.ISACTIVE) as! Bool
                 let story = i.value(forKey: ThumbnailFieldKey.STORY) as! String
                 let tutorPath = i.value(forKey: ThumbnailFieldKey.TUTORPATH) as! String
                 let videoPath = i.value(forKey: ThumbnailFieldKey.VIDEOPATH) as! String
                
                 
-                let thumbnail: Thumbnail = Thumbnail(id: id,chapter: chapter, story: story, imgthumbnail: imgThumbnail ?? "tb1", videoPath: videoPath, tutorPath: tutorPath, isActive: isActive, gameStoryboard: gameStoryboard, gameIdentifier: gameIdentifier)
+                let thumbnail: Thumbnail = Thumbnail(id: id,chapter: chapter, story: story, imgthumbnail: imgThumbnail, videoPath: videoPath, tutorPath: tutorPath, isActive: isActive, gameStoryboard: gameStoryboard, gameIdentifier: gameIdentifier)
                 
                 listThumbnail.append(thumbnail)
             }
