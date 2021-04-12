@@ -408,10 +408,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 }
 
 extension UIImageView {
-    func applyshadowWithCorner(containerView : UIView, cornerRadious : CGFloat){
+    func applyshadowWithCorner(containerView: UIView, cornerRadious: CGFloat, shadowOpacity: Float){
         containerView.clipsToBounds = false
         containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowOpacity = 0.8
+        containerView.layer.shadowOpacity = shadowOpacity
         containerView.layer.shadowOffset = CGSize.zero
         containerView.layer.shadowRadius = 5
         containerView.layer.cornerRadius = cornerRadious
