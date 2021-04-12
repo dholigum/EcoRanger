@@ -96,17 +96,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
       
         
         //Play BGM on Menu Load
-   //     MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
-        
-        
-//        do{
-//            MenuBGM = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "MainMenuBGM", ofType: ".mp3")!))
-//            MenuBGM.prepareToPlay()
-//            MenuBGM.play()
-//        }
-//        catch{
-//            print(error)
-//        }
+        MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
         
         //Prepare SFX on Button Press
 /*        do{

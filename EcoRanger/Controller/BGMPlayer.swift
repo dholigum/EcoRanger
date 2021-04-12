@@ -10,7 +10,9 @@ import AVFoundation
 class MusicPlayer{
     static let shared = MusicPlayer()
     var audioPlayer: AVAudioPlayer?
+    var BGMAllowStatus = true
     func startBackgroundMusic(bgmFIleName: String) {
+        if (BGMAllowStatus) {
             if let bundle = Bundle.main.path(forResource: bgmFIleName, ofType: "mp3") {
                 let backgroundMusic = NSURL(fileURLWithPath: bundle)
                 do {
@@ -22,6 +24,7 @@ class MusicPlayer{
                 } catch  {
                     print(error)
                 }
+            }
         }
     }
 
