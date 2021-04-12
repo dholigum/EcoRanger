@@ -103,7 +103,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
       
         
         //Play BGM on Menu Load
-   //     MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
+   MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
         
         
 //        do{
