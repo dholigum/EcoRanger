@@ -31,3 +31,30 @@ class MusicPlayer{
     }
 
 }
+
+class SFXPlayer{
+    static let shared = SFXPlayer()
+    var audioPlayer: AVAudioPlayer?
+    var SFXAllowStatus = true
+    func PlaySFX(SFXFileName: String) {
+        if SFXAllowStatus {
+            if let bundle = Bundle.main.path(forResource: SFXFileName, ofType: "wav") {
+                let SFXSound = NSURL(fileURLWithPath: bundle)
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: SFXSound as URL)
+                    guard let audioPlayer = audioPlayer else {return}
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
+                } catch  {
+                    print(error)
+                }
+            }
+        }
+    }
+
+    func StopSFX() {
+        guard let audioPlayer = audioPlayer else { return }
+        audioPlayer.stop()
+    }
+
+}

@@ -17,14 +17,17 @@ class PausePopUpController: UIView {
     @IBOutlet var settingBtn:UIView!
 
     @IBAction func resumeButton(_ sender: Any) {
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         print("resume button")
         parentView.removeFromSuperview()
     }
     @IBAction func homeButton(_ sender: Any) {
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         print("home button")
         
     }
     @IBAction func settingButton(_ sender: Any) {
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         print("setting button")
         SettingPopUpController.instance.showAlert()
         parentView.removeFromSuperview()

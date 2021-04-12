@@ -31,14 +31,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func backButton(_ sender: UIButton) {
         popUpTransitionOut(desiredView: settingView)
         popUpTransitionOut(desiredView: blurView)
-        if SFXAllowStatus
-        {
-            if ButtonPressSFX.isPlaying
-            {
-                ButtonPressSFX.stop()
-            }
-            ButtonPressSFX.play()
-        }
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
     @IBOutlet weak var SFXSwitch: UISwitch!
     @IBOutlet weak var BGMSwitch: UISwitch!
@@ -116,13 +109,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //        }
         
         //Prepare SFX on Button Press
-        do{
+/*        do{
             ButtonPressSFX = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "ButtonPress", ofType: ".wav")!))
             ButtonPressSFX.prepareToPlay()
         }
         catch{
             print(error)
-        }
+        }*/
     }
     
     func setUpUISegmented() {
@@ -144,42 +137,21 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             StorySelected = "Cerita 1"
             storyBgImage.image = #imageLiteral(resourceName: "homescreenbg")
             collectionView.reloadData()
-            if SFXAllowStatus
-            {
-                if ButtonPressSFX.isPlaying
-                {
-                    ButtonPressSFX.stop()
-                }
-                ButtonPressSFX.play()
-            }
+            SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         }
         else if sender.selectedSegmentIndex == 1
         {
             StorySelected = "Cerita 2"
             storyBgImage.image = #imageLiteral(resourceName: "parkbg")
             collectionView.reloadData()
-            if SFXAllowStatus
-            {
-                if ButtonPressSFX.isPlaying
-                {
-                    ButtonPressSFX.stop()
-                }
-                ButtonPressSFX.play()
-            }
+            SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         }
         else if sender.selectedSegmentIndex == 2
         {
             StorySelected = "Cerita 3"
             storyBgImage.image = #imageLiteral(resourceName: "beachbg")
             collectionView.reloadData()
-            if SFXAllowStatus
-            {
-                if ButtonPressSFX.isPlaying
-                {
-                    ButtonPressSFX.stop()
-                }
-                ButtonPressSFX.play()
-            }
+            SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         }
         
         //Get all Data Core Data
@@ -300,14 +272,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         if (dataThumbailFiltered[indexSelected].isActive == true) {
             self.performSegue(withIdentifier: "prologIdentifier", sender: self)
-            if SFXAllowStatus
-            {
-                if ButtonPressSFX.isPlaying
-                {
-                    ButtonPressSFX.stop()
-                }
-                ButtonPressSFX.play()
-            }
+            SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         } else {
             print("Belom kelar oy")
         }
@@ -330,14 +295,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //popUpTransitionIn(desiredView: settingView)
         //menggunakan view xib
         SettingPopUpController.instance.showAlert()
-        if SFXAllowStatus
-        {
-            if ButtonPressSFX.isPlaying
-            {
-                ButtonPressSFX.stop()
-            }
-            ButtonPressSFX.play()
-        }
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
     
     //badges
@@ -350,14 +308,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         GameResultPopUpController.instance.showResultView(alertType: .success)
         
         PausePopUpController.instance.showPausePopUp()
-        if SFXAllowStatus
-        {
-            if ButtonPressSFX.isPlaying
-            {
-                ButtonPressSFX.stop()
-            }
-            ButtonPressSFX.play()
-        }
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
     
     //avatar
@@ -366,14 +317,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //testing game failure popup
         GameResultPopUpController.instance.showResultView(alertType: .failure)
         //testing
-        if SFXAllowStatus
-        {
-            if ButtonPressSFX.isPlaying
-            {
-                ButtonPressSFX.stop()
-            }
-            ButtonPressSFX.play()
-        }
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
     
     //popUp transition

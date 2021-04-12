@@ -13,6 +13,7 @@ class SlapMosquitoGameViewController: UIViewController {
 //    var time = 20
     @IBOutlet weak var skview: SKView!
     @IBAction func pauseButton(_ sender: UIButton) {
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
         PausePopUpController.instance.showPausePopUp()
         scene.view?.isPaused = true

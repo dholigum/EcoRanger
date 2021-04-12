@@ -20,15 +20,18 @@ class GameResultPopUpController: UIView {
     @IBOutlet var failureLbl:UILabel!
     
     @IBAction func trueButton(_ sender: Any){
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         print("resume button")
     }
     @IBAction func falseButton(_ sender: Any) {
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         print("home button")
         parentView.removeFromSuperview()
         //tempat kosong
         
     }
     @IBAction func nextButton(_ sender: Any) {
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         print("setting button")
         parentView.removeFromSuperview()
     }
