@@ -342,12 +342,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 }
 
 extension UIImageView {
-    func applyBlurEffect() {
-        let blurEffect = UIBlurEffect(style: .regular)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(blurEffectView)
+    func applyshadowWithCorner(containerView: UIView, cornerRadious: CGFloat, shadowOpacity: Float){
+        containerView.clipsToBounds = false
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = shadowOpacity
+        containerView.layer.shadowOffset = CGSize.zero
+        containerView.layer.shadowRadius = 5
+        containerView.layer.cornerRadius = cornerRadious
+        containerView.layer.shadowPath = UIBezierPath(roundedRect: containerView.bounds, cornerRadius: cornerRadious).cgPath
+        self.clipsToBounds = true
+        self.layer.cornerRadius = cornerRadious
     }
 }
 
