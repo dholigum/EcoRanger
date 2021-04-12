@@ -19,13 +19,13 @@ class PrologViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //Prepare SFX on Button Press
-        do{
+/*        do{
             ButtonPressSFX = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "ButtonPress", ofType: ".wav")!))
             ButtonPressSFX.prepareToPlay()
         }
         catch{
             print(error)
-        }
+        }*/
     }
     
     
@@ -38,26 +38,12 @@ class PrologViewController: UIViewController {
     
     @IBAction func prevButtonPressed(_ sender: UIButton) {
         print("Prolog Prev Button Pressed!")
-        if SFXAllowStatus
-        {
-            if ButtonPressSFX.isPlaying
-            {
-                ButtonPressSFX.stop()
-            }
-            ButtonPressSFX.play()
-        }
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "tutorialIdentiier", sender: self)
         print("Prolog Next Button Pressed!")
-        if SFXAllowStatus
-        {
-            if ButtonPressSFX.isPlaying
-            {
-                ButtonPressSFX.stop()
-            }
-            ButtonPressSFX.play()
-        }
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,14 +56,7 @@ class PrologViewController: UIViewController {
     
     
     @IBAction func btnPlay(_ sender: UIButton) {
-        if SFXAllowStatus
-        {
-            if ButtonPressSFX.isPlaying
-            {
-                ButtonPressSFX.stop()
-            }
-            ButtonPressSFX.play()
-        }
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         guard let dataModel = chapterModel else { return }
         if let path =  Bundle.main.path(forResource: "\(dataModel.videoPath)", ofType: "mp4"){
             let video =  AVPlayer(url: URL(fileURLWithPath: path))

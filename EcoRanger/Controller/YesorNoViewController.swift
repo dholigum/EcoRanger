@@ -44,10 +44,12 @@ class YesorNoViewController: UIViewController {
     
     
     @IBAction func btnPause(_ sender: UIButton) {
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         PausePopUpController.instance.showPausePopUp()
     }
     @IBOutlet weak var objectView: UIImageView!
     @IBAction func btnYes(_ sender: UIButton) {
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         if life >= 1 {
             if objFlags<10 {
                 selectedObj = objectGames[objFlags]
@@ -77,6 +79,7 @@ class YesorNoViewController: UIViewController {
 
     }
     @IBAction func btnNo(_ sender: UIButton) {
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         if life >= 1 {
             if objFlags<10 {
                 selectedObj = objectGames[objFlags]
