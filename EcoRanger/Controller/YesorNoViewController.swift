@@ -16,6 +16,8 @@ class YesorNoViewController: UIViewController {
     var objFlags = 0
     var life = 3
     
+    @IBOutlet weak var isthistrashContainer: UIView!
+    @IBOutlet weak var isthistrashImgView: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var objectView: UIImageView!
     @IBOutlet weak var bgGame: UIImageView!
@@ -24,6 +26,9 @@ class YesorNoViewController: UIViewController {
     @IBOutlet weak var noButtonContainer: UIView!
     @IBOutlet weak var noImgView: UIImageView!
     
+    @IBOutlet weak var lifeFullThree: UIImageView!
+    @IBOutlet weak var lifeFullTwo: UIImageView!
+    @IBOutlet weak var lifeFullOne: UIImageView!
     
     @IBAction func btnPause(_ sender: UIButton) {
         PausePopUpController.instance.showPausePopUp()
@@ -31,11 +36,12 @@ class YesorNoViewController: UIViewController {
     
     @IBAction func btnYes(_ sender: UIButton) {
         if life >= 1 {
-            if objFlags<10 {
+            if objFlags < 10 {
                 selectedObj = objectGames[objFlags]
                 //var randomInt = Int.random(in: 0...14)
                 if selectedObj.imgId == "toys" {
                     life -= 1
+                    lifeWatcher(life: life)
                     //                    objFlags += 1
                     if life == 0 {
                         GameResultPopUpController.instance.showResultView(alertType: .failure)
@@ -45,7 +51,7 @@ class YesorNoViewController: UIViewController {
                 selectedObj = objectGames[objFlags]
                 objectView.image = UIImage(named: selectedObj.imgSource)
             }
-            else{
+            else {
                 GameResultPopUpController.instance.showResultView(alertType: .success)
             }
         }
@@ -53,11 +59,12 @@ class YesorNoViewController: UIViewController {
     
     @IBAction func btnNo(_ sender: UIButton) {
         if life >= 1 {
-            if objFlags<10 {
+            if objFlags < 10 {
                 selectedObj = objectGames[objFlags]
                 if selectedObj.imgId == "trash" {
                     life -= 1
-                    if life==0 {
+                    lifeWatcher(life: life)
+                    if life == 0 {
                         GameResultPopUpController.instance.showResultView(alertType: .failure)
                     }
                 }
@@ -79,11 +86,31 @@ class YesorNoViewController: UIViewController {
         objectView.applyshadowWithCorner(containerView: containerView, cornerRadious: 10.0, shadowOpacity: 0.8)
         yesImgView.applyshadowWithCorner(containerView: yesButtonContainer, cornerRadious: 10.0, shadowOpacity: 0.4)
         noImgView.applyshadowWithCorner(containerView: noButtonContainer, cornerRadious: 10.0, shadowOpacity: 0.4)
+        isthistrashImgView.applyshadowWithCorner(containerView: isthistrashContainer, cornerRadious: 8.0, shadowOpacity: 0.4)
         
         if objFlags==10{
             GameResultPopUpController.instance.showResultView(alertType: .success)
         }
         
+    }
+    
+    func lifeWatcher(life: Int) {
+        switch life {
+        case 2:
+            lifeFullThree.isHidden = true
+        case 1:
+            lifeFullThree.isHidden = true
+            lifeFullTwo.isHidden = true
+        case 0:
+            lifeFullThree.isHidden = true
+            lifeFullTwo.isHidden = true
+            lifeFullOne.isHidden = true
+        default:
+            lifeFullThree.isHidden = false
+            lifeFullTwo.isHidden = false
+            lifeFullOne.isHidden = false
+
+        }
     }
     
     func initDataImage() {
