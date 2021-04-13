@@ -80,7 +80,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZI-cy-JMq">
-                                <rect key="frame" x="384.33333333333331" y="24" width="75.333333333333314" height="28"/>
+                                <rect key="frame" x="392.33333333333331" y="23.999999999999996" width="59.333333333333314" height="32.666666666666657"/>
                                 <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,8 +89,8 @@
                                 <rect key="frame" x="126" y="74" width="592" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbnailvideo" translatesAutoresizingMaskIntoConstraints="NO" id="2FS-7o-Jo4">
-                                        <rect key="frame" x="0.0" y="0.0" width="592" height="242"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbnailvideo" translatesAutoresizingMaskIntoConstraints="NO" id="2FS-7o-Jo4">
+                                        <rect key="frame" x="-6" y="0.0" width="606" height="248"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jca-CR-YDD">
@@ -120,6 +120,8 @@
                     </view>
                     <connections>
                         <outlet property="labelChapter" destination="LZI-cy-JMq" id="zf3-Na-rnk"/>
+                        <outlet property="thmbImage" destination="2FS-7o-Jo4" id="pkO-iz-Xpb"/>
+                        <outlet property="thumbnailImage" destination="2FS-7o-Jo4" id="3wQ-Yq-N6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSO-h5-c9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
