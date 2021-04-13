@@ -82,34 +82,21 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if ( dataThumbnailCoreData.count == 0) {
             initDataThumbnail()
         } else {
-            dataThumbailFiltered = dataThumbnailCoreData
             dataThumbail = dataThumbnailCoreData
             dataThumbailFiltered = dataThumbail.filter({ (Thumbnail) -> Bool in
                 return Thumbnail.story == "Cerita 1"
             })
-//            dataThumbailFiltered = dataThumbail
+            //            dataThumbailFiltered = dataThumbail
         }
         
         //popUp setting button
         setUpPopUpSettingView()
         setUpCreaditPopUp()
-        initDataThumbnail()
-        
         setUpUISegmented()
-        
-      
         
         //Play BGM on Menu Load
         MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
-        
-        //Prepare SFX on Button Press
-/*        do{
-            ButtonPressSFX = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "ButtonPress", ofType: ".wav")!))
-            ButtonPressSFX.prepareToPlay()
-        }
-        catch{
-            print(error)
-        }*/
+    
     }
     
     func setUpUISegmented() {
@@ -155,11 +142,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return thumbnail.story == StorySelected
         }
         
-        //Change to dataThumbnailCoreData
-//        dataThumbailFiltered = dataThumbail.filter
-//        {   (thumbnail) in
-//            return thumbnail.story == StorySelected
-//        }
         collectionView.reloadData()
         collectionView.reloadItems(at: collectionView.indexPathsForVisibleItems)
     }
@@ -189,7 +171,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let s3c2 = Thumbnail(id: 8,chapter: "Bagian 2", story: "Cerita 3", imgthumbnail: "tb2", videoPath:"s3c2", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         let s3c3 = Thumbnail(id: 9,chapter: "Bagian 3", story: "Cerita 3", imgthumbnail: "tb3", videoPath:"s3c3", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
-        
         //Save to CoreData
         CoreDataHandle.addDataThumbnail(s1c1)
         CoreDataHandle.addDataThumbnail(s1c2)
@@ -205,17 +186,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         dataThumbail = dataThumbnailCoreData
         print("Size nya berapa dataThumbnail di init data -> \(dataThumbail.count)")
         
-//        dataThumbail.append(s1c1) //Append untuk ngesave data yang diinput ke array. (Masuk ke akhir queue array)
-//        dataThumbail.append(s1c2)
-//        dataThumbail.append(s1c3)
-//        dataThumbail.append(s2c1)
-//        dataThumbail.append(s2c2)
-//        dataThumbail.append(s2c3)
-//        dataThumbail.append(s3c1)
-//        dataThumbail.append(s3c2)
-//        dataThumbail.append(s3c3)
-        
-        
         dataThumbailFiltered = dataThumbail.filter
         {   (thumbnail) in
             return thumbnail.story == StorySelected
@@ -223,9 +193,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         collectionView.reloadData()
     }
-    
-    
-    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -283,22 +250,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     //settingButtonPressed
     @IBAction func settingButtonPressed(_ sender: UIButton) {
-        //print("Setting Button Pressed")
-        //action
-        //popUpTransitionIn(desiredView: blurView)
-        //popUpTransitionIn(desiredView: settingView)
-        //menggunakan view xib
         SettingPopUpController.instance.showAlert()
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
     
     //badges
     @IBAction func badgesButtonPressed(_ sender: UIButton) {
-        print("Badges Button Pressed")
-        //testing pause pop up
-        //testing pause pop up
-        //PausePopUpController.instance.showPausePopUp()
-        //testing game success popup
         GameResultPopUpController.instance.showResultView(alertType: .success)
         
         PausePopUpController.instance.showPausePopUp()
