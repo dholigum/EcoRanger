@@ -27,22 +27,7 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
         ispausedon = false
         //skview.isPaused = ispausedon
     }
-    
-    func backToHome() {
-        let storyboard = UIStoryboard(name: "Main" ?? "nil", bundle: nil)
-        let navigation = storyboard.instantiateViewController(identifier: "mainView" ?? "nil")
-        self.present(navigation, animated: true, completion: nil)
-    }
 
-    //SwitcherMusic
-//    @IBOutlet var switcher: UISwitch!
-//    @IBAction func bgmSwitcher(_ sender: UISwitch) {
-//        if sender.isOn{
-//            MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "homemusic")
-//        }else{
-//            MusicPlayer.shared.stopBackgroundMusic()
-//        }
-//    }
     @IBOutlet weak var bgGame: UIImageView!
     @IBOutlet weak var yesButtonContainer: UIView!
     @IBOutlet weak var yesImgView: UIImageView!
@@ -119,6 +104,7 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
         }
         
         GameResultPopUpController.instance.delegate = self
+        PausePopUpController.instance.delegate = self
         
     }
     
@@ -129,8 +115,20 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
         
         CoreDataHandle.updateIsActiveStatus(id: 2, isActive: true)
         
-        let storyboard = UIStoryboard(name: "Main" ?? "", bundle: nil)
-        let navigation = storyboard.instantiateViewController(identifier: "mainView" ?? "")
+        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" )
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
+    func backToHome() {
+        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" )
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
+    func backToGame() {
+        let storyboard = UIStoryboard(name: "YesOrNoStoryboard" , bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "YesOrNo" )
         self.present(navigation, animated: true, completion: nil)
     }
     
@@ -149,12 +147,7 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
             lifeFullThree.isHidden = false
             lifeFullTwo.isHidden = false
             lifeFullOne.isHidden = false
-
         }
-        PausePopUpController.instance.delegate = self
-//        for objectGame in objectGames {
-//            print(objectGame.imgSource)
-//        }
     }
     
     func initDataImage() {

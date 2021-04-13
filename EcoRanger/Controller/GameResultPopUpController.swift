@@ -9,11 +9,14 @@ import UIKit
 
 protocol CustomViewDelegate: class {
     func goToNextScene()
+    func backToHome()
+    func backToGame()
 }
 
 class GameResultPopUpController: UIView {
 
     static let instance = GameResultPopUpController()
+    
     @IBOutlet var parentView:UIView!
     @IBOutlet var childView:UIView!
     @IBOutlet var starView:UIImageView!
@@ -27,13 +30,12 @@ class GameResultPopUpController: UIView {
     
     @IBAction func trueButton(_ sender: Any){
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
-        print("resume button")
+        delegate?.backToGame()
     }
     @IBAction func falseButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
-        print("home button")
+        delegate?.backToHome()
         parentView.removeFromSuperview()
-        //tempat kosong
         
     }
     @IBAction func nextButton(_ sender: Any) {

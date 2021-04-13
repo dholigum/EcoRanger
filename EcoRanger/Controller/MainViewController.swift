@@ -160,7 +160,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //Add Id and Change isActive true only in S1C1
         
         let s1c1 = Thumbnail(id: 1,chapter: "Bagian 1", story: "Cerita 1", imgthumbnail: "tb1", videoPath:"s1c1", tutorPath:"s1c1", isActive: true, gameStoryboard: "YesOrNoStoryboard", gameIdentifier: "YesOrNo")
-        let s1c2 = Thumbnail(id: 2, chapter: "Bagian 2", story: "Cerita 1", imgthumbnail: "tb2", videoPath:"s1c2", tutorPath:"s1c2", isActive: true, gameStoryboard: "SlapMosquitoGame", gameIdentifier: "slapMosquitoGame")
+        let s1c2 = Thumbnail(id: 2, chapter: "Bagian 2", story: "Cerita 1", imgthumbnail: "tb2", videoPath:"s1c2", tutorPath:"s1c2", isActive: false, gameStoryboard: "SlapMosquitoGame", gameIdentifier: "slapMosquitoGame")
         let s1c3 = Thumbnail(id: 3,chapter: "Bagian 3", story: "Cerita 1", imgthumbnail: "tb3", videoPath:"s1c3", tutorPath:"s1c3", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
         let s2c1 = Thumbnail(id: 4,chapter: "Bagian 1", story: "Cerita 2", imgthumbnail: "tb1", videoPath:"s2c1", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
