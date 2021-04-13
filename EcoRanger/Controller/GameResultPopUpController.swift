@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol CustomViewDelegate: class {
+    func goToNextScene()
+    func backToHome()
+    func backToGame()
+}
+
 class GameResultPopUpController: UIView {
 
     static let instance = GameResultPopUpController()
+    
     @IBOutlet var parentView:UIView!
     @IBOutlet var childView:UIView!
     @IBOutlet var starView:UIImageView!
@@ -19,20 +26,22 @@ class GameResultPopUpController: UIView {
     @IBOutlet var succesLbl:UILabel!
     @IBOutlet var failureLbl:UILabel!
     
+    weak var delegate: CustomViewDelegate?
+    
     @IBAction func trueButton(_ sender: Any){
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
-        print("resume button")
+        delegate?.backToGame()
+       
     }
     @IBAction func falseButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
-        print("home button")
+        delegate?.backToHome()
         parentView.removeFromSuperview()
-        //tempat kosong
         
     }
     @IBAction func nextButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
-        print("setting button")
+        delegate?.goToNextScene()
         parentView.removeFromSuperview()
     }
     
@@ -90,8 +99,6 @@ class GameResultPopUpController: UIView {
         }
         UIApplication.shared.keyWindow?.addSubview(parentView)
     }
-//    func returnToHome{
-//        //direct ke home
-//    }
+
 
 }

@@ -15,6 +15,7 @@ struct Thumbnail {
     var chapter: String
     var story: String
     var imgthumbnail: String
+    var imgtutorthumbnail: String
     var videoPath: String
     var tutorPath: String
     var isActive: Bool

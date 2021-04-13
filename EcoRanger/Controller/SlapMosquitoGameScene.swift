@@ -20,47 +20,36 @@ class SlapMosquitoGameScene: SKScene, SKPhysicsContactDelegate {
     let label = SKLabelNode(fontNamed: "LuckiestGuy-Regular")
     var time = 20
     var iswin = false
-    //ar timerGame = Timer()
+    var gameIsPaused: Bool = false
+    var mosquitoLayer: SKSpriteNode!
     
-//    var timerGame = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Action), userInfo: nil, repeats: true)
-//    @objc func Action(){
-//        time -= 1
-//        
-//    }
-//    var labeltimer: SKLabelNode!
-    
-//    var labeltimer = SKLabelNode(fontNamed: "Chalkduster")
-//    func addTimer(waktu: Int){
-//        labeltimer.text = "\(time)"
-//        labeltimer.horizontalAlignmentMode = .right
-//        labeltimer.position = CGPoint(x: 980, y: 700)
-//        addChild(labeltimer)
-//    }
-    
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self.view)
-        let tapEffect: SKSpriteNode = SKSpriteNode(imageNamed: "tapeffect")
+            if let touch = touches.first{
+                let location = touch.location(in: self.view)
+                let tapEffect: SKSpriteNode = SKSpriteNode(imageNamed: "tapeffect")
+                
+                tapEffect.position = CGPoint(x: location.x, y: size.height - location.y)
+                tapEffect.size = CGSize(width: 80, height: 80)
+                addChild(tapEffect)
+                
+                tapEffect.run(
+                    SKAction.sequence([
+                        SKAction.playSoundFileNamed("button-3.wav", waitForCompletion: false),
+                        SKAction.wait(forDuration: 0.15),
+                        SKAction.removeFromParent()
+                    ])
+                )
+                
+                tapEffect.physicsBody = SKPhysicsBody(circleOfRadius: tapEffect.size.width/4)
+                tapEffect.physicsBody?.isDynamic = true
+                tapEffect.physicsBody?.categoryBitMask = PhysicsCategory.tapEffect
+                tapEffect.physicsBody?.contactTestBitMask = PhysicsCategory.mosquito
+                tapEffect.physicsBody?.collisionBitMask = PhysicsCategory.none
+                tapEffect.physicsBody?.usesPreciseCollisionDetection = true
+                
+               //pauseGame()
+            }
         
-        tapEffect.position = CGPoint(x: location.x, y: size.height - location.y)
-        tapEffect.size = CGSize(width: 80, height: 80)
-        addChild(tapEffect)
-        
-        tapEffect.run(
-            SKAction.sequence([
-                SKAction.playSoundFileNamed("button-3.wav", waitForCompletion: false),
-                SKAction.wait(forDuration: 0.15),
-                SKAction.removeFromParent()
-            ])
-        )
-        
-        tapEffect.physicsBody = SKPhysicsBody(circleOfRadius: tapEffect.size.width/4)
-        tapEffect.physicsBody?.isDynamic = true
-        tapEffect.physicsBody?.categoryBitMask = PhysicsCategory.tapEffect
-        tapEffect.physicsBody?.contactTestBitMask = PhysicsCategory.mosquito
-        tapEffect.physicsBody?.collisionBitMask = PhysicsCategory.none
-        tapEffect.physicsBody?.usesPreciseCollisionDetection = true
     }
     
     override func didMove(to view: SKView) {
@@ -106,21 +95,33 @@ class SlapMosquitoGameScene: SKScene, SKPhysicsContactDelegate {
         
         for _ in 1...10 {
             
-            let mosquitoSprite = mosquito.copy() as! SKSpriteNode
-            
+            //let mosquitoSprite = mosquito.copy() as! SKSpriteNode
+            mosquitoLayer = mosquito.copy() as! SKSpriteNode
             let x = CGFloat(0 - CGFloat(Double.random(in: 50...250)))
             let y = CGFloat(arc4random()).truncatingRemainder(dividingBy: frame.size.height)
             
-            mosquitoSprite.position = CGPoint(x: x, y: y)
-            mosquitoSprite.size = CGSize(width: 80, height: 80)
-            
-            addChild(mosquitoSprite)
-            
-            mosquitoSprite.physicsBody = SKPhysicsBody(circleOfRadius: 30) // 1
-            mosquitoSprite.physicsBody?.isDynamic = true // 2
-            mosquitoSprite.physicsBody?.categoryBitMask = PhysicsCategory.mosquito // 3
-            mosquitoSprite.physicsBody?.contactTestBitMask = PhysicsCategory.tapEffect // 4
-            mosquitoSprite.physicsBody?.collisionBitMask = PhysicsCategory.mosquito // 5
+            mosquitoLayer.position = CGPoint(x: x, y: y)
+            mosquitoLayer.size = CGSize(width: 80, height: 80)
+
+            addChild(mosquitoLayer)
+
+            mosquitoLayer.physicsBody = SKPhysicsBody(circleOfRadius: 30) // 1
+            mosquitoLayer.physicsBody?.isDynamic = true // 2
+            mosquitoLayer.physicsBody?.categoryBitMask = PhysicsCategory.mosquito // 3
+            mosquitoLayer.physicsBody?.contactTestBitMask = PhysicsCategory.tapEffect // 4
+            mosquitoLayer.physicsBody?.collisionBitMask = PhysicsCategory.mosquito // 5
+//
+            // cara lama
+//            mosquitoSprite.position = CGPoint(x: x, y: y)
+//            mosquitoSprite.size = CGSize(width: 80, height: 80)
+//
+//            addChild(mosquitoSprite)
+//
+//            mosquitoSprite.physicsBody = SKPhysicsBody(circleOfRadius: 30) // 1
+//            mosquitoSprite.physicsBody?.isDynamic = true // 2
+//            mosquitoSprite.physicsBody?.categoryBitMask = PhysicsCategory.mosquito // 3
+//            mosquitoSprite.physicsBody?.contactTestBitMask = PhysicsCategory.tapEffect // 4
+//            mosquitoSprite.physicsBody?.collisionBitMask = PhysicsCategory.mosquito // 5
             
             var actions:[SKAction] = []
 
@@ -133,15 +134,25 @@ class SlapMosquitoGameScene: SKScene, SKPhysicsContactDelegate {
                 let velocity = Double.random(in: 1.0...1.5)
                 let move = SKAction.move(to:destination, duration: velocity)
                 actions.append(move)
+                
+                if gameIsPaused{
+                    gameIsPaused =  true
+                    physicsWorld.speed = 0
+                } else{
+                    gameIsPaused =  false
+                    physicsWorld.speed = 1
+                }
             }
 
             let lastDestination = CGPoint(x: frame.size.width + CGFloat.random(in: 20...50), y: CGFloat.random(in: 0...frame.size.height))
             let lastMove = SKAction.move(to:lastDestination, duration: 1.0)
             actions.append(lastMove)
             
-            mosquitoSprite.run(SKAction.sequence(actions))
+            mosquitoLayer.run(SKAction.sequence(actions))
+           
+            
         }
-      
+        //mosquito.isPaused = true
     }
     
     func getRandomPoint(withinRect rect:CGRect)->CGPoint{
@@ -191,4 +202,7 @@ class SlapMosquitoGameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    
 }
+    
+

@@ -13,21 +13,15 @@ class PrologViewController: UIViewController {
     var ButtonPressSFX = AVAudioPlayer()
     var SFXAllowStatus = true
     
+    @IBOutlet weak var thmbImage: UIView!
+    @IBOutlet weak var thumbnailImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         labelChapter.text = chapterModel?.chapter
-        // Do any additional setup after loading the view.
+        thumbnailImage.image = UIImage(named: chapterModel!.imgthumbnail)
+        thumbnailImage.applyshadowWithCorner(containerView: thmbImage, cornerRadious: 10.0, shadowOpacity: 0.4)
         
-        //Prepare SFX on Button Press
-/*        do{
-            ButtonPressSFX = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "ButtonPress", ofType: ".wav")!))
-            ButtonPressSFX.prepareToPlay()
-        }
-        catch{
-            print(error)
-        }*/
     }
-    
     
     
     @IBOutlet weak var labelChapter: UILabel!
@@ -68,11 +62,6 @@ class PrologViewController: UIViewController {
             })
         }
     }
-//    
-//    private func setupView() {
-//        guard let dataModel = chapterModel else { return }
-//        print(dataModel.chapter)
-//    }
     
     
     

@@ -89,12 +89,12 @@
                                 <rect key="frame" x="126" y="74" width="592" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbnailvideo" translatesAutoresizingMaskIntoConstraints="NO" id="2FS-7o-Jo4">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbnailvideo" translatesAutoresizingMaskIntoConstraints="NO" id="2FS-7o-Jo4">
                                         <rect key="frame" x="0.0" y="0.0" width="592" height="242"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jca-CR-YDD">
-                                        <rect key="frame" x="8" y="0.0" width="584" height="242"/>
+                                        <rect key="frame" x="-6" y="0.0" width="606" height="248"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="btnPlay:" destination="Qaa-uB-y6t" eventType="touchUpInside" id="Ne4-ad-J4s"/>
@@ -120,6 +120,8 @@
                     </view>
                     <connections>
                         <outlet property="labelChapter" destination="LZI-cy-JMq" id="zf3-Na-rnk"/>
+                        <outlet property="thmbImage" destination="5lV-r0-kma" id="Y9K-6N-86G"/>
+                        <outlet property="thumbnailImage" destination="2FS-7o-Jo4" id="gSy-WQ-0kK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSO-h5-c9c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

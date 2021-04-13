@@ -9,17 +9,24 @@ import UIKit
 import SpriteKit
 import AVFoundation
 
-class YesorNoViewController: UIViewController {
+class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpControllerDelegate {
     
     var objectGames =  [DataImage]()
     var selectedObj = DataImage()
     var objFlags = 0
     var life = 3
-    
+    var flagGame = 1
     @IBOutlet weak var isthistrashContainer: UIView!
     @IBOutlet weak var isthistrashImgView: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var objectView: UIImageView!
+    
+    var ispausedon = true
+    
+    func resumeGame() {
+        ispausedon = false
+    }
+
     @IBOutlet weak var bgGame: UIImageView!
     @IBOutlet weak var yesButtonContainer: UIView!
     @IBOutlet weak var yesImgView: UIImageView!
@@ -40,11 +47,10 @@ class YesorNoViewController: UIViewController {
         if life >= 1 {
             if objFlags < 10 {
                 selectedObj = objectGames[objFlags]
-                //var randomInt = Int.random(in: 0...14)
+          
                 if selectedObj.imgId == "toys" {
                     life -= 1
                     lifeWatcher(life: life)
-                    //                    objFlags += 1
                     if life == 0 {
                         GameResultPopUpController.instance.showResultView(alertType: .failure)
                     }
@@ -95,6 +101,39 @@ class YesorNoViewController: UIViewController {
             GameResultPopUpController.instance.showResultView(alertType: .success)
         }
         
+        GameResultPopUpController.instance.delegate = self
+        PausePopUpController.instance.delegate = self
+        
+    }
+    
+    func goToNextScene() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        CoreDataHandle.initCoreData(appDelegate)
+        
+        CoreDataHandle.updateIsActiveStatus(id: 2, isActive: true)
+        
+        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" )
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
+    func backToHome() {
+        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" )
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
+    func backToGame() {
+        if flagGame == 1 {
+            let storyboard = UIStoryboard(name: "YesOrNoStoryboard" , bundle: nil)
+            let navigation = storyboard.instantiateViewController(identifier: "YesOrNo" )
+            self.present(navigation, animated: true, completion: nil)
+        } else{
+            let storyboard = UIStoryboard(name: "SlapMosquitoGame" , bundle: nil)
+            let navigation = storyboard.instantiateViewController(identifier: "slapMosquitoGame" )
+            self.present(navigation, animated: true, completion: nil)
+        }
     }
     
     func lifeWatcher(life: Int) {
@@ -112,7 +151,6 @@ class YesorNoViewController: UIViewController {
             lifeFullThree.isHidden = false
             lifeFullTwo.isHidden = false
             lifeFullOne.isHidden = false
-
         }
     }
     

@@ -34,11 +34,6 @@ class SettingPopUpController: UIView {
     }
     @IBAction func bgmSwitch(_ sender: Any) {
         print("ini switch BMG")
-        /*if BGMSwitch.isOn{
-                    MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
-                }else{
-                    MusicPlayer.shared.stopBackgroundMusic()
-                }*/
         if switcher.isOn
         {
             MusicPlayer.shared.BGMAllowStatus = true
@@ -72,7 +67,6 @@ class SettingPopUpController: UIView {
         print("halaman alert")
         alertView.layer.cornerRadius = 10
         backBtn.layer.cornerRadius = 10
-        //parentViewContoller.center = center.center
         UIApplication.shared.keyWindow?.addSubview(parentViewContoller)
     }
     

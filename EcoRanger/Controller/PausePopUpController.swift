@@ -7,30 +7,38 @@
 
 import UIKit
 import SpriteKit
+
+
+protocol PausePopUpControllerDelegate: class {
+    func backToHome()
+    func resumeGame()
+}
+
 class PausePopUpController: UIView {
 
     static let instance = PausePopUpController()
+    //let gameMosquito = SlapMosquitoGameScene()
     @IBOutlet var parentView:UIView!
     @IBOutlet var childView:UIView!
     @IBOutlet var resumeBtn:UIButton!
     @IBOutlet var homeBtn:UIButton!
     @IBOutlet var settingBtn:UIView!
-
+    weak var delegate:PausePopUpControllerDelegate?
     @IBAction func resumeButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         print("resume button")
+        self.delegate?.resumeGame()
         parentView.removeFromSuperview()
     }
+    
     @IBAction func homeButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
-        print("home button")
-        
+        delegate?.backToHome()
     }
     @IBAction func settingButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
-        print("setting button")
         SettingPopUpController.instance.showAlert()
-        parentView.removeFromSuperview()
+        //parentView.removeFromSuperview()
     }
     
     override init(frame: CGRect) {
@@ -57,7 +65,5 @@ class PausePopUpController: UIView {
         print("pause pop up")
         UIApplication.shared.keyWindow?.addSubview(parentView)
     }
-    
-    
 
 }

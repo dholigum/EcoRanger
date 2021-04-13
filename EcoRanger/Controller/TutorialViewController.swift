@@ -8,20 +8,22 @@
 import UIKit
 import AVKit
 
+
+
 class TutorialViewController: UIViewController {
     var tutorModel: Thumbnail?
     var ButtonPressSFX = AVAudioPlayer()
     var SFXAllowStatus = true
-    
+    @IBOutlet weak var containerTutorThumbnail: UIView!
+    @IBOutlet weak var tutorThumbnail: UIImageView!
     @IBAction func PlayButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         guard let dataModel = tutorModel else { return }
-        if let Path = Bundle.main.path(forResource: "\(dataModel.videoPath)", ofType: "mp4")
+        if let Path = Bundle.main.path(forResource: "\(dataModel.tutorPath)", ofType: "mp4")
         {
             let Video = AVPlayer(url: URL(fileURLWithPath: Path))
             let VideoPlayer = AVPlayerViewController()
             VideoPlayer.player = Video
-            // VideoPlayer.showsPlaybackControls = false
             MusicPlayer.shared.stopBackgroundMusic()
             present(VideoPlayer, animated: true, completion:
                         {
@@ -32,23 +34,9 @@ class TutorialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-        //Prepare SFX on Button Press
-/*        do{
-            ButtonPressSFX = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "ButtonPress", ofType: ".wav")!))
-            ButtonPressSFX.prepareToPlay()
-        }
-        catch{
-            print(error)
-        }*/
+        tutorThumbnail.image = UIImage(named: tutorModel!.imgtutorthumbnail)
+        tutorThumbnail.applyshadowWithCorner(containerView: containerTutorThumbnail, cornerRadious: 10.0, shadowOpacity: 0.5)
     }
-    
-//    @IBAction func backTutor(_ sender: UIStoryboardSegue){
-//        guard let gameVC = sender.source as? CarGameViewController else { return }
-//        tutorModel = gameVC.gameModel
-//    }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
