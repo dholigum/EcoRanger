@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol CustomViewDelegate: class {         // make this class protocol so you can create `weak` reference
+    func goToNextScene()
+}
+
 class GameResultPopUpController: UIView {
+
 
     static let instance = GameResultPopUpController()
     @IBOutlet var parentView:UIView!
@@ -19,6 +24,8 @@ class GameResultPopUpController: UIView {
     @IBOutlet var succesLbl:UILabel!
     @IBOutlet var failureLbl:UILabel!
     
+    weak var delegate: CustomViewDelegate?
+    
     @IBAction func trueButton(_ sender: Any){
         print("resume button")
     }
@@ -29,8 +36,7 @@ class GameResultPopUpController: UIView {
         
     }
     @IBAction func nextButton(_ sender: Any) {
-        print("setting button")
-        parentView.removeFromSuperview()
+        delegate?.goToNextScene()
     }
     
     override init(frame: CGRect) {

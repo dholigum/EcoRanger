@@ -8,7 +8,9 @@
 import UIKit
 import AVKit
 
+
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    
     
     @IBOutlet weak var segmentedViewController: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -91,9 +93,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             dataThumbailFiltered = dataThumbail.filter({ (Thumbnail) -> Bool in
                 return Thumbnail.story == "Cerita 1"
             })
-            dataThumbailFiltered = dataThumbail
+            
         }
-        
         //popUp setting button
         setUpPopUpSettingView()
        

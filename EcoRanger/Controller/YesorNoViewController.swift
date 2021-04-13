@@ -9,12 +9,14 @@ import UIKit
 import SpriteKit
 import AVFoundation
 
-class YesorNoViewController: UIViewController {
+class YesorNoViewController: UIViewController, CustomViewDelegate {
 
     var objectGames =  [DataImage]()
     var objFlags = 0
     var life = 3
     var loseMessage = UIAlertController(title: "Confirm", message: "Kamu payah!", preferredStyle: .alert)
+    
+    
     
     let iyanih = UIAlertAction(title: "Setuju!", style: .default, handler: { (action) -> Void in
         print("Ok button tapped")
@@ -78,6 +80,7 @@ class YesorNoViewController: UIViewController {
     }
     @IBAction func btnNo(_ sender: UIButton) {
         if life >= 1 {
+            //Ubah jadi 2 dlu
             if objFlags<10 {
                 selectedObj = objectGames[objFlags]
                 if selectedObj.imgId == "trash" {
@@ -108,14 +111,20 @@ class YesorNoViewController: UIViewController {
         MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
         print("obj ke = \(objFlags)")
         print("Nyawa = \(life)")
+        //ini tadi diubah 
         if objFlags==10{
             GameResultPopUpController.instance.showResultView(alertType: .success)
         }
-//        for objectGame in objectGames {
-//            print(objectGame.imgSource)
-//        }
         
+        //Declare Delegate
+        GameResultPopUpController.instance.delegate = self
+    }
+    
+    func goToNextScene() {
         
+        let storyboard = UIStoryboard(name: "Main" ?? "nil", bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" ?? "nil")
+        self.present(navigation, animated: true, completion: nil)
     }
     
     func initDataImage() {
