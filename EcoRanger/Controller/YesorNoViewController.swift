@@ -33,7 +33,7 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
         let navigation = storyboard.instantiateViewController(identifier: "mainView" ?? "nil")
         self.present(navigation, animated: true, completion: nil)
     }
-    var selectedObj = DataImage()
+
     //SwitcherMusic
 //    @IBOutlet var switcher: UISwitch!
 //    @IBAction func bgmSwitcher(_ sender: UISwitch) {
@@ -155,8 +155,9 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
 //        for objectGame in objectGames {
 //            print(objectGame.imgSource)
 //        }
-        
-        
+    }
+    
+    func initDataImage() {
         let data1 = DataImage(imgId: "toys", imgSource: "YesOrNoCard-10")
         let data2 = DataImage(imgId: "toys", imgSource: "YesOrNoCard-11")
         let data3 = DataImage(imgId: "toys", imgSource: "YesOrNoCard-12")
