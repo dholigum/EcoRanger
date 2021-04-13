@@ -87,7 +87,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             dataThumbailFiltered = dataThumbail.filter({ (Thumbnail) -> Bool in
                 return Thumbnail.story == "Cerita 1"
             })
-            dataThumbailFiltered = dataThumbail
+//            dataThumbailFiltered = dataThumbail
         }
         
         //popUp setting button

@@ -101,6 +101,11 @@ class YesorNoViewController: UIViewController, CustomViewDelegate {
     
     func goToNextScene() {
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        CoreDataHandle.initCoreData(appDelegate)
+        
+        CoreDataHandle.updateIsActiveStatus(id: 2, isActive: true)
+        
         let storyboard = UIStoryboard(name: "Main" ?? "", bundle: nil)
         let navigation = storyboard.instantiateViewController(identifier: "mainView" ?? "")
         self.present(navigation, animated: true, completion: nil)
