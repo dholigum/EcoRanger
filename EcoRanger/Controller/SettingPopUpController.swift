@@ -15,20 +15,40 @@ class SettingPopUpController: UIView {
     @IBOutlet var parentViewContoller : UIView!
     @IBOutlet var alertView : UIView!
     @IBOutlet var switcher: UISwitch!
+    @IBOutlet var SFXSwitch: UISwitch!
     @IBAction func backButton(_ sender: UIButton) {
         print("tombol kembali")
         parentViewContoller.removeFromSuperview()
+        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
     @IBAction func sfxButton(_ sender: Any) {
         print("ini switch sfx")
+        if SFXSwitch.isOn
+        {
+            SFXPlayer.shared.SFXAllowStatus = true
+        }
+        else
+        {
+            SFXPlayer.shared.SFXAllowStatus = false
+        }
     }
     @IBAction func bgmSwitch(_ sender: Any) {
         print("ini switch BMG")
-        if switcher.isOn{
+        /*if BGMSwitch.isOn{
                     MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
                 }else{
                     MusicPlayer.shared.stopBackgroundMusic()
-                }
+                }*/
+        if switcher.isOn
+        {
+            MusicPlayer.shared.BGMAllowStatus = true
+            MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "MainMenuBGM")
+        }
+        else
+        {
+            MusicPlayer.shared.BGMAllowStatus = false
+            MusicPlayer.shared.stopBackgroundMusic()
+        }
     }
     
     
