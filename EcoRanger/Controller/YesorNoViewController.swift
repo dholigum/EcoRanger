@@ -126,9 +126,15 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
         self.present(navigation, animated: true, completion: nil)
     }
     
-    func backToGame() {
+    func backToGameYesOrNo() {
         let storyboard = UIStoryboard(name: "YesOrNoStoryboard" , bundle: nil)
         let navigation = storyboard.instantiateViewController(identifier: "YesOrNo" )
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
+    func backToGameSlapMosquito() {
+        let storyboard = UIStoryboard(name: "SlapMosquitoGame" , bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "slapMosquitoGame" )
         self.present(navigation, animated: true, completion: nil)
     }
     
