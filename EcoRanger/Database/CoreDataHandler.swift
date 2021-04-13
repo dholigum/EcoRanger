@@ -29,6 +29,7 @@ class CoreDataHandle {
         newThumbnailData.setValue(dataThumbnail.gameIdentifier, forKey: ThumbnailFieldKey.GAMEIDENTIFIER)
         newThumbnailData.setValue(dataThumbnail.gameStoryboard, forKey: ThumbnailFieldKey.GAMESTORYBOARD)
         newThumbnailData.setValue(dataThumbnail.imgthumbnail, forKey: ThumbnailFieldKey.IMGTHUMBNAIL)
+        newThumbnailData.setValue(dataThumbnail.imgtutorthumbnail, forKey: ThumbnailFieldKey.IMGTUTORTHUMBNAIL)
         newThumbnailData.setValue(dataThumbnail.isActive, forKey: ThumbnailFieldKey.ISACTIVE)
         newThumbnailData.setValue(dataThumbnail.story, forKey: ThumbnailFieldKey.STORY)
         newThumbnailData.setValue(dataThumbnail.tutorPath, forKey: ThumbnailFieldKey.TUTORPATH)
@@ -62,13 +63,14 @@ class CoreDataHandle {
                 let gameIdentifier = i.value(forKey: ThumbnailFieldKey.GAMEIDENTIFIER) as! String
                 let gameStoryboard = i.value(forKey: ThumbnailFieldKey.GAMESTORYBOARD) as! String
                 let imgThumbnail = i.value(forKey: ThumbnailFieldKey.IMGTHUMBNAIL) as! String
+                let imgTutorThumbnail = i.value(forKey: ThumbnailFieldKey.IMGTUTORTHUMBNAIL) as! String
                 let isActive = i.value(forKey: ThumbnailFieldKey.ISACTIVE) as! Bool
                 let story = i.value(forKey: ThumbnailFieldKey.STORY) as! String
                 let tutorPath = i.value(forKey: ThumbnailFieldKey.TUTORPATH) as! String
                 let videoPath = i.value(forKey: ThumbnailFieldKey.VIDEOPATH) as! String
                
                 
-                let thumbnail: Thumbnail = Thumbnail(id: id,chapter: chapter, story: story, imgthumbnail: imgThumbnail, videoPath: videoPath, tutorPath: tutorPath, isActive: isActive, gameStoryboard: gameStoryboard, gameIdentifier: gameIdentifier)
+                let thumbnail: Thumbnail = Thumbnail(id: id,chapter: chapter, story: story, imgthumbnail: imgThumbnail, imgtutorthumbnail: imgTutorThumbnail, videoPath: videoPath, tutorPath: tutorPath, isActive: isActive, gameStoryboard: gameStoryboard, gameIdentifier: gameIdentifier)
                 
                 listThumbnail.append(thumbnail)
             }
@@ -107,6 +109,7 @@ class ThumbnailFieldKey{
     static var GAMEIDENTIFIER = "gameIdentifier"
     static var GAMESTORYBOARD = "gameStoryboard"
     static var IMGTHUMBNAIL = "imgThumbnail"
+    static var IMGTUTORTHUMBNAIL = "imgTutorThumbnail"
     static var ISACTIVE = "isActive"
     static var STORY = "story"
     static var TUTORPATH = "tutorPath"

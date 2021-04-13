@@ -14,7 +14,8 @@ class TutorialViewController: UIViewController {
     var tutorModel: Thumbnail?
     var ButtonPressSFX = AVAudioPlayer()
     var SFXAllowStatus = true
-    
+    @IBOutlet weak var containerTutorThumbnail: UIView!
+    @IBOutlet weak var tutorThumbnail: UIImageView!
     @IBAction func PlayButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         guard let dataModel = tutorModel else { return }
@@ -33,7 +34,8 @@ class TutorialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tutorThumbnail.image = UIImage(named: tutorModel!.imgtutorthumbnail)
+        tutorThumbnail.applyshadowWithCorner(containerView: containerTutorThumbnail, cornerRadious: 10.0, shadowOpacity: 1)
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
