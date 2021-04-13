@@ -9,7 +9,7 @@ import UIKit
 import SpriteKit
 import AVFoundation
 
-class YesorNoViewController: UIViewController, CustomViewDelegate {
+class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpControllerDelegate {
     
     var objectGames =  [DataImage]()
     var selectedObj = DataImage()
@@ -20,6 +20,29 @@ class YesorNoViewController: UIViewController, CustomViewDelegate {
     @IBOutlet weak var isthistrashImgView: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var objectView: UIImageView!
+    
+    var ispausedon = true
+    
+    func resumeGame() {
+        ispausedon = false
+        //skview.isPaused = ispausedon
+    }
+    
+    func backToHome() {
+        let storyboard = UIStoryboard(name: "Main" ?? "nil", bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" ?? "nil")
+        self.present(navigation, animated: true, completion: nil)
+    }
+    var selectedObj = DataImage()
+    //SwitcherMusic
+//    @IBOutlet var switcher: UISwitch!
+//    @IBAction func bgmSwitcher(_ sender: UISwitch) {
+//        if sender.isOn{
+//            MusicPlayer.shared.startBackgroundMusic(bgmFIleName: "homemusic")
+//        }else{
+//            MusicPlayer.shared.stopBackgroundMusic()
+//        }
+//    }
     @IBOutlet weak var bgGame: UIImageView!
     @IBOutlet weak var yesButtonContainer: UIView!
     @IBOutlet weak var yesImgView: UIImageView!
@@ -128,9 +151,12 @@ class YesorNoViewController: UIViewController, CustomViewDelegate {
             lifeFullOne.isHidden = false
 
         }
-    }
-    
-    func initDataImage() {
+        PausePopUpController.instance.delegate = self
+//        for objectGame in objectGames {
+//            print(objectGame.imgSource)
+//        }
+        
+        
         let data1 = DataImage(imgId: "toys", imgSource: "YesOrNoCard-10")
         let data2 = DataImage(imgId: "toys", imgSource: "YesOrNoCard-11")
         let data3 = DataImage(imgId: "toys", imgSource: "YesOrNoCard-12")
