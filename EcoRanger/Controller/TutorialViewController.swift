@@ -19,7 +19,7 @@ class TutorialViewController: UIViewController {
     @IBAction func PlayButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         guard let dataModel = tutorModel else { return }
-        if let Path = Bundle.main.path(forResource: "\(dataModel.videoPath)", ofType: "mp4")
+        if let Path = Bundle.main.path(forResource: "\(dataModel.tutorPath)", ofType: "mp4")
         {
             let Video = AVPlayer(url: URL(fileURLWithPath: Path))
             let VideoPlayer = AVPlayerViewController()

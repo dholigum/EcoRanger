@@ -159,8 +159,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         //Add Id and Change isActive true only in S1C1
         
-        let s1c1 = Thumbnail(id: 1,chapter: "Bagian 1", story: "Cerita 1", imgthumbnail: "S1C1-TB", imgtutorthumbnail: "S1C1T-TB",  videoPath:"S1C1Tutorial", tutorPath:"S1C1Tutorial", isActive: true, gameStoryboard: "YesOrNoStoryboard", gameIdentifier: "YesOrNo")
-        let s1c2 = Thumbnail(id: 2, chapter: "Bagian 2", story: "Cerita 1", imgthumbnail: "S1C2-TB", imgtutorthumbnail: "S1C2T-TB", videoPath:"S1C2Tutorial", tutorPath:"S1C2Tutorial", isActive: false, gameStoryboard: "SlapMosquitoGame", gameIdentifier: "slapMosquitoGame")
+        let s1c1 = Thumbnail(id: 1,chapter: "Bagian 1", story: "Cerita 1", imgthumbnail: "S1C1-TB", imgtutorthumbnail: "S1C1T-TB",  videoPath:"S1C1", tutorPath:"S1C1Tutorial", isActive: true, gameStoryboard: "YesOrNoStoryboard", gameIdentifier: "YesOrNo")
+        let s1c2 = Thumbnail(id: 2, chapter: "Bagian 2", story: "Cerita 1", imgthumbnail: "S1C2-TB", imgtutorthumbnail: "S1C2T-TB", videoPath:"S1C2", tutorPath:"S1C2Tutorial", isActive: false, gameStoryboard: "SlapMosquitoGame", gameIdentifier: "slapMosquitoGame")
         let s1c3 = Thumbnail(id: 3,chapter: "Bagian 3", story: "Cerita 1", imgthumbnail: "tb3", imgtutorthumbnail: "S1C2T-TB", videoPath:"s1c3", tutorPath:"s1c3", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
         
         let s2c1 = Thumbnail(id: 4,chapter: "Bagian 1", story: "Cerita 2", imgthumbnail: "tb1", imgtutorthumbnail: "S1C1T-TB", videoPath:"s2c1", tutorPath:"s1c1", isActive: false, gameStoryboard: "CarGame", gameIdentifier: "carGame")
@@ -256,17 +256,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     //badges
     @IBAction func badgesButtonPressed(_ sender: UIButton) {
-        GameResultPopUpController.instance.showResultView(alertType: .success)
-        
-        PausePopUpController.instance.showPausePopUp()
-        SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
+//        GameResultPopUpController.instance.showResultView(alertType: .success)
+//
+//        PausePopUpController.instance.showPausePopUp()
+          SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
     
     //avatar
     @IBAction func avatarButtonPressed(_ sender: UIButton) {
         print("Avatar Button Pressed")
         //testing game failure popup
-        GameResultPopUpController.instance.showResultView(alertType: .failure)
+       // GameResultPopUpController.instance.showResultView(alertType: .failure)
         //testing
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
     }
