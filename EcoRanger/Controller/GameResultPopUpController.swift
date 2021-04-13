@@ -16,8 +16,6 @@ protocol CustomViewDelegate: class {
 class GameResultPopUpController: UIView {
 
     static let instance = GameResultPopUpController()
-//    var currentPreviousGameStoryboard: String
-//    var currentPreviousGameStoryboard: String
     
     @IBOutlet var parentView:UIView!
     @IBOutlet var childView:UIView!
@@ -101,8 +99,6 @@ class GameResultPopUpController: UIView {
         }
         UIApplication.shared.keyWindow?.addSubview(parentView)
     }
-//    func returnToHome{
-//        //direct ke home
-//    }
+
 
 }

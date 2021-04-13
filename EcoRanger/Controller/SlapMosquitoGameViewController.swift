@@ -45,36 +45,28 @@ class SlapMosquitoGameViewController: UIViewController, PausePopUpControllerDele
     }
     
     var gameModel: Thumbnail?
-   // var mosquitoScene: SlapMosquitoGameScene!
+   
     var ispausedon = true
     var statusGame = 2
-//    var time = 20
+
     @IBOutlet weak var skview: SKView!
-//    @IBOutlet weak var pauseBtn: UIButton!
+
     
     @IBAction func pauseButton(_ sender: UIButton) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
-        //let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
+
         ispausedon = true
         PausePopUpController.instance.showPausePopUp()
-        //mosquitoScene.gameIsPaused = true
-        //mosquitoScene!.pauseButtoPressed(sender: sender)
-        //scene.view?.isPaused = true
-        //scene.physicsWorld.speed = 0
 
         skview.isPaused = ispausedon
     }
     
-//    @IBOutlet weak var timeLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if let view = self.view as! SKView?{
-//            if let scene = SKScene(fileNamed: "SlapMosquitoGameScene"){
-//            scene.scaleMode = .aspectFIll
-//            view.presentScene(scene)
-//        }
+
         let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
         skview.presentScene(scene)
         PausePopUpController.instance.delegate = self

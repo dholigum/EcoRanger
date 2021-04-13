@@ -25,7 +25,6 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
     
     func resumeGame() {
         ispausedon = false
-        //skview.isPaused = ispausedon
     }
 
     @IBOutlet weak var bgGame: UIImageView!
@@ -48,11 +47,10 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
         if life >= 1 {
             if objFlags < 10 {
                 selectedObj = objectGames[objFlags]
-                //var randomInt = Int.random(in: 0...14)
+          
                 if selectedObj.imgId == "toys" {
                     life -= 1
                     lifeWatcher(life: life)
-                    //                    objFlags += 1
                     if life == 0 {
                         GameResultPopUpController.instance.showResultView(alertType: .failure)
                     }

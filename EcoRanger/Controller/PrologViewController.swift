@@ -16,16 +16,6 @@ class PrologViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         labelChapter.text = chapterModel?.chapter
-        // Do any additional setup after loading the view.
-        
-        //Prepare SFX on Button Press
-/*        do{
-            ButtonPressSFX = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath:  Bundle.main.path(forResource: "ButtonPress", ofType: ".wav")!))
-            ButtonPressSFX.prepareToPlay()
-        }
-        catch{
-            print(error)
-        }*/
     }
     
     

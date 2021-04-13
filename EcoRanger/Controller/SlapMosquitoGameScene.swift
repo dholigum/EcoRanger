@@ -23,26 +23,6 @@ class SlapMosquitoGameScene: SKScene, SKPhysicsContactDelegate {
     var gameIsPaused: Bool = false
     var mosquitoLayer: SKSpriteNode!
     
-//    func pauseGame() {
-//        gameIsPaused =  true
-//       self.mosquitoLayer!.isPaused = true
-//        physicsWorld.speed = 0
-//    }
-//
-//    func pauseButtoPressed(sender: AnyObject) {
-//        if !gameIsPaused{
-//            pauseGame()
-//        }else{
-//            unpauseGame()
-//        }
-//    }
-//
-//    func unpauseGame() {
-//        gameIsPaused =  false
-//        self.mosquitoLayer.isPaused = true
-//        physicsWorld.speed = 1
-//    }
-//
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             if let touch = touches.first{
                 let location = touch.location(in: self.view)
