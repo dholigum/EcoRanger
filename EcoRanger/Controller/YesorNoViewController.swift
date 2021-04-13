@@ -9,17 +9,27 @@ import UIKit
 import SpriteKit
 import AVFoundation
 
-class YesorNoViewController: UIViewController {
+class YesorNoViewController: UIViewController, PausePopUpControllerDelegate {
 
     var objectGames =  [DataImage]()
     var objFlags = 0
     var life = 3
     var loseMessage = UIAlertController(title: "Confirm", message: "Kamu payah!", preferredStyle: .alert)
-    
+    var ispausedon = true
     let iyanih = UIAlertAction(title: "Setuju!", style: .default, handler: { (action) -> Void in
         print("Ok button tapped")
     })
     
+    func resumeGame() {
+        ispausedon = false
+        //skview.isPaused = ispausedon
+    }
+    
+    func backToHome() {
+        let storyboard = UIStoryboard(name: "Main" ?? "nil", bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" ?? "nil")
+        self.present(navigation, animated: true, completion: nil)
+    }
     var selectedObj = DataImage()
     //SwitcherMusic
 //    @IBOutlet var switcher: UISwitch!
@@ -111,6 +121,7 @@ class YesorNoViewController: UIViewController {
         if objFlags==10{
             GameResultPopUpController.instance.showResultView(alertType: .success)
         }
+        PausePopUpController.instance.delegate = self
 //        for objectGame in objectGames {
 //            print(objectGame.imgSource)
 //        }

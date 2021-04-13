@@ -22,7 +22,6 @@ class SlapMosquitoGameViewController: UIViewController, PausePopUpControllerDele
     
     var gameModel: Thumbnail?
    // var mosquitoScene: SlapMosquitoGameScene!
-    var tempPaused = true
     var ispausedon = true
 //    var time = 20
     @IBOutlet weak var skview: SKView!
