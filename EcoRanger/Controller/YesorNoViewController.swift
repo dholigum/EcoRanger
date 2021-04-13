@@ -9,7 +9,7 @@ import UIKit
 import SpriteKit
 import AVFoundation
 
-class YesorNoViewController: UIViewController {
+class YesorNoViewController: UIViewController, CustomViewDelegate {
     
     var objectGames =  [DataImage]()
     var selectedObj = DataImage()
@@ -95,6 +95,15 @@ class YesorNoViewController: UIViewController {
             GameResultPopUpController.instance.showResultView(alertType: .success)
         }
         
+        GameResultPopUpController.instance.delegate = self
+        
+    }
+    
+    func goToNextScene() {
+        
+        let storyboard = UIStoryboard(name: "Main" ?? "", bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" ?? "")
+        self.present(navigation, animated: true, completion: nil)
     }
     
     func lifeWatcher(life: Int) {

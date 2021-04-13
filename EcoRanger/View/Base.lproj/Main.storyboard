@@ -155,17 +155,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="46I-6o-LIG"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xpS-ys-a5X">
-                                <rect key="frame" x="106" y="31.666666666666686" width="80" height="56"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUU-XA-pQ4" userLabel="creditButton">
+                                <rect key="frame" x="94" y="20" width="78" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBG-h5-BWo">
-                                <rect key="frame" x="120" y="33" width="57" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="creditButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="plV-yP-Xfw"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crediticon" translatesAutoresizingMaskIntoConstraints="NO" id="xpS-ys-a5X">
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBG-h5-BWo">
+                                        <rect key="frame" x="18" y="18" width="43" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="creditButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="plV-yP-Xfw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -349,10 +355,10 @@
     <resources>
         <image name="avataricon" width="18.666666030883789" height="18.666666030883789"/>
         <image name="badgesicon" width="26" height="26"/>
+        <image name="crediticon" width="100" height="100"/>
         <image name="homescreenbg" width="270.66665649414062" height="125"/>
         <image name="lockicon" width="58.666667938232422" height="58.666667938232422"/>
-        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
-        <image name="settingicon" width="25" height="25"/>
+        <image name="settingicon" width="100" height="100"/>
         <image name="tb1" width="846" height="360"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

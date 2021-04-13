@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "truck.png",
+      "filename" : "crediticon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "truck@2x.png",
+      "filename" : "crediticon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "truck@3x.png",
+      "filename" : "crediticon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

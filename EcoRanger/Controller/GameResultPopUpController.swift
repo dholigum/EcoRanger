@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CustomViewDelegate: class {
+    func goToNextScene()
+}
+
 class GameResultPopUpController: UIView {
 
     static let instance = GameResultPopUpController()
@@ -18,6 +22,8 @@ class GameResultPopUpController: UIView {
     @IBOutlet var nextBtn:UIButton!
     @IBOutlet var succesLbl:UILabel!
     @IBOutlet var failureLbl:UILabel!
+    
+    weak var delegate: CustomViewDelegate?
     
     @IBAction func trueButton(_ sender: Any){
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
@@ -32,7 +38,7 @@ class GameResultPopUpController: UIView {
     }
     @IBAction func nextButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
-        print("setting button")
+        delegate?.goToNextScene()
         parentView.removeFromSuperview()
     }
     
