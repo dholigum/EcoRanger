@@ -10,31 +10,41 @@ import SpriteKit
 
 class SlapMosquitoGameViewController: UIViewController {
     var gameModel: Thumbnail?
+   // var mosquitoScene: SlapMosquitoGameScene!
+    var tempPaused = true
+    var ispausedon = true
 //    var time = 20
     @IBOutlet weak var skview: SKView!
+//    @IBOutlet weak var pauseBtn: UIButton!
     @IBAction func pauseButton(_ sender: UIButton) {
         //let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
         PausePopUpController.instance.showPausePopUp()
-        skview.isPaused = true
-        
+        //mosquitoScene.gameIsPaused = true
+        //mosquitoScene!.pauseButtoPressed(sender: sender)
+        //scene.view?.isPaused = true
+        //scene.physicsWorld.speed = 0
+
+        skview.isPaused = ispausedon
     }
     
 //    @IBOutlet weak var timeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        if let view = self.view as! SKView?{
+//            if let scene = SKScene(fileNamed: "SlapMosquitoGameScene"){
+//            scene.scaleMode = .aspectFIll
+//            view.presentScene(scene)
+//        }
         let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
 //       print(time)
+        //mosquitoScene = scene
         skview.presentScene(scene)
-        
+//        if pauseBtn?.isTouchInside == true {
+//            skview.isPaused = true
+//        }
 //        scene.view?.isPaused = true
         //print("sisa \(scene.mosquitoleft)")
     }
-//    var timerGame = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Action), userInfo: nil, repeats: true)
-//    @objc func Action(){
-//        time -= 1
-//        timeLabel.text = String(time)
-//
-//    }
+
 }
