@@ -38,7 +38,7 @@ class PausePopUpController: UIView {
     @IBAction func settingButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
         SettingPopUpController.instance.showAlert()
-        parentView.removeFromSuperview()
+        //parentView.removeFromSuperview()
     }
     
     override init(frame: CGRect) {

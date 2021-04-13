@@ -8,7 +8,31 @@
 import UIKit
 import SpriteKit
 
-class SlapMosquitoGameViewController: UIViewController, PausePopUpControllerDelegate {
+class SlapMosquitoGameViewController: UIViewController, PausePopUpControllerDelegate, CustomViewDelegate {
+    var flagGame = 2
+    func goToNextScene() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        CoreDataHandle.initCoreData(appDelegate)
+        
+        CoreDataHandle.updateIsActiveStatus(id: 3, isActive: true)
+        
+        let storyboard = UIStoryboard(name: "Main" , bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" )
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
+    func backToGame() {
+        if flagGame == 1 {
+            let storyboard = UIStoryboard(name: "YesOrNoStoryboard" , bundle: nil)
+            let navigation = storyboard.instantiateViewController(identifier: "YesOrNo" )
+            self.present(navigation, animated: true, completion: nil)
+        } else{
+            let storyboard = UIStoryboard(name: "SlapMosquitoGame" , bundle: nil)
+            let navigation = storyboard.instantiateViewController(identifier: "slapMosquitoGame" )
+            self.present(navigation, animated: true, completion: nil)
+        }
+    }
+    
     func resumeGame() {
         ispausedon = false
         skview.isPaused = ispausedon
@@ -23,6 +47,7 @@ class SlapMosquitoGameViewController: UIViewController, PausePopUpControllerDele
     var gameModel: Thumbnail?
    // var mosquitoScene: SlapMosquitoGameScene!
     var ispausedon = true
+    var statusGame = 2
 //    var time = 20
     @IBOutlet weak var skview: SKView!
 //    @IBOutlet weak var pauseBtn: UIButton!
@@ -51,15 +76,11 @@ class SlapMosquitoGameViewController: UIViewController, PausePopUpControllerDele
 //            view.presentScene(scene)
 //        }
         let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
-//       print(time)
-        //mosquitoScene = scene
         skview.presentScene(scene)
         PausePopUpController.instance.delegate = self
-//        if pauseBtn?.isTouchInside == true {
-//            skview.isPaused = true
-//        }
-//        scene.view?.isPaused = true
-        //print("sisa \(scene.mosquitoleft)")
+        GameResultPopUpController.instance.delegate = self
+        
+
     }
 
 }

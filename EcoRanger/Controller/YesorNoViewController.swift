@@ -15,7 +15,7 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
     var selectedObj = DataImage()
     var objFlags = 0
     var life = 3
-    
+    var flagGame = 1
     @IBOutlet weak var isthistrashContainer: UIView!
     @IBOutlet weak var isthistrashImgView: UIImageView!
     @IBOutlet weak var containerView: UIView!
@@ -126,16 +126,16 @@ class YesorNoViewController: UIViewController, CustomViewDelegate, PausePopUpCon
         self.present(navigation, animated: true, completion: nil)
     }
     
-    func backToGameYesOrNo() {
-        let storyboard = UIStoryboard(name: "YesOrNoStoryboard" , bundle: nil)
-        let navigation = storyboard.instantiateViewController(identifier: "YesOrNo" )
-        self.present(navigation, animated: true, completion: nil)
-    }
-    
-    func backToGameSlapMosquito() {
-        let storyboard = UIStoryboard(name: "SlapMosquitoGame" , bundle: nil)
-        let navigation = storyboard.instantiateViewController(identifier: "slapMosquitoGame" )
-        self.present(navigation, animated: true, completion: nil)
+    func backToGame() {
+        if flagGame == 1 {
+            let storyboard = UIStoryboard(name: "YesOrNoStoryboard" , bundle: nil)
+            let navigation = storyboard.instantiateViewController(identifier: "YesOrNo" )
+            self.present(navigation, animated: true, completion: nil)
+        } else{
+            let storyboard = UIStoryboard(name: "SlapMosquitoGame" , bundle: nil)
+            let navigation = storyboard.instantiateViewController(identifier: "slapMosquitoGame" )
+            self.present(navigation, animated: true, completion: nil)
+        }
     }
     
     func lifeWatcher(life: Int) {

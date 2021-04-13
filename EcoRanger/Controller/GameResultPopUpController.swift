@@ -10,8 +10,7 @@ import UIKit
 protocol CustomViewDelegate: class {
     func goToNextScene()
     func backToHome()
-    func backToGameYesOrNo()
-    func backToGameSlapMosquito()
+    func backToGame()
 }
 
 class GameResultPopUpController: UIView {
@@ -33,8 +32,8 @@ class GameResultPopUpController: UIView {
     
     @IBAction func trueButton(_ sender: Any){
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
-        delegate?.backToGameYesOrNo()
-        delegate?.backToGameSlapMosquito()
+        delegate?.backToGame()
+       
     }
     @IBAction func falseButton(_ sender: Any) {
         SFXPlayer.shared.PlaySFX(SFXFileName: "ButtonPress")
