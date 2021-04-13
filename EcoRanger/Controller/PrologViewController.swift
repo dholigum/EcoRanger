@@ -19,7 +19,7 @@ class PrologViewController: UIViewController {
         super.viewDidLoad()
         labelChapter.text = chapterModel?.chapter
         thumbnailImage.image = UIImage(named: chapterModel!.imgthumbnail)
-        thumbnailImage.applyshadowWithCorner(containerView: thmbImage, cornerRadious: 10.0, shadowOpacity: 1)
+        thumbnailImage.applyshadowWithCorner(containerView: thmbImage, cornerRadious: 10.0, shadowOpacity: 0.4)
         
     }
     

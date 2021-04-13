@@ -35,7 +35,7 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tutorThumbnail.image = UIImage(named: tutorModel!.imgtutorthumbnail)
-        tutorThumbnail.applyshadowWithCorner(containerView: containerTutorThumbnail, cornerRadious: 10.0, shadowOpacity: 1)
+        tutorThumbnail.applyshadowWithCorner(containerView: containerTutorThumbnail, cornerRadious: 10.0, shadowOpacity: 0.5)
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {

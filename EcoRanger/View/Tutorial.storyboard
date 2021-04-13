@@ -48,7 +48,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbnailvideo" translatesAutoresizingMaskIntoConstraints="NO" id="JnO-Zp-Hse">
-                                        <rect key="frame" x="-5" y="0.0" width="602" height="246"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="592" height="246"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6KR-jL-QCz">
@@ -95,8 +95,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ggA-AT-jTe"/>
                     <connections>
-                        <outlet property="containerTutorThumbnail" destination="JnO-Zp-Hse" id="k8q-Jx-6VX"/>
-                        <outlet property="tutorThumbnail" destination="JnO-Zp-Hse" id="0qe-0V-8gG"/>
+                        <outlet property="containerTutorThumbnail" destination="c9Q-7y-caq" id="RmA-z4-bk6"/>
+                        <outlet property="tutorThumbnail" destination="JnO-Zp-Hse" id="ZfK-V9-nPo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CcT-sD-w6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
