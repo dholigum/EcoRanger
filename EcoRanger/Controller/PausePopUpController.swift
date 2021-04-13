@@ -7,11 +7,14 @@
 
 import UIKit
 import SpriteKit
+
+
 protocol PausePopUpControllerDelegate: class {
-    func updateData(withValue: String)
+    func backToHome()
+    func resumeGame()
 }
 
-class PausePopUpController: UIView, SlapMosquitoGameViewController {
+class PausePopUpController: UIView {
 
     static let instance = PausePopUpController()
     //let gameMosquito = SlapMosquitoGameScene()
@@ -20,9 +23,10 @@ class PausePopUpController: UIView, SlapMosquitoGameViewController {
     @IBOutlet var resumeBtn:UIButton!
     @IBOutlet var homeBtn:UIButton!
     @IBOutlet var settingBtn:UIView!
-
+    weak var delegate:PausePopUpControllerDelegate?
     @IBAction func resumeButton(_ sender: Any) {
         print("resume button")
+        self.delegate?.resumeGame()
         parentView.removeFromSuperview()
         //gameScene.isPaused = false
         //gameScene.physicsWorld.speed = 1
@@ -35,7 +39,7 @@ class PausePopUpController: UIView, SlapMosquitoGameViewController {
 //            gameMosquito.speed = 1.0
     }
     @IBAction func homeButton(_ sender: Any) {
-        print("home button")
+      delegate?.backToHome()
         
     }
     @IBAction func settingButton(_ sender: Any) {
@@ -69,12 +73,12 @@ class PausePopUpController: UIView, SlapMosquitoGameViewController {
         UIApplication.shared.keyWindow?.addSubview(parentView)
     }
     
-    @objc func backToHome(){
-         let destinationVC = SlapMosquitoGameViewController()
-        //navVC.delegate = self
-        destinationVC.tempPaused = true
-        self.pushViewController(destinationVC, animated: true)
-    }
+//    @objc func backToHome(){
+//         let destinationVC = SlapMosquitoGameViewController()
+//        //navVC.delegate = self
+//        destinationVC.tempPaused = true
+//        self.pushViewController(destinationVC, animated: true)
+//    }
     
     
 

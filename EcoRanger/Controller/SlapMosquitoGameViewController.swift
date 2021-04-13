@@ -8,7 +8,18 @@
 import UIKit
 import SpriteKit
 
-class SlapMosquitoGameViewController: UIViewController {
+class SlapMosquitoGameViewController: UIViewController, PausePopUpControllerDelegate {
+    func resumeGame() {
+        ispausedon = false
+        skview.isPaused = ispausedon
+    }
+    
+    func backToHome() {
+        let storyboard = UIStoryboard(name: "Main" ?? "nil", bundle: nil)
+        let navigation = storyboard.instantiateViewController(identifier: "mainView" ?? "nil")
+        self.present(navigation, animated: true, completion: nil)
+    }
+    
     var gameModel: Thumbnail?
    // var mosquitoScene: SlapMosquitoGameScene!
     var tempPaused = true
@@ -16,8 +27,10 @@ class SlapMosquitoGameViewController: UIViewController {
 //    var time = 20
     @IBOutlet weak var skview: SKView!
 //    @IBOutlet weak var pauseBtn: UIButton!
+    
     @IBAction func pauseButton(_ sender: UIButton) {
         //let scene: SlapMosquitoGameScene = SlapMosquitoGameScene(size: skview.frame.size)
+        ispausedon = true
         PausePopUpController.instance.showPausePopUp()
         //mosquitoScene.gameIsPaused = true
         //mosquitoScene!.pauseButtoPressed(sender: sender)
@@ -40,6 +53,7 @@ class SlapMosquitoGameViewController: UIViewController {
 //       print(time)
         //mosquitoScene = scene
         skview.presentScene(scene)
+        PausePopUpController.instance.delegate = self
 //        if pauseBtn?.isTouchInside == true {
 //            skview.isPaused = true
 //        }
