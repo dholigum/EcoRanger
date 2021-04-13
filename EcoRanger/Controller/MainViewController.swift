@@ -8,7 +8,7 @@
 import UIKit
 import AVKit
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var segmentedViewController: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -25,9 +25,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var dataThumbnailCoreData = [Thumbnail]()
     
     //popUp var space
+    @IBOutlet var creditView: UIView!
+    @IBOutlet weak var creditTableView: UITableView!
     @IBOutlet var settingView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet weak var SegmentControl: UISegmentedControl!
+    @IBOutlet var creditBackButton: UIButton!
     @IBAction func backButton(_ sender: UIButton) {
         popUpTransitionOut(desiredView: settingView)
         popUpTransitionOut(desiredView: blurView)
@@ -89,7 +92,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         //popUp setting button
         setUpPopUpSettingView()
-       
+        setUpCreaditPopUp()
+        initDataThumbnail()
         
         setUpUISegmented()
         
@@ -337,6 +341,94 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }, completion: { _ in
             desiredView.removeFromSuperview()
         })
+    }
+    
+    //credit PopUp
+    let creditLabels = ["Freepik",
+                        "BGM Dova Syndrome",
+                        "Irasutoya ",
+                        "Beach",
+                        "Hidden Object BGM",
+                        "Taman",
+                        "Bersih Kamar Vibes",
+                        "Nangkep Sampah",
+                        "Taman V2",
+                        "Menu Button",
+                        "Mosquito Slap",
+                        "Beach BG",
+                        "Potato Chips Bag",
+                        "Bento Box",
+                        "Orange Peel",
+                        "Ocean Waste",
+                        "Dolphin Ocean Waste",
+                        "Beach ball",
+                        "Boy Littering",
+                        "Boy Washing Hands",
+                        "ubbish Bins + Rubbish",
+                        "Organic Waste",
+                        "Waste",
+                        "Plastic Waste",
+                        "Food Wastes",
+                        "Mobile UI Buttons",
+                        "Wooden UI Buttons"]
+    let creditLinks = ["https://support.freepik.com/hc/en-us/articles/208976585-Attribution-How-when-and-where- ",
+                       "https://dova-s.jp/_contents/license/ ",
+                       "https://www.irasutoya.com/p/terms.html ",
+                       "https://youtu.be/dpsOt7rcZCE ",
+                       "https://youtu.be/NoZNP5gUf6E",
+                       "https://youtu.be/pNIdw2I4umM",
+                       "https://youtu.be/m_onXjyekUw",
+                       "https://youtu.be/CIaOdhNyblQ",
+                       "https://youtu.be/t9U0sLxVxbc",
+                       "https://freesound.org/s/506052/ ",
+                       "https://freesound.org/s/232135/ ",
+                       "https://www.freepik.com/free-vector/realistic-beautiful-sea-view-summer-vacation-concept_2438179.htm#page=1&query=beach&position=11",
+                       "https://www.irasutoya.com/2020/09/blog-post_20.html ",
+                       "https://www.irasutoya.com/2020/09/blog-post_98.html",
+                       "https://www.irasutoya.com/2020/11/blog-post_23.html",
+                       "https://www.irasutoya.com/2017/08/blog-post_941.html ",
+                       "https://www.irasutoya.com/2014/02/blog-post_7197.html ",
+                       "https://www.irasutoya.com/2012/03/blog-post_6415.html ",
+                       "https://www.irasutoya.com/2013/06/blog-post_1432.html ",
+                       "https://www.irasutoya.com/2013/02/blog-post_8482.html ",
+                       "https://www.freepik.com/free-vector/garbage-sorting-set_13146308.htm ",
+                       "https://www.freepik.com/free-vector/food-trash-set-rotten-fruits-vegetables-meat-fish-bread-organic-waste-isolated-shite-background-flat-illustration_12699080.htm ",
+                       "https://www.freepik.com/free-vector/pollution-litter-rubbish-trash-objects-isolated_5840643.htm#page=1&query=waste&position=0 ",
+                       "https://www.freepik.com/free-vector/set-plastic-trash_4555725.htm#page=1&query=waste&position=22 ",
+                       "https://www.freepik.com/free-vector/set-waste-elements_4510802.htm#page=1&query=waste&position=44",
+                       "https://kenney.nl/assets/onscreen-controls ",
+                       "https://www.freepik.com/free-vector/wooden-buttons-ui-game_12632833.htm#page=1&query=game%20ui&position=4  "]
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return creditLabels.count
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 77.0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let myCell = (tableView.dequeueReusableCell(withIdentifier: "creditCellIdentifier", for: indexPath) as? CreditPopUpTableViewCell)!
+        myCell.creditTitel.text = creditLabels[indexPath.row]
+        myCell.creditLink.text = creditLinks[indexPath.row]
+        return myCell
+        
+    }
+    func setUpCreaditPopUp(){
+        creditView.layer.cornerRadius = 10
+        creditBackButton.layer.cornerRadius = 5
+        creditTableView.delegate = self
+        creditTableView.dataSource = self
+    }
+    
+    @IBAction func creditButton(_ sender: UIButton) {
+        popUpTransitionIn(desiredView: blurView)
+        popUpTransitionIn(desiredView: creditView)
+    }
+    
+    @IBAction func creditBackButtonAction(_ sender: UIButton) {
+        popUpTransitionOut(desiredView: creditView)
+        popUpTransitionOut(desiredView: blurView)
+        
     }
     
 }

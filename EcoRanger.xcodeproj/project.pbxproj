@@ -43,6 +43,7 @@
 		EA3CDD7F261F6F7300C167EF /* PausePopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CDD7E261F6F7300C167EF /* PausePopUpController.swift */; };
 		EA3CDD822620045400C167EF /* GameResultPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3CDD812620045400C167EF /* GameResultPopUp.xib */; };
 		EA3CDD852620047E00C167EF /* GameResultPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3CDD842620047E00C167EF /* GameResultPopUpController.swift */; };
+		EA9F14BF2624A01300AE5DE1 /* CreditPopUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9F14BE2624A01300AE5DE1 /* CreditPopUpTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		EA3CDD7E261F6F7300C167EF /* PausePopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePopUpController.swift; sourceTree = "<group>"; };
 		EA3CDD812620045400C167EF /* GameResultPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameResultPopUp.xib; sourceTree = "<group>"; };
 		EA3CDD842620047E00C167EF /* GameResultPopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultPopUpController.swift; sourceTree = "<group>"; };
+		EA9F14BE2624A01300AE5DE1 /* CreditPopUpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditPopUpTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				EA3CDD7E261F6F7300C167EF /* PausePopUpController.swift */,
 				EA3CDD842620047E00C167EF /* GameResultPopUpController.swift */,
 				4EF387892620BBA900EE04D6 /* YesorNoViewController.swift */,
+				EA9F14BE2624A01300AE5DE1 /* CreditPopUpTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				4EF3878D2620BC2C00EE04D6 /* ImageGameData.swift in Sources */,
 				2F6F622E26189BC200284F8F /* TutorialViewController.swift in Sources */,
 				2F6F62022617DC1800284F8F /* SceneDelegate.swift in Sources */,
+				EA9F14BF2624A01300AE5DE1 /* CreditPopUpTableViewCell.swift in Sources */,
 				2F6F62262618895900284F8F /* PrologViewController.swift in Sources */,
 				EA3CDD7F261F6F7300C167EF /* PausePopUpController.swift in Sources */,
 				4ED2CA26261A283800AC5985 /* ThumbnailCollectionViewCell.swift in Sources */,
