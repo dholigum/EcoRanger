@@ -51,7 +51,7 @@ class YesorNoViewController: UIViewController, CustomViewDelegate {
     @IBOutlet weak var objectView: UIImageView!
     @IBAction func btnYes(_ sender: UIButton) {
         if life >= 1 {
-            if objFlags<1 {
+            if objFlags<10 {
                 selectedObj = objectGames[objFlags]
                 //var randomInt = Int.random(in: 0...14)
                 if selectedObj.imgId == "toys" {
@@ -81,7 +81,7 @@ class YesorNoViewController: UIViewController, CustomViewDelegate {
     @IBAction func btnNo(_ sender: UIButton) {
         if life >= 1 {
             //Ubah jadi 2 dlu
-            if objFlags<1 {
+            if objFlags<10 {
                 selectedObj = objectGames[objFlags]
                 if selectedObj.imgId == "trash" {
                     life -= 1
@@ -112,7 +112,7 @@ class YesorNoViewController: UIViewController, CustomViewDelegate {
         print("obj ke = \(objFlags)")
         print("Nyawa = \(life)")
         //ini tadi diubah 
-        if objFlags==1{
+        if objFlags==10{
             GameResultPopUpController.instance.showResultView(alertType: .success)
         }
         
