@@ -70,8 +70,11 @@ class TutorialViewController: UIViewController {
         print("to \(tutorModel?.gameStoryboard ?? "nil") Activity")
         print("to \(tutorModel?.gameIdentifier ?? "nil") Identifier")
         
+        
+        
         let storyboard = UIStoryboard(name: tutorModel?.gameStoryboard ?? "nil", bundle: nil)
         let navigation = storyboard.instantiateViewController(identifier: tutorModel?.gameIdentifier ?? "nil")
+        
         self.present(navigation, animated: true, completion: nil)
         
     }
